@@ -4,5 +4,5 @@ here there be bash
 
 ## bootstrap
 
-    ln -s ~/src/dotfiles/bash_profile.sh .bash_profile
-    ln -s ~/src/dotfiles/.vimrc ~/.vimrc
+    git clone https://github.com/rsanheim/dotfiles.git ~/src
+    cd ~/src/dotfiles && bootstrap.sh
