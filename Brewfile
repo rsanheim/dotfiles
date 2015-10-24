@@ -4,7 +4,8 @@ tap "homebrew/completions"
 
 # dropbox first to get syncing starting...
 cask "dropbox"
-# 1password early as well
+
+# 1password and chrome to get them setup
 cask "1password"
 cask "google-chrome"
 
@@ -27,6 +28,7 @@ brew "wget"
 brew "unrar"
 brew "youtube-dl"
 
+# the rest of the apps
 cask "caffeine"
 cask "cloak"
 cask "fantastical"
