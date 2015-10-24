@@ -14,11 +14,6 @@ if [ -d "$HOME/src/dotfiles/bin" ] ; then
   PATH="$HOME/src/dotfiles/bin:$PATH"
 fi
 
-hitch() {
-  command hitch "$@"
-  if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
-}
-
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export ACK_OPTIONS="--ignore-dir=log --ignore-dir=tmp --ignore-dir=public/assets"
 
