@@ -21,6 +21,7 @@ brew "findutils"
 brew "flac"
 brew "hub"
 brew "lame"
+brew "macvim", args: ['with-lua', 'with-custom-icons', 'with-override-system-vim']
 brew "rbenv"
 brew "ruby-build"
 brew "sqlite"
