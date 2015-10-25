@@ -219,5 +219,3 @@ autocmd User Rails Rnavcommand controllertest   test/controllers  -glob=**/*  -s
 autocmd User Rails Rnavcommand modeltest        test/models       -glob=**/*  -suffix=.rb
 autocmd User Rails Rnavcommand viewmodel        app/view_models   -glob=**/*  -suffix=.rb
 autocmd User Rails Rnavcommand viewmodeltest    test/view_models  -glob=**/*  -suffix=.rb
-
-
