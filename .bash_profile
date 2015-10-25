@@ -19,6 +19,8 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
+export RBENV_ROOT=/usr/local/var/rbenv
+
 export HISTCONTROL=ignoredups;
 export HISTSIZE=10000;
 shopt -s histappend;
