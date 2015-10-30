@@ -15,6 +15,7 @@ alias pr="script/git-pr --push"
 alias sb="script/bootstrap"
 alias sc="script/console"
 alias ss="script/server"
+alias t="bin/testrb"
 
 alias use_gcc="export CC=/usr/bin/gcc && export CXX=/usr/bin/g++ && export LD=/usr/bin/gcc"
 alias "count-github-test-code"="sloccount test/models test/integration test/controllers test/jobs test/lib test/mailers test/view_models"
