@@ -2,6 +2,7 @@
 
 ln -sf ~/src/dotfiles/.bash_profile ~
 ln -sf ~/src/dotfiles/.vimrc ~
+ln -sf ~/src/dotfiles/.gitconfig ~
 source ~/.bash_profile
 brew bundle
 # setup Vundle for vim
