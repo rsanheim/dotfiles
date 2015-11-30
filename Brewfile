@@ -35,6 +35,7 @@ brew "unrar"
 brew "youtube-dl"
 
 # the rest of the apps
+cask "audacity"
 cask "caffeine"
 cask "cloak"
 cask "fantastical"
