@@ -33,3 +33,4 @@ export EDITOR=atom
 export GIT_EDITOR="vim"
 
 alias pair='ruby ~/src/dotfiles/bash/pair.rb'
+alias git=hub
