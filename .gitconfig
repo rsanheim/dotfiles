@@ -18,3 +18,7 @@ email = rsanheim@gmail.com
 
 [credential]
 	helper = osxkeychain
+[hub]
+	protocol = https
+[core]
+	excludesfile = /Users/rsanheim/.gitignore_global
