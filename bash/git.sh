@@ -23,3 +23,6 @@ alias random_commit="echo `date` >> README.markdown \
 
 alias "clean-local-branches"="git branch --merged master | grep -v 'master$' | xargs git branch -d"
 alias "git-sync"="git co master && git pull && clean-local-branches"
+
+# copy current branch to clipboard
+alias "copy-current-branch"="git branch | grep '^\*' | cut -d' ' -f2 | pbcopy"
