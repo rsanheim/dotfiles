@@ -11,7 +11,7 @@
   LIGHT_RED="\[\033[1;31m\]"
 LIGHT_GREEN="\[\033[1;32m\]"
       WHITE="\[\033[1;37m\]"
- LIGHT_GRAY="\[\033[0;37m\]"
+ LIGHT_GRAY="\[\033[1;34m\]"
  COLOR_NONE="\[\e[0m\]"
 
 function parse_git_branch {
