@@ -9,7 +9,7 @@ alias gh="cd ~/github/github"
 alias mix="cd ~/src/mixcatcher"
 
 # just make life easier
-alias "edit-bash-profile"="vim ~/.bash_profile"
+alias "edit-bash-profile"="vim /Users/rsanheim/src/dotfiles/.bash_profile"
 alias "reload-bash-profile"=". ~/.bash_profile"
 
 alias pr="script/git-pr --push"
