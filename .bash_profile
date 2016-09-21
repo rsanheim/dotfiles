@@ -31,3 +31,5 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export ACK_OPTIONS="--ignore-dir=log --ignore-dir=tmp --ignore-dir=public/assets"
 export EDITOR=atom
 export GIT_EDITOR="vim"
+
+eval "$(nodenv init -)"
