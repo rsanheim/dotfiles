@@ -24,6 +24,7 @@ brew "hub"
 brew "lame"
 brew "macvim", args: ['with-lua', 'with-custom-icons', 'with-override-system-vim']
 brew "node"
+brew "graphiql"
 brew "rbenv"
 # http://blog.burntsushi.net/ripgrep/
 brew "https://raw.githubusercontent.com/BurntSushi/ripgrep/master/pkg/brew/ripgrep.rb"
