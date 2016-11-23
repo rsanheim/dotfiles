@@ -1,5 +1,6 @@
 alias git=hub
 
+alias h="history"
 alias be="bundle exec"
 alias bi="bundle install"
 alias rdm="bundle exec rake db:migrate"
