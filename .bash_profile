@@ -10,6 +10,10 @@ if test "${PS1+set}"; then
   CDPATH=".:/Users/rsanheim:/Users/rsanheim/src:/Users/rsanheim/github"
 fi
 
+if [ -d "$HOME/bin" ] ; then
+  PATH="$HOME/bin:$PATH"
+fi
+
 if [ -d "$HOME/src/dotfiles/bin" ] ; then
   PATH="$HOME/src/dotfiles/bin:$PATH"
 fi
