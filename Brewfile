@@ -12,6 +12,8 @@ cask "google-chrome"
 # dev tools
 cask "iterm2"
 cask "atom"
+cask "virtualbox"
+cask "vagrant"
 
 brew "ack"
 brew "bash"
