@@ -16,6 +16,7 @@ cask "virtualbox"
 cask "vagrant"
 
 brew "ack"
+brew "ansible"
 brew "bash"
 brew "bash-completion"
 brew "ffmpeg"
