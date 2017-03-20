@@ -7,7 +7,7 @@ for file in ~/src/dotfiles/bash/*.sh; do
 done
 
 if test "${PS1+set}"; then
-  CDPATH=".:/Users/rsanheim:/Users/rsanheim/src:/Users/rsanheim/github"
+  CDPATH=".:/Users/rsanheim:/Users/rsanheim/src:/Users/rsanheim/src/3dna"
 fi
 
 if [ -d "$HOME/bin" ] ; then
@@ -31,9 +31,9 @@ export HISTCONTROL=ignoredups;
 export HISTSIZE=10000;
 shopt -s histappend;
 
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export ACK_OPTIONS="--ignore-dir=log --ignore-dir=tmp --ignore-dir=public/assets"
 export EDITOR=atom
 export GIT_EDITOR="vim"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 eval "$(nodenv init -)"
