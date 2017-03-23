@@ -6,14 +6,14 @@ alias bi="bundle install"
 alias rdm="bundle exec rake db:migrate"
 alias rdt="bin/rake db:migrate db:test:prepare"
 alias m="mvim ."
-alias gh="cd ~/github/github"
 alias mix="cd ~/src/mixcatcher"
+alias nb="cd ~/src/nationbuilder/nbuild"
 
 # just make life easier
 alias "edit-bash-profile"="vim /Users/rsanheim/src/dotfiles/.bash_profile"
 alias "reload-bash-profile"=". ~/.bash_profile"
 
-# rails and github stuff
+# rails stuff
 alias sb="script/bootstrap"
 alias sc="script/console"
 alias ss="script/server"
