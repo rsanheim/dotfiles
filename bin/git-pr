@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# Usage: git-pr
+
+branch = `git symbolic-ref --short HEAD`.strip
+origin = `git config --get remote.origin.url`.strip
+url = origin.gsub(/\.git$/, '')
+url << "/pull/" << branch
+
+puts "Opening #{url}"
+
+`open '#{url}'`
