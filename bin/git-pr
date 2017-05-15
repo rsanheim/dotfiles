@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 # Usage: git-pr
 
+if ARGV.first =~ /--p/ || ARGV.first =~ /-p/
+  `git push -u`
+end
+
 branch = `git symbolic-ref --short HEAD`.strip
 origin = `git config --get remote.origin.url`.strip
 url = origin.gsub(/\.git$/, '')

@@ -14,7 +14,8 @@
       "one-light-ui"
       "solarized-light-syntax"
     ]
-  editor: {}
+  editor:
+    fontSize: 13
   "exception-reporting":
     userId: "9363c2a1-ce13-c340-7351-14b4c86035b6"
   "one-dark-ui":
