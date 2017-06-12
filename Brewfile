@@ -6,7 +6,7 @@ tap "homebrew/completions"
 cask "dropbox"
 
 # 1password and chrome to get them setup
-cask "1password"
+# cask "1password"
 cask "google-chrome"
 
 # dev tools
