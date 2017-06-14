@@ -23,5 +23,7 @@
   "package-sync":
     createOnChange: true
     forceOverwrite: true
+  "vim-mode-plus-ex-mode":
+    notifiedUseExMode: true
   welcome:
     showOnStartup: false

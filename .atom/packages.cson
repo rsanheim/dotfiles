@@ -1,9 +1,9 @@
 packages: [
+  "ex-mode"
   "language-haml"
   "package-sync"
   "solarized-dark-ui"
   "solarized-light-ui"
   "sort-lines"
   "vim-mode-plus"
-  "vim-mode-plus-ex-mode"
 ]
