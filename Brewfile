@@ -24,6 +24,7 @@ brew "findutils"
 brew "flac"
 brew "git"
 brew "hub"
+brew "iperf"
 brew "lame"
 brew "macvim", args: ['with-lua', 'with-custom-icons', 'with-override-system-vim']
 brew "node"
