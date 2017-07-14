@@ -1,7 +1,3 @@
-if [ -f "/opt/github/env.sh" ]
-  then source "/opt/github/env.sh"
-fi
-
 for file in ~/src/dotfiles/bash/*.sh; do
   [[ -r $file ]] && source $file;
 done
