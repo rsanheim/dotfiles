@@ -1,3 +1,5 @@
+source ~/src/dotfiles/bin/functions
+
 for file in ~/src/dotfiles/bash/*.sh; do
   [[ -r $file ]] && source $file;
 done
@@ -15,7 +17,7 @@ if [ -d "$HOME/src/dotfiles/bin" ] ; then
 fi
 
 # nice bash completion
-if [ -f `brew --prefix`/etc/bash_completion ]; then
+if is_osx && [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
