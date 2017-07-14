@@ -1,6 +1,5 @@
 "*":
   core:
-    allowPendingPaneItems: false
     ignoredNames: [
       ".git"
       ".hg"
@@ -15,8 +14,7 @@
       "one-light-ui"
       "solarized-light-syntax"
     ]
-  editor:
-    preferredLineLength: 120
+  editor: {}
   "exception-reporting":
     userId: "9363c2a1-ce13-c340-7351-14b4c86035b6"
   "one-dark-ui":
@@ -24,7 +22,7 @@
   "package-sync":
     createOnChange: true
     forceOverwrite: true
-  "vim-mode-plus-ex-mode":
-    notifiedUseExMode: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
