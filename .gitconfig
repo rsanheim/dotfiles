@@ -16,8 +16,6 @@ email = rsanheim@gmail.com
 [push]
 	default = current
 
-[credential]
-	helper = osxkeychain
 [hub]
 	protocol = https
 [core]
