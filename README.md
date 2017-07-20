@@ -15,6 +15,8 @@ Requires xcode
 
 ## bootstrap (assumes you are on Ubuntu 14+)
 
+*this is still a work in progress*
+
     sudo apt install git
     git clone https://github.com/rsanheim/dotfiles.git ~/src/dotfiles
     cd ~/src/dotfiles && ./bootstrap.sh
