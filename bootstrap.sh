@@ -2,6 +2,7 @@
 
 source bin/functions
 
+ln -sf ~/src/dotfiles/.bashrc ~
 ln -sf ~/src/dotfiles/.bash_profile ~
 ln -sf ~/src/dotfiles/.vimrc ~
 ln -sf ~/src/dotfiles/.gitconfig ~
@@ -17,6 +18,6 @@ git -C ~/.vim/bundle/Vundle.vim pull || git clone https://github.com/VundleVim/V
 # install plugins via vim + vundle
 vim +PluginInstall +qall
 
-source ~/.bash_profile
+source ~/.bashrc
 
 echo "==> All done!"
