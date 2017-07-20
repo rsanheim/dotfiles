@@ -1,4 +1,6 @@
-alias git=hub
+if [[ -e hub ]]; then
+  alias git=hub
+ fi
 
 alias h="history"
 alias be="bundle exec"
