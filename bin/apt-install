@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
 sudo apt update
-sudo apt install ack-grep vim vim-gnome
+sudo apt install ack-grep vim vim-gnome git
+sudo apt install curl build-essential
+sudo apt install autoconf bison libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
 sudo apt install nfs-kernel-server vagrant virtualbox ansible
+sudo apt install postgresql postgresql-contrib libpq-dev
+
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
