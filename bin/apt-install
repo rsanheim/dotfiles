@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+sudo apt update
+sudo apt install ack-grep vim vim-gnome
+sudo apt install nfs-kernel-server vagrant virtualbox ansible

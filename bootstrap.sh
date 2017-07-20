@@ -10,6 +10,8 @@ ln -sf ~/src/dotfiles/.atom/ ~/.atom
 
 if is_osx; then
   brew bundle
+else
+  source bin/apt-install
 fi
 
 # setup Vundle for vim
