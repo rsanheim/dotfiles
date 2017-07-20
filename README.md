@@ -2,7 +2,7 @@
 
 here there be bash
 
-## bootstrap
+## bootstrap (Mac)
 
 Requires xcode
 
@@ -11,4 +11,10 @@ Requires xcode
     # install the dotfiles
     git clone https://github.com/rsanheim/dotfiles.git ~/src/dotfiles
     # set up all the things
+    cd ~/src/dotfiles && ./bootstrap.sh
+
+## bootstrap (assumes you are on Ubuntu 14+)
+
+    sudo apt install git
+    git clone https://github.com/rsanheim/dotfiles.git ~/src/dotfiles
     cd ~/src/dotfiles && ./bootstrap.sh
