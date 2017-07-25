@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+function command_exists () {
+    type "$1" &> /dev/null ;
+}
+
 # OS detection
 function is_osx() {
   [[ "$OSTYPE" =~ ^darwin ]] || return 1
