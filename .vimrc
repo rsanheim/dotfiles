@@ -22,7 +22,6 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'puppetlabs/puppet-syntax-vim'
-Bundle 'zerowidth/vim-copy-as-rtf'
 
 " ****************************
 " Settings
