@@ -5,7 +5,7 @@ for file in ~/src/dotfiles/bash/*.sh; do
 done
 
 if test "${PS1+set}"; then
-  CDPATH=".:/Users/rsanheim:/Users/rsanheim/src:/Users/rsanheim/src/3dna"
+  CDPATH=".:$HOME:$HOME/src:$HOME/src/3dna"
 fi
 
 if [ -d "$HOME/bin" ] ; then
