@@ -8,11 +8,14 @@ ln -sf ~/src/dotfiles/.vimrc ~
 ln -sf ~/src/dotfiles/.gitconfig ~
 ln -sf ~/src/dotfiles/.atom/ ~/.atom
 
+git clone https://github.com/rsanheim/dotfiles-private.git $HOME/src/dotfiles-private
+
 if is_osx; then
   brew bundle
 fi
 
 if is_ubuntu_desktop; then
+  bin/install-amdgpu-pro
   bin/install-xmr-stak-amd
 fi
 
