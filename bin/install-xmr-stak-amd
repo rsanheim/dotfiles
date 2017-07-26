@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+sudo apt-get install ocl-icd-opencl-dev libmicrohttpd-dev libssl-dev cmake build-essential
+git clone https://github.com/fireice-uk/xmr-stak-amd.git $HOME/src/xmr-stak-amd
+pushd $HOME/src/xmr-stak-amd
+cmake .
+make
+popd
