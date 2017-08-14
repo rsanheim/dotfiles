@@ -12,6 +12,7 @@ cask "google-chrome"
 # dev tools
 cask "iterm2"
 cask "atom"
+cask "docker"
 cask "virtualbox"
 cask "vagrant"
 
