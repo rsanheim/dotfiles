@@ -1,7 +1,9 @@
 packages: [
+  "copy-as-rtf"
   "ex-mode"
   "language-haml"
   "package-sync"
+  "pretty-json"
   "solarized-dark-ui"
   "solarized-light-ui"
   "sort-lines"
