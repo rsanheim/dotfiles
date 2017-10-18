@@ -20,7 +20,6 @@ if [[ ! -L "$HOME/Documents" && -d "$HOME/Dropbox/Documents" ]]; then
   ln -sv $HOME/Dropbox/Documents $HOME
 fi
 
-
 if is_osx; then
   brew bundle
 fi
@@ -34,7 +33,6 @@ if is_ubuntu; then
   cmake .
   make install
 fi
-
 
 if is_ubuntu_desktop; then
   bin/install-amdgpu-pro
