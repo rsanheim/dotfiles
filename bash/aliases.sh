@@ -22,3 +22,5 @@ alias ss="script/server"
 alias beg="bin/bundle exec guard"
 
 alias use_gcc="export CC=/usr/bin/gcc && export CXX=/usr/bin/g++ && export LD=/usr/bin/gcc"
+
+alias touchssl="find app/ -path "*ssl*.rb" -exec touch {} \+"
