@@ -2,14 +2,15 @@
 
 source bin/functions
 
-ln -sf ~/src/dotfiles/.bashrc ~
-ln -sf ~/src/dotfiles/.bash_profile ~
-ln -sf ~/src/dotfiles/.vimrc ~
-ln -sf ~/src/dotfiles/.gitconfig ~
-ln -sf ~/src/dotfiles/.atom/ ~/.atom
+export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
+ln -sf $DOTFILES_HOME/.bashrc ~
+ln -sf $DOTFILES_HOME/.bash_profile ~
+ln -sf $DOTFILES_HOME/.vimrc ~
+ln -sf $DOTFILES_HOME/.gitconfig ~
+ln -sf $DOTFILES_HOME/.atom/ ~/.atom
 
-if [[ ! -d $HOME/src/dotfiles-private ]]; then
-  git clone https://github.com/rsanheim/dotfiles-private.git $HOME/src/dotfiles-private
+if [[ ! -d $HOME/src/rsanheim/dotfiles-private ]]; then
+  git clone https://github.com/rsanheim/dotfiles-private.git $HOME/src/rsanheim/dotfiles-private
 fi
 
 if [[ ! -L "$HOME/Documents" && -d "$HOME/Dropbox/Documents" ]]; then
