@@ -13,8 +13,8 @@ if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
 fi
 
-if [ -d "$HOME/src/dotfiles/bin" ] ; then
-  PATH="$HOME/src/dotfiles/bin:$PATH"
+if [ -d "$DOTFILES_HOME/bin" ] ; then
+  PATH="$DOTFILES_HOME/bin:$PATH"
 fi
 
 # nice bash completion
