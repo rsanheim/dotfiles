@@ -2,6 +2,7 @@
 
 source bin/functions
 
+export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
 ln -sf $DOTFILES_HOME/.bashrc ~
 ln -sf $DOTFILES_HOME/.bash_profile ~
 ln -sf $DOTFILES_HOME/.vimrc ~
