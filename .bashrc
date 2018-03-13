@@ -1,6 +1,7 @@
-source ~/src/dotfiles/bin/functions
+export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
+source $DOTFILES_HOME/bin/functions
 
-for file in ~/src/dotfiles/bash/*.sh; do
+for file in $DOTFILES_HOME/bash/*.sh; do
   [[ -r $file ]] && source $file;
 done
 
