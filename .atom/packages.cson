@@ -1,4 +1,5 @@
 packages: [
+  "atom-clock"
   "copy-as-rtf"
   "ex-mode"
   "language-haml"
@@ -7,5 +8,6 @@ packages: [
   "solarized-dark-ui"
   "solarized-light-ui"
   "sort-lines"
+  "teletype"
   "vim-mode-plus"
 ]
