@@ -9,4 +9,4 @@ git checkout dev-rsanheim
 cmake . -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl
 make install
 popd
-cp $HOME/src/dotfiles-private/xmr-stak-cpu-mac $HOME/src/xmr-stak-cpu/bin/config.txt
+cp $HOME/src/rsanheim/dotfiles-private/xmr-stak-cpu-mac $HOME/src/xmr-stak-cpu/bin/config.txt

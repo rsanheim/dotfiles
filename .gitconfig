@@ -28,3 +28,5 @@ email = rsanheim@gmail.com
   prompt = false
 [difftool "icdiff"]
   cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
+[credential]
+	helper = osxkeychain
