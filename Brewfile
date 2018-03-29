@@ -58,12 +58,11 @@ mas "Xcode", id: 497799835
 # the rest of the apps
 cask "1password"
 cask "caffeine"
-# cask "cloak"
 cask "divvy"
 cask "fantastical"
 # cask "flux"
 cask "handbrake"
-# cask "java"
+cask "java"
 cask "kindlegen"
 cask "minecraft"
 cask "nvalt"
