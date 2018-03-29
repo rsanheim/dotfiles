@@ -43,6 +43,7 @@ brew "unrar"
 brew "youtube-dl"
 
 mas "Bear", id: 1091189122
+mas "Divvy", id: 413857545
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
@@ -57,18 +58,18 @@ mas "Xcode", id: 497799835
 # the rest of the apps
 cask "1password"
 cask "caffeine"
-cask "cloak"
+# cask "cloak"
 # cask "divvy"
 cask "fantastical"
 # cask "flux"
 cask "handbrake"
-cask "java"
+# cask "java"
 cask "kindlegen"
 cask "minecraft"
 cask "nvalt"
 cask "graphiql"
 cask "screenhero"
-cask "sizeup"
+# cask "sizeup"
 cask "steam"
 cask "the-unarchiver"
 cask "transmission"
