@@ -1,6 +1,7 @@
 tap "caskroom/cask"
 tap "homebrew/bundle"
 tap "homebrew/completions"
+tap "macvim-dev/macvim"
 
 # dropbox first to get syncing starting...
 cask "dropbox"
@@ -27,7 +28,8 @@ brew "git"
 brew "hub"
 brew "iperf"
 brew "lame"
-brew "macvim", args: ['with-lua', 'with-custom-icons', 'with-override-system-vim']
+brew "macvim-dev/macvim/macvim"
+# brew "macvim", args: ['with-lua', 'with-custom-icons', 'with-override-system-vim']
 brew "mas"
 brew "node"
 brew "rbenv"
