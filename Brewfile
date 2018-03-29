@@ -40,10 +40,10 @@ brew "tig"
 brew "tree"
 brew "wget"
 brew "unrar"
+brew "yarn"
 brew "youtube-dl"
 
 mas "Bear", id: 1091189122
-mas "Divvy", id: 413857545
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
@@ -59,7 +59,7 @@ mas "Xcode", id: 497799835
 cask "1password"
 cask "caffeine"
 # cask "cloak"
-# cask "divvy"
+cask "divvy"
 cask "fantastical"
 # cask "flux"
 cask "handbrake"
