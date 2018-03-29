@@ -28,6 +28,7 @@ brew "hub"
 brew "iperf"
 brew "lame"
 brew "macvim", args: ['with-lua', 'with-custom-icons', 'with-override-system-vim']
+brew "mas"
 brew "node"
 brew "rbenv"
 # http://blog.burntsushi.net/ripgrep/
@@ -41,13 +42,25 @@ brew "wget"
 brew "unrar"
 brew "youtube-dl"
 
+mas "Bear", id: 1091189122
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pixelmator", id: 407963104
+mas "Shazam", id: 897118787
+mas "Slack", id: 803453959
+mas "Speedtest", id: 1153157709
+mas "Xcode", id: 497799835
+
 # the rest of the apps
 cask "1password"
 cask "caffeine"
 cask "cloak"
-cask "divvy"
+# cask "divvy"
 cask "fantastical"
-cask "flux"
+# cask "flux"
 cask "handbrake"
 cask "java"
 cask "kindlegen"
@@ -56,7 +69,6 @@ cask "nvalt"
 cask "graphiql"
 cask "screenhero"
 cask "sizeup"
-cask "slack"
 cask "steam"
 cask "the-unarchiver"
 cask "transmission"
