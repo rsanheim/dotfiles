@@ -12,7 +12,7 @@ alias mix="cd ~/src/mixcatcher"
 alias nb="cd ~/src/3dna/nbuild"
 
 # just make life easier
-alias "edit-bash-profile"="vim /Users/rsanheim/src/dotfiles/.bash_profile"
+alias "edit-bash-profile"="vim $DOTFILES_HOME/.bash_profile"
 alias "reload-bash-profile"=". ~/.bash_profile"
 
 # rails stuff

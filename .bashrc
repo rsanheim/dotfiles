@@ -9,6 +9,7 @@ if test "${PS1+set}"; then
   CDPATH=".:$HOME:$HOME/src:$HOME/src/3dna:$HOME/src/rsanheim"
 fi
 
+
 if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
 fi
@@ -16,6 +17,9 @@ fi
 if [ -d "$DOTFILES_HOME/bin" ] ; then
   PATH="$DOTFILES_HOME/bin:$PATH"
 fi
+
+# for homebrew
+PATH="/usr/local/sbin:$PATH"
 
 # nice bash completion
 if is_osx && [ -f `brew --prefix`/etc/bash_completion ]; then
