@@ -41,8 +41,12 @@ set directory=~/.vim/swap,~/tmp,.  " keep swp files under ~/.vim/swap
 " ****************************
 " Look and Feel
 " ****************************
+set t_Co=256
+let g:solarized_termtrans = 1
+let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
+
 set guifont=Inconsolata:h15
 
 if has("gui_running")
@@ -210,11 +214,3 @@ else
   map  <C-9> 9gt
   imap <C-9> <Esc>9gt
 endif
-
-" Rnavcommand extensions for github/github
-" ======================
-autocmd User Rails Rnavcommand api              app/api           -glob=**/*  -suffix=.rb
-autocmd User Rails Rnavcommand controllertest   test/controllers  -glob=**/*  -suffix=.rb
-autocmd User Rails Rnavcommand modeltest        test/models       -glob=**/*  -suffix=.rb
-autocmd User Rails Rnavcommand viewmodel        app/view_models   -glob=**/*  -suffix=.rb
-autocmd User Rails Rnavcommand viewmodeltest    test/view_models  -glob=**/*  -suffix=.rb

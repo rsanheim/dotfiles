@@ -1,6 +1,5 @@
 tap "caskroom/cask"
 tap "homebrew/bundle"
-tap "homebrew/completions"
 tap "macvim-dev/macvim"
 
 # dropbox first to get syncing starting...
@@ -74,3 +73,4 @@ cask "the-unarchiver"
 cask "transmission"
 cask "tunnelblick"
 cask "vlc"
+cask "zoom"

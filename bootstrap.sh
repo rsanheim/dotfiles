@@ -23,6 +23,7 @@ fi
 
 if is_osx; then
   brew bundle
+  brew install --HEAD macvim-dev/macvim/macvim
 fi
 
 if is_ubuntu; then
