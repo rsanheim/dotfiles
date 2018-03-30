@@ -5,13 +5,15 @@ tap "macvim-dev/macvim"
 # dropbox first to get syncing starting...
 cask "dropbox"
 
-# 1password and chrome to get them setup
-# cask "1password"
+# Lets get some essentials installed first
+cask "1password"
+cask "firefox"
 cask "google-chrome"
+brew "git"
 
 # dev tools
-cask "iterm2"
 cask "atom"
+cask "iterm2"
 cask "docker"
 cask "virtualbox"
 cask "vagrant"
@@ -23,17 +25,13 @@ brew "bash-completion"
 brew "ffmpeg"
 brew "findutils"
 brew "flac"
-brew "git"
 brew "hub"
 brew "iperf"
 brew "lame"
 brew "macvim-dev/macvim/macvim"
-# brew "macvim", args: ['with-lua', 'with-custom-icons', 'with-override-system-vim']
 brew "mas"
 brew "node"
 brew "rbenv"
-# http://blog.burntsushi.net/ripgrep/
-# brew "https://raw.githubusercontent.com/BurntSushi/ripgrep/master/pkg/brew/ripgrep.rb"
 brew "ruby-build"
 brew "python"
 brew "sqlite"
@@ -57,7 +55,6 @@ mas "Speedtest", id: 1153157709
 mas "Xcode", id: 497799835
 
 # the rest of the apps
-cask "1password"
 cask "caffeine"
 cask "divvy"
 cask "fantastical"
@@ -73,4 +70,4 @@ cask "the-unarchiver"
 cask "transmission"
 cask "tunnelblick"
 cask "vlc"
-cask "zoom"
+cask "zoomus"
