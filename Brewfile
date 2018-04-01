@@ -15,8 +15,6 @@ brew "git"
 cask "atom"
 cask "iterm2"
 cask "docker"
-cask "virtualbox"
-cask "vagrant"
 
 brew "ack"
 brew "ansible"

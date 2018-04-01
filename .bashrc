@@ -6,7 +6,7 @@ for file in $DOTFILES_HOME/bash/*.sh; do
 done
 
 if test "${PS1+set}"; then
-  CDPATH=".:$HOME:$HOME/src:$HOME/src/3dna:$HOME/src/rsanheim"
+  CDPATH=".:$HOME:$HOME/src:$HOME/src/firstleads:$HOME/src/rsanheim"
 fi
 
 
