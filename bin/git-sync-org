@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+# Usage: git-sync-org ORG_NAME
+
+if ARGV.first.nil?
+  abort "You must provide an org account to sync with"
+end
+
+org = ARGV.first
+username = ENV["USER"]
+
+cmd = %[curl -u #{username} -s 'https://api.github.com/orgs/#{org}/repos?per_page=100' | grep clone_url |  awk -F '"' '{print $4}' | xargs -n 1 -P 4 git clone]
+exec cmd
