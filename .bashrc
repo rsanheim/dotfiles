@@ -35,6 +35,6 @@ export HISTSIZE=10000;
 shopt -s histappend;
 
 export ACK_OPTIONS="--ignore-dir=log --ignore-dir=tmp --ignore-dir=public/assets"
-export EDITOR=atom
+export EDITOR="atom --wait"
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
