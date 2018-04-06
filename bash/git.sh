@@ -11,6 +11,7 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gcap='git commit -v -a && git push'
 alias gpp='git pull; git push'
+alias gpr='git-pr -p'
 
 # From: http://www.commandlinefu.com/commands/view/2345/show-git-branches-by-date-useful-for-showing-active-branches
 alias "git-recent-branches"='for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
