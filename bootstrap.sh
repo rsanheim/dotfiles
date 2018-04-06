@@ -7,7 +7,7 @@ ln -sf $DOTFILES_HOME/.bashrc ~
 ln -sf $DOTFILES_HOME/.bash_profile ~
 ln -sf $DOTFILES_HOME/.vimrc ~
 ln -sf $DOTFILES_HOME/.gitconfig ~
-ln -sf $DOTFILES_HOME/.atom/ ~/.atom
+ln -sf $DOTFILES_HOME/.atom/ ~
 
 if [[ ! -d $HOME/src/rsanheim/dotfiles-private ]]; then
   git clone https://github.com/rsanheim/dotfiles-private.git $HOME/src/rsanheim/dotfiles-private
