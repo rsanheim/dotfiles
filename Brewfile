@@ -6,6 +6,7 @@ tap "macvim-dev/macvim"
 cask "dropbox"
 
 # Lets get some essentials installed first
+cask "spectacle"
 cask "1password"
 cask "firefox"
 cask "google-chrome"
@@ -58,7 +59,6 @@ mas "Xcode", id: 497799835
 
 # the rest of the apps
 cask "caffeine"
-cask "divvy"
 cask "fantastical"
 # cask "flux"
 cask "handbrake"
