@@ -8,4 +8,4 @@ git checkout dev
 cmake . -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=ON
 make install
 popd
-cp $HOME/src/rsanheim/dotfiles-private/xmr-stak-cpu-mac $HOME/src/xmr-stak/bin/config.txt
+# cp $HOME/src/rsanheim/dotfiles-private/xmr-stak-cpu-mac $HOME/src/xmr-stak/bin/config.txt
