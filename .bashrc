@@ -38,7 +38,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export HISTCONTROL=ignoredups;
 export HISTSIZE=10000;
-shopt -s histappend;
+shopt -s histappend histverify;
 
 export ACK_OPTIONS="--ignore-dir=log --ignore-dir=tmp --ignore-dir=public/assets"
 export EDITOR="atom --wait"
