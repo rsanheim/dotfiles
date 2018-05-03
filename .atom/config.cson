@@ -12,8 +12,8 @@
     ]
     telemetryConsent: "limited"
     themes: [
-      "solarized-dark-ui"
-      "solarized-dark-syntax"
+      "solarized-light-ui"
+      "solarized-light-syntax"
     ]
   editor:
     fontSize: 16
