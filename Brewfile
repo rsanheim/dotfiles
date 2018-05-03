@@ -33,7 +33,6 @@ brew "lame"
 brew "macvim-dev/macvim/macvim"
 brew "mas"
 brew "md5sha1sum"
-brew "node"
 brew "rbenv"
 brew "ruby-build"
 brew "python"
@@ -43,6 +42,7 @@ brew "tree"
 brew "wget"
 brew "unrar"
 brew "yarn"
+brew "yarn", args: ["without-node"]
 brew "youtube-dl"
 
 mas "Bear", id: 1091189122
