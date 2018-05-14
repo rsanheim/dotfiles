@@ -1,6 +1,7 @@
 tap "caskroom/cask"
 tap "homebrew/bundle"
 tap "macvim-dev/macvim"
+tap "wix/brew"
 
 # dropbox first to get syncing starting...
 cask "dropbox"
@@ -20,6 +21,7 @@ cask "docker"
 
 brew "ack"
 brew "ansible"
+brew "applesimutils" # for https://github.com/wix/detox/
 brew "bash"
 brew "bash-completion"
 brew "ffmpeg"
@@ -41,7 +43,6 @@ brew "tig"
 brew "tree"
 brew "wget"
 brew "unrar"
-brew "yarn"
 brew "yarn", args: ["without-node"]
 brew "youtube-dl"
 
