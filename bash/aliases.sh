@@ -14,6 +14,7 @@ alias brainy="cd ~/src/firstleads/brainy"
 # just make life easier
 alias "edit-bash-profile"="vim $DOTFILES_HOME/.bash_profile"
 alias "reload-bash-profile"=". ~/.bash_profile"
+alias "preflight"="~/src/rsanheim/preflight/preflight.rb"
 
 # rails stuff
 alias sb="script/bootstrap"
