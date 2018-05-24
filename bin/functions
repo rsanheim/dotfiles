@@ -19,6 +19,6 @@ function get_os() {
     is_$os; [[ $? == ${1:-0} ]] && echo $os
   done
 }
-function find_touch() {
+function find-touch() {
   find . -path *$1*.rb -exec touch {} \+
 }
