@@ -1,7 +1,12 @@
 export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
+export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
 source $DOTFILES_HOME/bin/functions
 
 for file in $DOTFILES_HOME/bash/*.sh; do
+  [[ -r $file ]] && source $file;
+done
+
+for file in $DOTFILES_PRIVATE_HOME/bash/*.sh; do
   [[ -r $file ]] && source $file;
 done
 
