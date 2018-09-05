@@ -12,11 +12,11 @@
     ]
     telemetryConsent: "limited"
     themes: [
-      "solarized-light-ui"
-      "solarized-light-syntax"
+      "solarized-dark-ui"
+      "solarized-dark-syntax"
     ]
   editor:
-    fontSize: 11
+    fontSize: 12
     preferredLineLength: 120
   "exception-reporting":
     userId: "9363c2a1-ce13-c340-7351-14b4c86035b6"
