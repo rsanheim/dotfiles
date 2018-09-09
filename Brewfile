@@ -16,14 +16,16 @@ brew "git"
 
 # dev tools
 cask "atom"
-cask "iterm2"
 cask "docker"
+cask "iterm2"
+cask "visual-studio-code"
 
 brew "ack"
 brew "ansible"
 brew "applesimutils" # for https://github.com/wix/detox/
 brew "bash"
 brew "bash-completion"
+brew "fd"
 brew "ffmpeg"
 brew "findutils"
 brew "flac"
