@@ -14,6 +14,8 @@ if test "${PS1+set}"; then
   CDPATH=".:$HOME:$HOME/src:$HOME/src/firstleads:$HOME/src/rsanheim"
 fi
 
+# for homebrew
+PATH="/usr/local/sbin:$PATH"
 
 if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
@@ -29,8 +31,6 @@ if [ -d $POSTGRES_PATH ]; then
   PATH="$POSTGRES_PATH:$PATH"
 fi
 
-# for homebrew
-PATH="/usr/local/sbin:$PATH"
 
 # nice bash completion
 if is_osx && [ -f `brew --prefix`/etc/bash_completion ]; then
