@@ -10,6 +10,7 @@ alias rdt="bin/rake db:migrate db:test:prepare"
 alias m="mvim ."
 alias mix="cd ~/src/mixcatcher"
 alias brainy="cd ~/src/firstleads/brainy"
+alias convo="cd ~/src/firstleads/conversations"
 
 # just make life easier
 alias "edit-bash-profile"="vim $DOTFILES_HOME/.bash_profile"
@@ -23,5 +24,3 @@ alias ss="script/server"
 alias beg="bin/bundle exec guard"
 
 alias use_gcc="export CC=/usr/bin/gcc && export CXX=/usr/bin/g++ && export LD=/usr/bin/gcc"
-
-alias touchssl="find spec -path *ssl*.rb -exec touch {} \+"
