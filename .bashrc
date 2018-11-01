@@ -41,6 +41,7 @@ fi
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+export AWS_PROFILE="default"
 export HISTCONTROL=ignoredups;
 export HISTSIZE=10000;
 shopt -s histappend histverify;
