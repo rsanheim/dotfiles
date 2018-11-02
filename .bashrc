@@ -50,3 +50,5 @@ export ACK_OPTIONS="--ignore-dir=log --ignore-dir=tmp --ignore-dir=public/assets
 export EDITOR="atom --wait"
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

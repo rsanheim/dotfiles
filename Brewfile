@@ -18,6 +18,7 @@ brew "git"
 cask "atom"
 cask "docker"
 cask "iterm2"
+cask "postico"
 cask "visual-studio-code"
 
 brew "ack"
