@@ -25,6 +25,11 @@ if [ -d "$DOTFILES_HOME/bin" ] ; then
   PATH="$DOTFILES_HOME/bin:$PATH"
 fi
 
+PYTHON_PATH="/usr/local/opt/python/libexec/bin"
+
+if [ -d "$PYTHON_PATH" ]; then
+  PATH="$PYTHON_PATH:$PATH"
+fi
 # Lock to Postgres 9.5 if installed - https://postgresapp.com/
 POSTGRES_PATH="/Applications/Postgres.app/Contents/Versions/9.5/bin"
 if [ -d $POSTGRES_PATH ]; then
