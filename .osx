@@ -700,6 +700,13 @@ defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
 defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
 
 ###############################################################################
+# VSCode
+###############################################################################
+
+# Make sure key repeat works in VSCode with VIM
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+###############################################################################
 # Transmission.app                                                            #
 ###############################################################################
 
