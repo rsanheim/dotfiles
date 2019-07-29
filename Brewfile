@@ -47,7 +47,6 @@ brew "tig"
 brew "tree"
 brew "wget"
 brew "unrar"
-brew "yarn", args: ["without-node"]
 brew "youtube-dl"
 
 mas "Bear", id: 1091189122
