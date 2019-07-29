@@ -21,7 +21,6 @@ Bundle 'ervandew/supertab'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'puppetlabs/puppet-syntax-vim'
 
 " ****************************
 " Settings
