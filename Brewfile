@@ -11,7 +11,6 @@ cask "spectacle"
 # cask "1password"
 # cask "firefox"
 # cask "google-chrome"
-cask "divvy"
 brew "git"
 
 # dev tools
