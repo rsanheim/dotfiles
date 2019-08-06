@@ -7,6 +7,7 @@ cask "dropbox"
 
 # Lets get some essentials installed first
 cask "spectacle"
+cask "postgres"
 # cask "1password"
 # cask "firefox"
 # cask "google-chrome"
