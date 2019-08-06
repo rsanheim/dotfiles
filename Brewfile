@@ -10,7 +10,7 @@ cask "spectacle"
 cask "postgres"
 # cask "1password"
 # cask "firefox"
-# cask "google-chrome"
+cask "google-chrome"
 brew "git"
 
 # essential dev tools
