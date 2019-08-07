@@ -25,11 +25,12 @@ if [ -d "$DOTFILES_HOME/bin" ] ; then
   PATH="$DOTFILES_HOME/bin:$PATH"
 fi
 
-PYTHON_PATH="/usr/local/opt/python/libexec/bin"
+# PYTHON_PATH="/usr/local/opt/python/libexec/bin"
 
-if [ -d "$PYTHON_PATH" ]; then
-  PATH="$PYTHON_PATH:$PATH"
-fi
+# if [ -d "$PYTHON_PATH" ]; then
+#   PATH="$PYTHON_PATH:$PATH"
+# fi
+
 # Lock to Postgres 9.5 if installed - https://postgresapp.com/
 POSTGRES_PATH="/Applications/Postgres.app/Contents/Versions/9.5/bin"
 if [ -d $POSTGRES_PATH ]; then
@@ -55,5 +56,3 @@ export ACK_OPTIONS="--ignore-dir=log --ignore-dir=tmp --ignore-dir=public/assets
 export EDITOR="code --wait"
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
