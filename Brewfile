@@ -18,9 +18,7 @@ cask "iterm2"
 
 # other dev tools
 cask "atom"
-
 cask "docker"
-
 cask "postico"
 
 brew "ack"
@@ -64,8 +62,8 @@ mas "Xcode", id: 497799835
 # the rest of the apps
 cask "caffeine"
 cask "fantastical"
+cask "istat-menus"
 # cask "flux"
-# cask "java"
 cask "nvalt"
 cask "graphiql"
 cask "the-unarchiver"
