@@ -1,6 +1,5 @@
 tap "caskroom/cask"
 tap "homebrew/bundle"
-tap "macvim-dev/macvim"
 tap "wix/brew"
 
 # dropbox first to get syncing starting...
@@ -8,17 +7,21 @@ cask "dropbox"
 
 # Lets get some essentials installed first
 cask "spectacle"
+cask "postgres"
 # cask "1password"
 # cask "firefox"
-# cask "google-chrome"
+cask "google-chrome"
 brew "git"
 
-# dev tools
+# essential dev tools
+cask "visual-studio-code"
+cask "iterm2"
+
+# other dev tools
 cask "atom"
 cask "docker"
-cask "iterm2"
+
 cask "postico"
-cask "visual-studio-code"
 
 brew "ack"
 brew "ansible"
