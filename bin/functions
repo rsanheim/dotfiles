@@ -22,3 +22,11 @@ function get_os() {
 function find-touch() {
   find . -path *$1*.rb -exec touch {} \+
 }
+
+# function wait_for_boot() {
+#   while true
+#   if curl --output /dev/null --silent --head --fail localhost:3000/health_check
+#     break
+#   end
+#   sleep 1
+# }
