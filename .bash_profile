@@ -3,3 +3,4 @@ if [ -f ~/.bashrc ]; then
 fi
 
 eval "$(rbenv init -)"
+export PATH="/usr/local/opt/node@10/bin:$PATH"
