@@ -9,8 +9,7 @@ cask "dropbox"
 cask "spectacle"
 cask "postgres"
 # cask "1password"
-# cask "firefox"
-cask "google-chrome"
+cask "firefox"
 brew "git"
 
 # essential dev tools
@@ -20,7 +19,6 @@ cask "iterm2"
 # other dev tools
 cask "atom"
 cask "docker"
-
 cask "postico"
 
 brew "ack"
@@ -34,6 +32,7 @@ brew "findutils"
 brew "flac"
 brew "graphviz"
 brew "highlight"
+cask "homebrew/cask-versions/adoptopenjdk8"
 brew "hub"
 brew "iperf"
 brew "jq"
@@ -63,8 +62,8 @@ mas "Xcode", id: 497799835
 # the rest of the apps
 cask "caffeine"
 cask "fantastical"
+cask "istat-menus"
 # cask "flux"
-# cask "java"
 cask "nvalt"
 cask "graphiql"
 cask "the-unarchiver"
