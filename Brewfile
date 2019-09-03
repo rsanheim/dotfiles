@@ -61,6 +61,7 @@ mas "Speedtest", id: 1153157709
 mas "Xcode", id: 497799835
 
 # the rest of the apps
+cask "atext"
 cask "caffeine"
 cask "fantastical"
 cask "istat-menus"
