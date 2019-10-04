@@ -19,7 +19,7 @@ email = rsanheim@gmail.com
 [hub]
 	protocol = https
 [core]
-	excludesfile = /Users/rsanheim/.gitignore_global
+	excludesfile = ~/.gitignore
 [github]
 	user = rsanheim
 [diff]
