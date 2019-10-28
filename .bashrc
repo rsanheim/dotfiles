@@ -31,8 +31,8 @@ fi
 #   PATH="$PYTHON_PATH:$PATH"
 # fi
 
-# Lock to Postgres 9.5 if installed - https://postgresapp.com/
-POSTGRES_PATH="/Applications/Postgres.app/Contents/Versions/9.5/bin"
+# Lock to current Postgres if installed - https://postgresapp.com/
+POSTGRES_PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin"
 if [ -d $POSTGRES_PATH ]; then
   PATH="$POSTGRES_PATH:$PATH"
 fi
@@ -56,3 +56,4 @@ export ACK_OPTIONS="--ignore-dir=log --ignore-dir=tmp --ignore-dir=public/assets
 export EDITOR="code --wait"
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export BOLD_PENGUIN_HOME="$HOME/src/BoldPenguin"
