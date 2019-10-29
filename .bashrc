@@ -14,6 +14,11 @@ if test "${PS1+set}"; then
   CDPATH=".:$HOME:$HOME/src:$HOME/src/boldpenguin:$HOME/src/rsanheim"
 fi
 
+# More open files
+# https://gist.github.com/tombigel/d503800a282fcadbee14b537735d202c
+ulimit -n 65536
+ulimit -u 2048
+
 # for homebrew
 PATH="/usr/local/sbin:$PATH"
 
