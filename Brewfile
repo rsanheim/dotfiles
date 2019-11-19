@@ -1,6 +1,5 @@
 tap "caskroom/cask"
 tap "homebrew/bundle"
-tap "wix/brew"
 
 # dropbox first to get syncing starting...
 cask "dropbox"
@@ -23,7 +22,6 @@ cask "postico"
 
 brew "ack"
 brew "ansible"
-brew "applesimutils" # for https://github.com/wix/detox/
 brew "bash"
 brew "bash-completion"
 brew "fd"
