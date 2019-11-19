@@ -1,4 +1,4 @@
-tap "caskroom/cask"
+tap "caskroom/cask-cask"
 tap "homebrew/bundle"
 
 # dropbox first to get syncing starting...
@@ -38,6 +38,7 @@ brew "lame"
 brew "mas"
 brew "md5sha1sum"
 brew "node@10"
+brew "redis", start_service: true
 brew "rbenv"
 brew "ruby-build"
 brew "python"
