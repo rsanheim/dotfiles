@@ -49,9 +49,6 @@ brew "unrar"
 brew "youtube-dl"
 
 mas "Bear", id: 1091189122
-# mas "Keynote", id: 409183694
-# mas "Numbers", id: 409203825
-# mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
 # mas "Shazam", id: 897118787
 mas "Slack", id: 803453959
@@ -63,7 +60,6 @@ cask "atext"
 cask "caffeine"
 cask "fantastical"
 cask "istat-menus"
-# cask "flux"
 cask "nvalt"
 cask "graphiql"
 cask "the-unarchiver"
