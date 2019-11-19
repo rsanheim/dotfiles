@@ -24,6 +24,7 @@ brew "ack"
 brew "ansible"
 brew "bash"
 brew "bash-completion"
+brew "elasticsearch", start_service: true
 brew "fd"
 brew "ffmpeg"
 brew "findutils"
