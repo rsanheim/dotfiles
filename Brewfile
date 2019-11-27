@@ -1,4 +1,4 @@
-tap "caskroom/cask"
+tap "caskroom/cask-cask"
 tap "homebrew/bundle"
 
 # dropbox first to get syncing starting...
@@ -24,6 +24,7 @@ brew "ack"
 brew "ansible"
 brew "bash"
 brew "bash-completion"
+brew "elasticsearch", start_service: true
 brew "fd"
 brew "ffmpeg"
 brew "findutils"
@@ -38,6 +39,7 @@ brew "lame"
 brew "mas"
 brew "md5sha1sum"
 brew "node@10"
+brew "redis", start_service: true
 brew "rbenv"
 brew "ruby-build"
 brew "python"
@@ -50,6 +52,7 @@ brew "youtube-dl"
 
 mas "Bear", id: 1091189122
 mas "Pixelmator", id: 407963104
+mas "Dayone", id: 1055511498
 # mas "Shazam", id: 897118787
 mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709

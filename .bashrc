@@ -57,7 +57,6 @@ export HISTCONTROL=ignoredups;
 export HISTSIZE=10000;
 shopt -s histappend histverify;
 
-export ACK_OPTIONS="--ignore-dir=log --ignore-dir=tmp --ignore-dir=public/assets"
 export EDITOR="code --wait"
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
