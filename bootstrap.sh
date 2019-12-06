@@ -8,6 +8,7 @@ ln -sf $DOTFILES_HOME/.bash_profile ~
 ln -sf $DOTFILES_HOME/.vimrc ~
 ln -sf $DOTFILES_HOME/.gitconfig ~
 ln -sf $DOTFILES_HOME/.atom/ ~
+ln -sf $DOTFILES_HOME/.gitignore/ ~
 
 if [[ ! -d $HOME/src/rsanheim/dotfiles-private ]]; then
   git clone https://github.com/rsanheim/dotfiles-private.git $HOME/src/rsanheim/dotfiles-private
@@ -23,7 +24,6 @@ fi
 
 if is_osx; then
   brew bundle
-  # brew install --HEAD macvim-dev/macvim/macvim
 fi
 
 if is_ubuntu; then
