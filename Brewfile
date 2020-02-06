@@ -20,6 +20,7 @@ cask "docker"
 cask "postico"
 
 brew "ack"
+brew "ag"
 brew "ansible"
 brew "bash"
 brew "bash-completion"
