@@ -30,11 +30,12 @@ if [ -d "$DOTFILES_HOME/bin" ] ; then
   PATH="$DOTFILES_HOME/bin:$PATH"
 fi
 
-# PYTHON_PATH="/usr/local/opt/python/libexec/bin"
+PYTHON_PATH="/usr/local/opt/python/libexec/bin"
 
-# if [ -d "$PYTHON_PATH" ]; then
-#   PATH="$PYTHON_PATH:$PATH"
-# fi
+# Use Python from Homebrew if its available
+if [ -d "$PYTHON_PATH" ]; then
+  PATH="$PYTHON_PATH:$PATH"
+fi
 
 # Lock to current Postgres if installed - https://postgresapp.com/
 POSTGRES_PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin"
