@@ -32,6 +32,7 @@ fi
 
 PYTHON_PATH="/usr/local/opt/python/libexec/bin"
 
+# Use Python from Homebrew if its available
 if [ -d "$PYTHON_PATH" ]; then
   PATH="$PYTHON_PATH:$PATH"
 fi
