@@ -9,8 +9,6 @@ alias rdm="bundle exec rake db:migrate"
 alias rdt="bin/rake db:migrate db:test:prepare"
 alias m="mvim ."
 alias mix="cd ~/src/mixcatcher"
-alias pe="cd ~/src/boldpenguin/partner-engine"
-alias ce="cd ~/src/boldpenguin/carrier-engine"
 
 # just make life easier
 alias "edit-bash-profile"="vim $DOTFILES_HOME/.bash_profile"
