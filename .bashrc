@@ -38,7 +38,7 @@ if [ -d "$PYTHON_PATH" ]; then
 fi
 
 # Lock to current Postgres if installed - https://postgresapp.com/
-POSTGRES_PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin"
+POSTGRES_PATH="/Applications/Postgres.app/Contents/Versions/10/bin"
 if [ -d $POSTGRES_PATH ]; then
   PATH="$POSTGRES_PATH:$PATH"
 fi

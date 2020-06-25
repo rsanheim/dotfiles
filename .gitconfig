@@ -30,3 +30,5 @@ email = rsanheim@gmail.com
   cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 [credential]
 	helper = osxkeychain
+[diff "ansible-vault"]
+	textconv = ansible-vault view
