@@ -64,4 +64,3 @@ shopt -s histappend histverify;
 export EDITOR="code --wait"
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-export BOLD_PENGUIN_HOME="$HOME/src/BoldPenguin"
