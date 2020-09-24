@@ -61,6 +61,9 @@ export HISTCONTROL=ignoredups;
 export HISTSIZE=10000;
 shopt -s histappend histverify;
 
+# ansible
+export ANSIBLE_VAULT_PASSWORD_FILE="/Users/rsanheim/src/simpledotorg/deployment/.vault_password"
+
 export EDITOR="code --wait"
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
