@@ -10,18 +10,15 @@ cask "firefox"
 brew "git"
 
 # essential dev tools
-cask "visual-studio-code"
+brew "bash"
+brew "bash-completion"
 cask "iterm2"
-
-# other dev tools
+cask "visual-studio-code"
 cask "atom"
-cask "postico"
 
 brew "ack"
 brew "ag"
 brew "ansible"
-brew "bash"
-brew "bash-completion"
 brew "fd"
 brew "ffmpeg"
 brew "findutils"
