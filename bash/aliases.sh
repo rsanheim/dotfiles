@@ -16,6 +16,9 @@ alias "edit-bash-profile"="code $DOTFILES_HOME/"
 alias "reload-bash-profile"=". ~/.bash_profile"
 alias "preflight"="~/src/rsanheim/preflight/preflight.rb"
 
+# for M1 Arm macs
+alias a="arch -x86_64"
+alias ibrew="arch -x86_64 brew"
 
 # rails stuff
 alias beg="bin/bundle exec guard"
