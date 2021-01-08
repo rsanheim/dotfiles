@@ -34,6 +34,7 @@ brew "lame"
 brew "mas"
 brew "md5sha1sum"
 brew "node@10"
+brew "postgresql@10"
 brew "redis", start_service: true
 brew "rbenv"
 brew "ruby-build"
