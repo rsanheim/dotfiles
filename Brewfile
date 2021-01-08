@@ -5,17 +5,15 @@ cask "dropbox"
 
 # Lets get some essentials installed first
 cask "spectacle"
-cask "postgres"
 cask "firefox"
 brew "git"
 
 # essential dev tools
-cask "visual-studio-code"
+# cask "visual-studio-code"
 cask "iterm2"
 
 # other dev tools
 cask "atom"
-cask "docker"
 cask "postico"
 
 brew "ack"
@@ -29,7 +27,6 @@ brew "ffmpeg"
 brew "findutils"
 brew "flac"
 brew "graphviz"
-brew "highlight"
 brew "hub"
 brew "iperf"
 brew "jq"
@@ -40,7 +37,6 @@ brew "node@10"
 brew "redis", start_service: true
 brew "rbenv"
 brew "ruby-build"
-brew "python"
 brew "sqlite"
 brew "tree"
 brew "wget"

@@ -32,3 +32,5 @@ email = rsanheim@gmail.com
 	helper = osxkeychain
 [diff "ansible-vault"]
 	textconv = ansible-vault view
+[pull]
+	rebase = false

@@ -20,6 +20,11 @@ ulimit -n 65536
 ulimit -u 2048
 
 # for homebrew
+
+if [ -d "/opt/homebrew/bin" ] ; then
+  PATH="/opt/homebrew/bin:$PATH"
+fi
+
 PATH="/usr/local/sbin:$PATH"
 
 if [ -d "$HOME/bin" ] ; then
