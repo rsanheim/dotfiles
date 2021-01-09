@@ -44,14 +44,6 @@ brew "wget"
 brew "unrar"
 brew "youtube-dl"
 
-mas "Bear", id: 1091189122
-mas "Pixelmator", id: 407963104
-mas "Dayone", id: 1055511498
-# mas "Shazam", id: 897118787
-mas "Slack", id: 803453959
-mas "Speedtest", id: 1153157709
-mas "Xcode", id: 497799835
-
 # the rest of the apps
 cask "atext"
 cask "caffeine"
@@ -61,3 +53,11 @@ cask "the-unarchiver"
 cask "tunnelblick"
 cask "vlc"
 cask "zoomus"
+
+mas "Bear", id: 1091189122
+mas "Pixelmator", id: 407963104
+mas "Dayone", id: 1055511498
+# mas "Shazam", id: 897118787
+mas "Slack", id: 803453959
+mas "Speedtest", id: 1153157709
+mas "Xcode", id: 497799835
