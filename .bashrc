@@ -48,6 +48,12 @@ if [ -d $POSTGRES_PATH ]; then
   PATH="$POSTGRES_PATH:$PATH"
 fi
 
+# Use a pinned Postgres@10 install in homebrew if its there
+POSTGRES_BREW_PATH="/opt/homebrew/opt/postgresql@10/bin"
+if [ -d $POSTGRES_BREW_PATH ]; then
+  PATH="$POSTGRES_BREW_PATH:$PATH"
+fi
+
 
 # nice bash completion
 if is_osx && [ -f `brew --prefix`/etc/bash_completion ]; then
