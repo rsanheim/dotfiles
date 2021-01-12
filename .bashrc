@@ -63,7 +63,6 @@ if is_osx && [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 # rbenv
-export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export AWS_PROFILE="default"
