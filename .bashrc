@@ -60,9 +60,6 @@ if is_osx && [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
-# Dont update homebrew everytime you try to install something
-export HOMEBREW_NO_AUTO_UPDATE=1
-
 # rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
