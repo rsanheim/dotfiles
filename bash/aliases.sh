@@ -16,8 +16,9 @@ alias "edit-bash-profile"="code $DOTFILES_HOME/"
 alias "reload-bash-profile"=". ~/.bash_profile"
 alias "preflight"="~/src/rsanheim/preflight/preflight.rb"
 
-# rosetta homebrew
+# Rosetta things
 alias ibrew="arch -x86_64 /usr/local/bin/brew"
+alias ibash="arch -x86_64 /bin/bash --login"
 
 if [ -f "/usr/local/bin/code-insiders" ] ; then
   alias code="/usr/local/bin/code-insiders"
