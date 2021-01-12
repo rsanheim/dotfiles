@@ -19,11 +19,13 @@ fi
 ulimit -n 65536
 ulimit -u 2048
 
-# for homebrew
-
-if [ -d "/opt/homebrew/bin" ] ; then
-  PATH="/opt/homebrew/bin:$PATH"
+# for M1 homebrew compat homebrew
+if [ "$(sysctl -n sysctl.proc_translated)" = "1" ]; then
+  brew_path="/usr/local/homebrew/bin"
+else
+  brew_path="/opt/homebrew/bin"
 fi
+export PATH="${brew_path}:${PATH}"
 
 PATH="/usr/local/sbin:$PATH"
 
