@@ -21,7 +21,6 @@ brew "ag"
 brew "ansible"
 brew "bash"
 brew "bash-completion"
-brew "elasticsearch", start_service: true
 brew "fd"
 brew "ffmpeg"
 brew "findutils"
@@ -54,10 +53,9 @@ cask "tunnelblick"
 cask "vlc"
 cask "zoomus"
 
+mas "Amphetamine", id: 937984704
 mas "Bear", id: 1091189122
 mas "Pixelmator", id: 407963104
 mas "Dayone", id: 1055511498
-# mas "Shazam", id: 897118787
 mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709
-mas "Xcode", id: 497799835
