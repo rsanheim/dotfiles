@@ -40,7 +40,6 @@ brew "ruby-build"
 brew "sqlite"
 brew "tree"
 brew "wget"
-brew "unrar"
 brew "youtube-dl"
 
 # the rest of the apps
