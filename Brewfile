@@ -45,6 +45,7 @@ brew "youtube-dl"
 # the rest of the apps
 cask "atext"
 cask "caffeine"
+cask "dash"
 cask "fantastical"
 cask "istat-menus"
 cask "the-unarchiver"
