@@ -43,7 +43,6 @@ if [ -d $POSTGRES_PATH ]; then
   PATH="$POSTGRES_PATH:$PATH"
 fi
 
-
 # nice bash completion
 if is_osx && [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
