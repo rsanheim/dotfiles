@@ -28,11 +28,6 @@ if is_osx; then
   brew bundle
 fi
 
-if is_ubuntu_desktop; then
-  bin/install-amdgpu-pro
-  bin/install-xmr-stak-amd
-fi
-
 # setup Vundle for vim
 git -C ~/.vim/bundle/Vundle.vim pull || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 

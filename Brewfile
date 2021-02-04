@@ -11,8 +11,6 @@ brew "git"
 # essential dev tools
 # cask "visual-studio-code"
 cask "iterm2"
-
-# other dev tools
 cask "atom"
 cask "postico"
 
@@ -26,13 +24,11 @@ brew "ffmpeg"
 brew "findutils"
 brew "flac"
 brew "graphviz"
-brew "hub"
 brew "iperf"
 brew "jq"
 brew "lame"
 brew "mas"
 brew "md5sha1sum"
-brew "node@10"
 brew "postgresql@10"
 brew "redis", start_service: true
 brew "rbenv"
@@ -49,7 +45,6 @@ cask "dash"
 cask "fantastical"
 cask "istat-menus"
 cask "the-unarchiver"
-cask "tunnelblick"
 cask "vlc"
 cask "zoomus"
 

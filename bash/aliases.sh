@@ -24,7 +24,6 @@ if [ -f "/usr/local/bin/code-insiders" ] ; then
   alias code="/usr/local/bin/code-insiders"
 fi
 
-
 # rails stuff
 alias beg="bin/bundle exec guard"
 

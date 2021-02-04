@@ -23,6 +23,13 @@ function find-touch() {
   find . -path *$1*.rb -exec touch {} \+
 }
 
+function repeat() {
+  number=$1
+  shift
+  for n in $(seq $number); do
+    $@
+  done
+}
 # function wait_for_boot() {
 #   while true
 #   if curl --output /dev/null --silent --head --fail localhost:3000/health_check
