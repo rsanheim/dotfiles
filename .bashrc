@@ -19,7 +19,14 @@ fi
 ulimit -n 65536
 ulimit -u 2048
 
-# for homebrew
+# for M1 homebrew compat homebrew
+if [ "$(sysctl -n sysctl.proc_translated)" = "1" ]; then
+  brew_path="/usr/local/homebrew/bin"
+else
+  brew_path="/opt/homebrew/bin"
+fi
+export PATH="${brew_path}:${PATH}"
+
 PATH="/usr/local/sbin:$PATH"
 
 if [ -d "$HOME/bin" ] ; then
@@ -43,16 +50,18 @@ if [ -d $POSTGRES_PATH ]; then
   PATH="$POSTGRES_PATH:$PATH"
 fi
 
+# Use a pinned Postgres@10 install in homebrew if its there
+POSTGRES_BREW_PATH="/opt/homebrew/opt/postgresql@10/bin"
+if [ -d $POSTGRES_BREW_PATH ]; then
+  PATH="$POSTGRES_BREW_PATH:$PATH"
+fi
+
 # nice bash completion
 if is_osx && [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
-# Dont update homebrew everytime you try to install something
-export HOMEBREW_NO_AUTO_UPDATE=1
-
 # rbenv
-export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export AWS_PROFILE="default"
@@ -63,6 +72,11 @@ shopt -s histappend histverify;
 # ansible
 export ANSIBLE_VAULT_PASSWORD_FILE="/Users/rsanheim/src/simpledotorg/deployment/.vault_password"
 
-export EDITOR="code --wait"
+if [ -f "/usr/local/bin/code-insiders" ] ; then
+  export EDITOR="code-insiders --wait"
+else
+  export EDITOR="code --wait"
+fi
+
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"

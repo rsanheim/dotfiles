@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+chsh -s /bin/bash
+
 source bin/functions
 
 export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
