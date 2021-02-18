@@ -72,6 +72,11 @@ shopt -s histappend histverify;
 # ansible
 export ANSIBLE_VAULT_PASSWORD_FILE="/Users/rsanheim/src/simpledotorg/deployment/.vault_password"
 
-export EDITOR="code --wait"
+if [ -f "/usr/local/bin/code-insiders" ] ; then
+  export EDITOR="code-insiders --wait"
+else
+  export EDITOR="code --wait"
+fi
+
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"

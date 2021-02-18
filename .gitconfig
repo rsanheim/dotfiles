@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
-name = Rob Sanheim
-email = rsanheim@gmail.com
+	name = Rob Sanheim
+	email = rsanheim@gmail.com
 
 [alias]
   br = branch
