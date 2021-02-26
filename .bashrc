@@ -11,7 +11,7 @@ for file in $DOTFILES_PRIVATE_HOME/bash/*.sh; do
 done
 
 if test "${PS1+set}"; then
-  CDPATH=".:$HOME:$HOME/src:$HOME/src/simpledotorg:$HOME/src/rsanheim"
+  CDPATH=".:$HOME:$HOME/src:$HOME/src/simpledotorg:$HOME/src/rsanheim:$HOME/src/oss"
 fi
 
 # More open files
