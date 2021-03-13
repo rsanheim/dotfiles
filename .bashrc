@@ -69,6 +69,10 @@ export HISTCONTROL=ignoredups;
 export HISTSIZE=10000;
 shopt -s histappend histverify;
 
+# jenv for ze java
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 # ansible
 export ANSIBLE_VAULT_PASSWORD_FILE="/Users/rsanheim/src/simpledotorg/deployment/.vault_password"
 
