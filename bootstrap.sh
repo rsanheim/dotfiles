@@ -36,6 +36,13 @@ if is_osx; then
   brew bundle
 fi
 
+# Install nvm and install latest 12.x LTS version of Node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+nvm install --lts=erbium
+nvm use lts/erbium
+npm install -g yarn
+
+
 # setup Vundle for vim
 git -C ~/.vim/bundle/Vundle.vim pull || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
