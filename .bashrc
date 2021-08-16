@@ -69,11 +69,7 @@ export HISTCONTROL=ignoredups;
 export HISTSIZE=10000;
 shopt -s histappend histverify;
 
-# jenv for ze java
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-# ansible
+# Ansible
 export ANSIBLE_VAULT_PASSWORD_FILE="/Users/rsanheim/src/simpledotorg/deployment/.vault_password"
 
 if [ -f "/usr/local/bin/code-insiders" ] ; then
@@ -84,3 +80,8 @@ fi
 
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# NVM setup
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
