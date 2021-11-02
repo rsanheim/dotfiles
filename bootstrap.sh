@@ -24,14 +24,6 @@ cd "$home/src/rsanheim"
 curl -s https://api.github.com/users/rsanheim/repos | grep \"clone_url\" | awk '{print $2}' | sed -e 's/"//g' -e 's/,//g' | xargs -n1 git clone
 
 
-if [[ ! -L "$HOME/Documents" && -d "$HOME/Dropbox/Documents" ]]; then
-  echo "Symlinking Dropbox documents to $HOME/Documents"
-  if [[ -d "$HOME/Documents" ]]; then
-    sudo mv $HOME/Documents $HOME/Documents.old
-  fi
-  ln -sv $HOME/Dropbox/Documents $HOME
-fi
-
 if is_osx; then
   brew bundle
 fi
