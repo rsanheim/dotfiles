@@ -23,7 +23,6 @@ fi
 cd "$home/src/rsanheim"
 curl -s https://api.github.com/users/rsanheim/repos | grep \"clone_url\" | awk '{print $2}' | sed -e 's/"//g' -e 's/,//g' | xargs -n1 git clone
 
-
 if is_osx; then
   brew bundle
 fi
@@ -33,7 +32,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 nvm install --lts=erbium
 nvm use lts/erbium
 npm install -g yarn
-
 
 # setup Vundle for vim
 git -C ~/.vim/bundle/Vundle.vim pull || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

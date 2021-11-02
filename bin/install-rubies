@@ -3,5 +3,5 @@
 
 rbenv install --skip-existing 2.5.8
 rbenv install --skip-existing 2.6.6
-rbenv install --skip-existing 2.7.2
-rbenv install --skip-existing 3.0.0
+rbenv install --skip-existing 2.7.4
+rbenv install --skip-existing 3.0.2
