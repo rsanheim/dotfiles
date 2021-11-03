@@ -20,7 +20,7 @@ if [[ ! -d $HOME/src/rsanheim/preflight ]]; then
   git clone https://github.com/rsanheim/preflight.git $HOME/src/rsanheim/preflight
 fi
 
-cd "$home/src/rsanheim"
+cd "$HOME/src/rsanheim"
 curl -s https://api.github.com/users/rsanheim/repos | grep \"clone_url\" | awk '{print $2}' | sed -e 's/"//g' -e 's/,//g' | xargs -n1 git clone
 
 
