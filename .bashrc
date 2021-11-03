@@ -54,6 +54,9 @@ fi
 POSTGRES_BREW_PATH="/opt/homebrew/opt/postgresql@10/bin"
 if [ -d $POSTGRES_BREW_PATH ]; then
   PATH="$POSTGRES_BREW_PATH:$PATH"
+  export LDFLAGS="-L/opt/homebrew/opt/postgresql@10/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/postgresql@10/include"
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@10/lib/pkgconfig"
 fi
 
 # nice bash completion
