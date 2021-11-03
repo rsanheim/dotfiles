@@ -3,7 +3,6 @@ tap "homebrew/bundle"
 # dropbox first to get syncing starting...
 
 # Lets get some essentials installed first
-cask "spectacle"
 cask "firefox"
 brew "git"
 
