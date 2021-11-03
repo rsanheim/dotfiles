@@ -40,10 +40,9 @@ brew "youtube-dl"
 cask "atext"
 cask "dash"
 cask "fantastical"
-cask "istat-menus"
+# cask "istat-menus"
 cask "the-unarchiver"
 cask "vlc"
-cask "zoomus"
 
 mas "Amphetamine", id: 937984704
 mas "Bear", id: 1091189122
