@@ -40,6 +40,7 @@ cask "atext"
 cask "dash"
 cask "fantastical"
 # cask "istat-menus"
+cask "telegram-desktop"
 cask "the-unarchiver"
 cask "vlc"
 
