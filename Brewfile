@@ -1,20 +1,17 @@
 tap "homebrew/bundle"
 
 # dropbox first to get syncing starting...
-cask "dropbox"
 
 # Lets get some essentials installed first
-cask "spectacle"
 cask "firefox"
 brew "git"
 
 # essential dev tools
-# cask "visual-studio-code"
+cask "visual-studio-code"
 cask "iterm2"
-cask "atom"
-cask "postico"
+# cask "atom"
+# cask "postico"
 
-brew "ack"
 brew "ag"
 brew "ansible"
 brew "bash"
@@ -29,7 +26,7 @@ brew "jq"
 brew "lame"
 brew "mas"
 brew "md5sha1sum"
-brew "postgresql@10"
+# brew "postgresql@10"
 brew "redis", start_service: true
 brew "rbenv"
 brew "ruby-build"
@@ -40,13 +37,14 @@ brew "youtube-dl"
 
 # the rest of the apps
 cask "atext"
-cask "caffeine"
 cask "dash"
 cask "fantastical"
-cask "istat-menus"
+# waiting on this to see about M1 compat
+# cask "istat-menus"
+cask "roon"
+cask "telegram-desktop"
 cask "the-unarchiver"
 cask "vlc"
-cask "zoomus"
 
 mas "Amphetamine", id: 937984704
 mas "Bear", id: 1091189122
