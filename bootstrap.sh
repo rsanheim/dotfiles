@@ -5,6 +5,8 @@ chsh -s /bin/bash
 source bin/functions
 
 export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
+export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
+
 ln -sf $DOTFILES_HOME/.bashrc ~
 ln -sf $DOTFILES_HOME/.bash_profile ~
 ln -sf $DOTFILES_HOME/.vimrc ~
@@ -15,6 +17,8 @@ ln -sf $DOTFILES_HOME/.gitignore ~
 if [[ ! -d $HOME/src/rsanheim/dotfiles-private ]]; then
   git clone https://github.com/rsanheim/dotfiles-private.git $HOME/src/rsanheim/dotfiles-private
 fi
+
+ln -sf $DOTFILES_PRIVATE_HOME/ssh_config ~/.ssh/config
 
 if [[ ! -d $HOME/src/rsanheim/preflight ]]; then
   git clone https://github.com/rsanheim/preflight.git $HOME/src/rsanheim/preflight
