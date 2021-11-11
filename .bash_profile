@@ -7,4 +7,3 @@ if [ -f ~/.bashrc.m1 ]; then
 fi
 
 shopt -s globstar
-export PATH="/opt/homebrew/opt/postgresql@10/bin:$PATH"
