@@ -1,21 +1,20 @@
 tap "homebrew/bundle"
 
-# dropbox first to get syncing starting...
-
-# Lets get some essentials installed first
+# Get some essentials installed first
+cask "iterm2"
+cask "rectangle"
+cask "visual-studio-code"
 cask "firefox"
+brew "bash"
+brew "bash-completion"
 brew "git"
 
-# essential dev tools
-cask "visual-studio-code"
-cask "iterm2"
+# maybe phasing these out...
 # cask "atom"
 # cask "postico"
 
 brew "ag"
 brew "ansible"
-brew "bash"
-brew "bash-completion"
 brew "fd"
 brew "ffmpeg"
 brew "findutils"
