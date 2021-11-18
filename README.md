@@ -17,6 +17,6 @@ Requires homebrew. You can install homebrew via:
 git clone https://github.com/rsanheim/dotfiles.git ~/src/rsanheim/dotfiles
 
 # set up all the things
-cd ~/src/dotfiles && ./bootstrap.sh
+cd ~/src/rsanheim/dotfiles && ./bootstrap.sh
 ```
 
