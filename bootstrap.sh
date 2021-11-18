@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-chsh -s /bin/bash
+if [[ ! $SHELL == "/bin/bash" ]]; then
+  chsh -s /bin/bash
+fi
 
 source bin/functions
 
@@ -21,7 +23,8 @@ fi
 
 pushd "$HOME/src/rsanheim"
 if [[ ! -d $HOME/src/rsanheim ]]; then
-  echo "cloning personal repos..."
+  echo
+  echo "Cloning personal repos..."
   curl -s https://api.github.com/users/rsanheim/repos | grep \"clone_url\" | awk '{print $2}' | sed -e 's/"//g' -e 's/,//g' | xargs -n1 git clone
 fi
 popd
@@ -29,16 +32,22 @@ popd
 ln -sf $DOTFILES_PRIVATE_HOME/ssh_config ~/.ssh/config
 
 if [[ ! -d $HOME/src/simpledotorg ]]; then
-  echo "cloning simple-server..."
+  echo
+  echo "Cloning simple-server..."
   ./bin/install-simple
 fi
 
 if is_osx; then
-  echo "installing brew bundle..."
+  echo
+  echo "Installing brew bundle..."
   pushd $DOTFILES_HOME
   brew bundle
   popd
 fi
+
+echo
+echo "Installing Rubies..."
+./bin/install-rubies
 
 # Install nvm and install latest 12.x LTS version of Node
 
