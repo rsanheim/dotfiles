@@ -1,6 +1,4 @@
-# needed for older rubies <= 2.6.6
-# RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install --skip-existing 2.5.8
-
-rbenv install --skip-existing 2.6.6
+# the RUBY_CFLAGS bit is needed for older rubies (2.6.6 and older) on M1 macs
+RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install --skip-existing 2.6.6
 rbenv install --skip-existing 2.7.4
 rbenv install --skip-existing 3.0.2
