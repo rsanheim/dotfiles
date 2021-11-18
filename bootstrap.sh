@@ -29,8 +29,9 @@ curl -s https://api.github.com/users/rsanheim/repos | grep \"clone_url\" | awk '
 popd
 
 if is_osx; then
-  cd $HOME
+  pushd $DOTFILES_HOME
   brew bundle
+  popd
 fi
 
 # Install nvm and install latest 12.x LTS version of Node
