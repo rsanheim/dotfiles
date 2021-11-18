@@ -33,7 +33,6 @@ brew "tree"
 brew "wget"
 brew "youtube-dl"
 
-# 
 # the rest of the apps
 cask "atext"
 cask "dash"
@@ -54,3 +53,4 @@ mas "Speedtest", id: 1153157709
 
 # Things down here are slow or just much lower priority
 brew "ffmpeg"
+cask "google-chrome"
