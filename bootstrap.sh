@@ -24,8 +24,9 @@ if [[ ! -d $HOME/src/rsanheim/preflight ]]; then
   git clone https://github.com/rsanheim/preflight.git $HOME/src/rsanheim/preflight
 fi
 
-cd "$HOME/src/rsanheim"
+pushd "$HOME/src/rsanheim"
 curl -s https://api.github.com/users/rsanheim/repos | grep \"clone_url\" | awk '{print $2}' | sed -e 's/"//g' -e 's/,//g' | xargs -n1 git clone
+popd
 
 if is_osx; then
   cd $HOME
@@ -33,10 +34,6 @@ if is_osx; then
 fi
 
 # Install nvm and install latest 12.x LTS version of Node
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-nvm install --lts=erbium
-nvm use lts/erbium
-npm install -g yarn
 
 # setup Vundle for vim
 git -C ~/.vim/bundle/Vundle.vim pull || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
