@@ -1,4 +1,10 @@
+export RUBY_CONFIGURE_OPTS=--with-openssl-dir=/opt/local
+
+RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install 2.6.6
+rbenv install 2.7.4
+rbenv install 3.0.2
+
 # the RUBY_CFLAGS bit is needed for older rubies (2.6.6 and older) on M1 macs
-RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install --skip-existing 2.6.6
-rbenv install --skip-existing 2.7.4
-rbenv install --skip-existing 3.0.2
+# RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install --skip-existing 2.6.6
+# rbenv install --skip-existing 2.7.4
+# rbenv install --skip-existing 3.0.2

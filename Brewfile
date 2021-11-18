@@ -10,11 +10,9 @@ brew "bash-completion"
 brew "git"
 
 # maybe phasing these out...
-# cask "atom"
 # cask "postico"
 
 brew "ag"
-brew "ansible"
 brew "fd"
 brew "findutils"
 brew "flac"
@@ -24,7 +22,7 @@ brew "jq"
 brew "lame"
 brew "mas"
 brew "md5sha1sum"
-# brew "postgresql@10"
+brew "postgresql@10"
 brew "redis", start_service: true
 brew "rbenv"
 brew "ruby-build"
@@ -52,5 +50,6 @@ mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709
 
 # Things down here are slow or just much lower priority
+brew "ansible"
 brew "ffmpeg"
 cask "google-chrome"
