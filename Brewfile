@@ -16,7 +16,6 @@ brew "git"
 brew "ag"
 brew "ansible"
 brew "fd"
-brew "ffmpeg"
 brew "findutils"
 brew "flac"
 brew "graphviz"
@@ -34,6 +33,7 @@ brew "tree"
 brew "wget"
 brew "youtube-dl"
 
+# 
 # the rest of the apps
 cask "atext"
 cask "dash"
@@ -51,3 +51,6 @@ mas "Pixelmator", id: 407963104
 mas "Dayone", id: 1055511498
 mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709
+
+# Things down here are slow or just much lower priority
+brew "ffmpeg"
