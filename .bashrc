@@ -20,7 +20,7 @@ ulimit -n 65536
 ulimit -u 2048
 
 # for M1 homebrew compat homebrew
-if [ "$(sysctl -n sysctl.proc_translated)" = "1" ]; then
+if [ "$(uname -m)" = "x86_64" ]; then
   brew_path="/usr/local/homebrew/bin"
 else
   brew_path="/opt/homebrew/bin"
