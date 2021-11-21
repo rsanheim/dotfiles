@@ -21,13 +21,13 @@ if [[ ! -d $HOME/src/rsanheim ]]; then
   ssh git@github.com
 fi
 
-pushd "$HOME/src/rsanheim"
+pushd "$HOME/src/rsanheim" || exit 1
 if [[ ! -d $HOME/src/rsanheim ]]; then
   echo
   echo "Cloning personal repos..."
   curl -s https://api.github.com/users/rsanheim/repos | grep \"clone_url\" | awk '{print $2}' | sed -e 's/"//g' -e 's/,//g' | xargs -n1 git clone
 fi
-popd
+popd ..
 
 ln -sf $DOTFILES_PRIVATE_HOME/ssh_config ~/.ssh/config
 
@@ -40,9 +40,9 @@ fi
 if is_osx; then
   echo
   echo "Installing brew bundle..."
-  pushd $DOTFILES_HOME
+  pushd "$DOTFILES_HOME" || exit
   brew bundle
-  popd
+  popd .
 fi
 
 echo
@@ -57,6 +57,6 @@ echo "Installing Rubies..."
 # install plugins via vim + vundle
 # vim +PluginInstall +qall
 
-source ~/.bashrc
+source "$HOME/.bashrc"
 
 echo "==> All done!"

@@ -12,7 +12,7 @@ alias mix="cd ~/src/mixcatcher"
 alias ss="cd ~/src/simpledotorg/simple-server"
 
 # just make life easier
-alias "edit-bash-profile"="code $DOTFILES_HOME/"
+alias "edit-bash-profile"='code $DOTFILES_HOME/'
 alias "reload-bash-profile"=". ~/.bash_profile"
 alias "preflight"="~/src/rsanheim/preflight/preflight.rb"
 

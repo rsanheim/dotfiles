@@ -1,6 +1,6 @@
 export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
 export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
-source $DOTFILES_HOME/bin/functions
+source "$DOTFILES_HOME/bin/functions"
 
 for file in $DOTFILES_HOME/bash/*.sh; do
   [[ -r $file ]] && source $file;
@@ -60,8 +60,8 @@ if [ -d $POSTGRES_BREW_PATH ]; then
 fi
 
 # nice bash completion
-if is_osx && [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
+if is_osx && [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
 fi
 
 # rbenv
