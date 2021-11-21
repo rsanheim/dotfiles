@@ -42,7 +42,7 @@ if is_osx; then
   echo "Installing brew bundle..."
   pushd "$DOTFILES_HOME" || exit
   brew bundle
-  popd .
+  popd ..
 fi
 
 echo
