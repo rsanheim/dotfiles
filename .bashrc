@@ -2,6 +2,9 @@ export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
 export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
 source "$DOTFILES_HOME/bin/functions"
 
+HOMEBREW_PREF="/usr/local/"
+eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
+
 for file in $DOTFILES_HOME/bash/*.sh; do
   [[ -r $file ]] && source $file;
 done
@@ -19,13 +22,7 @@ fi
 ulimit -n 65536
 ulimit -u 2048
 
-# for M1 homebrew compat homebrew
-if [ "$(uname -m)" = "x86_64" ]; then
-  brew_path="/usr/local/homebrew/bin"
-else
-  brew_path="/opt/homebrew/bin"
-fi
-export PATH="${brew_path}:${PATH}"
+# eval "$(homebrew/bin/brew shellenv)"
 
 PATH="/usr/local/sbin:$PATH"
 
