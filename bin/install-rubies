@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 set -e
 
-export RUBY_CONFIGURE_OPTS=--with-openssl-dir=/opt/local
+# only needed for m1 macs
+# export RUBY_CONFIGURE_OPTS=--with-openssl-dir=/opt/local
 
 RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install --skip-existing 2.6.6
 RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install --skip-existing 2.6.8
 rbenv install --skip-existing 2.7.4
 rbenv install --skip-existing 3.0.2
+rbenv rehash
 rbenv global 3.0.2
+
+gem install solargraph
