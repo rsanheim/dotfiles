@@ -34,6 +34,7 @@ cask "telegram-desktop"
 cask "the-unarchiver"
 cask "vlc"
 
+mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
 mas "Bear", id: 1091189122
 mas "Pixelmator", id: 407963104
