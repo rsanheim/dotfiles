@@ -21,6 +21,7 @@ brew "postgresql@10", start_service: true
 brew "redis", start_service: true
 brew "rbenv"
 brew "ruby-build"
+brew "shellcheck"
 brew "sqlite"
 brew "tree"
 
