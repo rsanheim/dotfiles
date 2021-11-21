@@ -9,12 +9,15 @@ source bin/functions
 export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
 export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
 
-ln -sf $DOTFILES_HOME/.bashrc ~
-ln -sf $DOTFILES_HOME/.bash_profile ~
-ln -sf $DOTFILES_HOME/.vimrc ~
-ln -sf $DOTFILES_HOME/.gitconfig ~
-ln -sf $DOTFILES_HOME/.atom/ ~
-ln -sf $DOTFILES_HOME/.gitignore ~
+ln -sf "$DOTFILES_HOME"/.bashrc ~
+ln -sf "$DOTFILES_HOME"/.bash_profile ~
+ln -sf "$DOTFILES_HOME"/.vimrc ~
+ln -sf "$DOTFILES_HOME"/.gitconfig ~
+ln -sf "$DOTFILES_HOME"/.atom/ ~
+ln -sf "$DOTFILES_HOME"/.gitignore ~
+
+mkdir -p "$HOME"/src/rsanheim
+mkdir -p "$HOME"/src/oss
 
 if [[ ! -d $HOME/src/rsanheim ]]; then
   echo "SSH'ing to GitHub to setup .ssh dir (this is expected to fail...)"
@@ -27,9 +30,9 @@ if [[ ! -d $HOME/src/rsanheim ]]; then
   echo "Cloning personal repos..."
   curl -s https://api.github.com/users/rsanheim/repos | grep \"clone_url\" | awk '{print $2}' | sed -e 's/"//g' -e 's/,//g' | xargs -n1 git clone
 fi
-popd ..
+popd || exit 1
 
-ln -sf $DOTFILES_PRIVATE_HOME/ssh_config ~/.ssh/config
+ln -sf "$DOTFILES_PRIVATE_HOME"/ssh_config ~/.ssh/config
 
 if [[ ! -d $HOME/src/simpledotorg ]]; then
   echo
@@ -41,8 +44,8 @@ if is_osx; then
   echo
   echo "Installing brew bundle..."
   pushd "$DOTFILES_HOME" || exit
-  brew bundle
-  popd ..
+  # brew bundle
+  popd || exit 1
 fi
 
 echo
