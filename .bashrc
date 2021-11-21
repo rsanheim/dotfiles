@@ -2,9 +2,13 @@ export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
 export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
 source "$DOTFILES_HOME/bin/functions"
 
-HOMEBREW_PREF="/usr/local/"
-eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
-
+if [ "$(uname -m)" = "x86_64" ]; then
+  brew_path="/usr/local/homebrew/bin"
+  eval $(/usr/local/bin/brew shellenv)
+else
+  brew_path="/opt/homebrew/bin"
+  eval $(/opt/homebrew/bin/brew shellenv)
+fi
 for file in $DOTFILES_HOME/bash/*.sh; do
   [[ -r $file ]] && source $file;
 done
@@ -21,8 +25,6 @@ fi
 # https://gist.github.com/tombigel/d503800a282fcadbee14b537735d202c
 ulimit -n 65536
 ulimit -u 2048
-
-# eval "$(homebrew/bin/brew shellenv)"
 
 PATH="/usr/local/sbin:$PATH"
 
@@ -48,12 +50,12 @@ if [ -d $POSTGRES_PATH ]; then
 fi
 
 # Use a pinned Postgres@10 install in homebrew if its there
-POSTGRES_BREW_PATH="/opt/homebrew/opt/postgresql@10/bin"
+POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@10/bin"
 if [ -d $POSTGRES_BREW_PATH ]; then
   PATH="$POSTGRES_BREW_PATH:$PATH"
-  export LDFLAGS="-L/opt/homebrew/opt/postgresql@10/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/postgresql@10/include"
-  export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@10/lib/pkgconfig"
+  export LDFLAGS="-L$(brew --prefix)/opt/postgresql@10/lib"
+  export CPPFLAGS="-I$(brew --prefix)opt/postgresql@10/include"
+  export PKG_CONFIG_PATH="$(brew --prefix)/opt/postgresql@10/lib/pkgconfig"
 fi
 
 # nice bash completion
