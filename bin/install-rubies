@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 export RUBY_CONFIGURE_OPTS=--with-openssl-dir=/opt/local
 
 RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install 2.6.6

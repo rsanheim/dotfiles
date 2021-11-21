@@ -2,8 +2,8 @@
 
 mkdir $HOME/src/simpledotorg    
 
-pushd $HOME/src/simpledotorg
+pushd $HOME/src/simpledotorg || exit 1
 git clone https://github.com/simpledotorg/simple-server.git 
 git clone https://github.com/simpledotorg/simple-android.git 
 git clone https://github.com/simpledotorg/deployment.git 
-popd
+popd ..
