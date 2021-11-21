@@ -5,11 +5,16 @@ if ARGV.first =~ /--p/ || ARGV.first =~ /-p/
   `git push -u`
 end
 
+MAIN_BRANCHES = ["master", "main"].freeze
+
 branch = `git symbolic-ref --short HEAD`.strip
 origin = `git config --get remote.origin.url`.strip
-url = origin.gsub(/\.git$/, '')
-url << "/pull/" << branch
+
+url = if MAIN_BRANCHES.include?(branch)
+  origin.gsub(/\.git$/, '')
+else
+  origin.gsub(/\.git$/, '') << "/pull/" << branch
+end
 
 puts "Opening #{url}"
-
 `open '#{url}'`
