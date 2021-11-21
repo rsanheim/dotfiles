@@ -60,8 +60,8 @@ if [ -d $POSTGRES_BREW_PATH ]; then
 fi
 
 # nice bash completion
-if is_osx && [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
+if is_osx && [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
 fi
 
 # rbenv
