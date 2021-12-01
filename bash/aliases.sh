@@ -20,10 +20,6 @@ alias "preflight"="~/src/rsanheim/preflight/preflight.rb"
 alias ibrew="arch -x86_64 /usr/local/bin/brew"
 alias ibash="arch -x86_64 /bin/bash --login"
 
-if [ -f "/usr/local/bin/code-insiders" ] ; then
-  alias code="/usr/local/bin/code-insiders"
-fi
-
 # rails stuff
 alias beg="bin/bundle exec guard"
 
