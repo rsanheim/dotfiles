@@ -10,6 +10,7 @@ alias rdt="bin/rake db:migrate db:test:prepare"
 alias m="mvim ."
 alias mix="cd ~/src/mixcatcher"
 alias ss="cd ~/src/simpledotorg/simple-server"
+alias dotfiles="cd ~/src/rsanheim/dotfiles"
 
 # just make life easier
 alias "edit-bash-profile"='code $DOTFILES_HOME/'
