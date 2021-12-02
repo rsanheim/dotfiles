@@ -1,4 +1,5 @@
 tap "homebrew/bundle"
+tap "homebrew/services"
 
 # Get some essentials installed first
 brew "bash"
