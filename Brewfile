@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
+tap "heroku/brew"
 
 # Get some essentials installed first
 brew "bash"
@@ -14,13 +15,14 @@ brew "ag"
 brew "fd"
 brew "findutils"
 brew "flac"
+brew "heroku"
 brew "iperf"
 brew "jq"
 brew "mas"
 brew "md5sha1sum"
 brew "postgresql@10", start_service: true
-brew "redis", start_service: true
 brew "rbenv"
+brew "redis", start_service: true
 brew "ruby-build"
 brew "shellcheck"
 brew "sqlite"
