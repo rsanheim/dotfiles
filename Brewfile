@@ -25,6 +25,7 @@ brew "rbenv"
 brew "redis", start_service: true
 brew "ruby-build"
 brew "shellcheck"
+brew "sloccount"
 brew "sqlite"
 brew "tree"
 
