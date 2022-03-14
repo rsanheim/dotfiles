@@ -10,6 +10,7 @@ cask "iterm2"
 cask "rectangle"
 cask "visual-studio-code"
 cask "firefox"
+cask "zoom"
 
 brew "ag"
 brew "fd"
