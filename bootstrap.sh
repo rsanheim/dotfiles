@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-if [[ ! $SHELL == "/bin/bash" ]]; then
-  chsh -s /bin/bash
-fi
+# if [[ ! $SHELL == "/bin/bash" ]]; then
+#   chsh -s /bin/bash
+# fi
 
 source bin/functions
 
@@ -55,7 +55,7 @@ echo "Installing Rubies..."
 # Install nvm and install latest 12.x LTS version of Node
 
 # setup Vundle for vim
-# git -C ~/.vim/bundle/Vundle.vim pull || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git -C ~/.vim/bundle/Vundle.vim pull || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # install plugins via vim + vundle
 # vim +PluginInstall +qall
