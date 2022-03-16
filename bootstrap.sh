@@ -58,7 +58,7 @@ echo "Installing Rubies..."
 git -C ~/.vim/bundle/Vundle.vim pull || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # install plugins via vim + vundle
-# vim +PluginInstall +qall
+vim +PluginInstall +qall
 
 source "$HOME/.bashrc"
 
