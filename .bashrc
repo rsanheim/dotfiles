@@ -18,7 +18,7 @@ for file in $DOTFILES_PRIVATE_HOME/bash/*.sh; do
 done
 
 if test "${PS1+set}"; then
-  CDPATH=".:$HOME:$HOME/src:$HOME/src/simpledotorg:$HOME/src/rsanheim:$HOME/src/oss"
+  CDPATH=".:$HOME:$HOME/src:$HOME/src/monograph:$HOME/src/rsanheim:$HOME/src/oss"
 fi
 
 # More open files
@@ -85,9 +85,5 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # NVM setup
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
