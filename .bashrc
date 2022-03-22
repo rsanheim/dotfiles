@@ -70,6 +70,8 @@ export AWS_PROFILE="default"
 export HISTCONTROL=ignoredups;
 export HISTSIZE=10000;
 shopt -s histappend histverify;
+# set '**' to match all files and zero or more directories and subdirectories
+shopt -s globstar
 
 # Ansible
 export ANSIBLE_VAULT_PASSWORD_FILE="/Users/rsanheim/src/simpledotorg/deployment/.vault_password"
