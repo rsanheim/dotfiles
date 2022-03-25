@@ -14,6 +14,8 @@ alias mix="cd ~/src/mixcatcher"
 alias ss="cd ~/src/simpledotorg/simple-server"
 alias dotfiles="cd ~/src/rsanheim/dotfiles"
 
+alias sd="script/dev"
+
 # just make life easier
 alias "edit-bash-profile"='code $DOTFILES_HOME/'
 alias "reload-bash-profile"=". ~/.bash_profile"
