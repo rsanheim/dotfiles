@@ -11,10 +11,10 @@ alias m="mvim ."
 alias mg="cd ~/src/monograph/monograph-dashboard"
 alias mgs="cd ~/src/monograph/mg-schematic"
 alias mix="cd ~/src/mixcatcher"
-alias ss="cd ~/src/simpledotorg/simple-server"
 alias dotfiles="cd ~/src/rsanheim/dotfiles"
 
 alias sd="script/dev"
+alias ss="script/server"
 
 # just make life easier
 alias "edit-bash-profile"='code $DOTFILES_HOME/'
