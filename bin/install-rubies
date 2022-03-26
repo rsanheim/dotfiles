@@ -6,6 +6,7 @@ set -e
 
 RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install --skip-existing 2.6.6
 RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install --skip-existing 2.6.8
+RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install --skip-existing 2.6.9
 rbenv install --skip-existing 2.7.4
 rbenv install --skip-existing 2.7.5
 rbenv install --skip-existing 3.0.2
