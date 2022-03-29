@@ -4,8 +4,10 @@ set -e
 # only needed for m1 macs
 # export RUBY_CONFIGURE_OPTS=--with-openssl-dir=/opt/local
 
+RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install --skip-existing 2.6.5
 RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install --skip-existing 2.6.6
 RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install --skip-existing 2.6.8
+RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install --skip-existing 2.6.9
 rbenv install --skip-existing 2.7.4
 rbenv install --skip-existing 2.7.5
 rbenv install --skip-existing 3.0.2

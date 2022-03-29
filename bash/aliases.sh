@@ -8,10 +8,14 @@ alias bi="bundle install"
 alias rdm="bundle exec rake db:migrate"
 alias rdt="bin/rake db:migrate db:test:prepare"
 alias m="mvim ."
-alias mg="cd ~/src/monograph/monograph-dashboard"
 alias mix="cd ~/src/mixcatcher"
-alias ss="cd ~/src/simpledotorg/simple-server"
 alias dotfiles="cd ~/src/rsanheim/dotfiles"
+
+alias mg="cd ~/src/monograph/monograph-dashboard"
+alias mgs="cd ~/src/monograph/mg-schematic"
+
+alias sd="script/dev"
+alias ss="script/server"
 
 # just make life easier
 alias "edit-bash-profile"='code $DOTFILES_HOME/'

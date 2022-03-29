@@ -21,7 +21,7 @@ brew "iperf"
 brew "jq"
 brew "mas"
 brew "md5sha1sum"
-brew "postgresql", start_service: true
+brew "postgresql@12", start_service: true
 brew "rbenv"
 brew "redis", start_service: true
 brew "ruby-build"
@@ -35,6 +35,7 @@ cask "atext"
 cask "dash"
 cask "fantastical"
 cask "istat-menus"
+cask "notion"
 cask "roon"
 cask "telegram-desktop"
 cask "the-unarchiver"
