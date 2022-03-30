@@ -9,6 +9,7 @@ source bin/functions
 export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
 export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
 
+ln -sf "$DOTFILES_HOME"/.asdfrc ~
 ln -sf "$DOTFILES_HOME"/.bashrc ~
 ln -sf "$DOTFILES_HOME"/.bash_profile ~
 ln -sf "$DOTFILES_HOME"/.vimrc ~

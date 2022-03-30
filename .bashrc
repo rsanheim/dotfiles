@@ -85,6 +85,8 @@ fi
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
 # NVM setup
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
