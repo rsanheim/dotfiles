@@ -7,10 +7,10 @@ alias be="bundle exec"
 alias bi="bundle install"
 alias rdm="bundle exec rake db:migrate"
 alias rdt="bin/rake db:migrate db:test:prepare"
-alias m="mvim ."
 alias mix="cd ~/src/mixcatcher"
 alias dotfiles="cd ~/src/rsanheim/dotfiles"
 
+alias m="cd ~/src/monograph/monograph-dashboard"
 alias mg="cd ~/src/monograph/monograph-dashboard"
 alias mgs="cd ~/src/monograph/mg-schematic"
 
