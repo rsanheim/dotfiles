@@ -4,10 +4,10 @@ source "$DOTFILES_HOME/bin/functions"
 
 if [ "$(uname -m)" = "x86_64" ]; then
   brew_path="/usr/local/homebrew/bin"
-  eval $(/usr/local/bin/brew shellenv)
+  eval "$(/usr/local/bin/brew shellenv)"
 else
   brew_path="/opt/homebrew/bin"
-  eval $(/opt/homebrew/bin/brew shellenv)
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 for file in $DOTFILES_HOME/bash/*.sh; do
   [[ -r $file ]] && source $file;
@@ -43,19 +43,13 @@ if [ -d "$PYTHON_PATH" ]; then
   PATH="$PYTHON_PATH:$PATH"
 fi
 
-# Lock to current Postgres if installed - https://postgresapp.com/
-POSTGRES_PATH="/Applications/Postgres.app/Contents/Versions/10/bin"
-if [ -d $POSTGRES_PATH ]; then
-  PATH="$POSTGRES_PATH:$PATH"
-fi
-
 # Use a pinned Postgres@10 install in homebrew if its there
-POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@10/bin"
-if [ -d $POSTGRES_BREW_PATH ]; then
+POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@12/bin"
+if [ -d "$POSTGRES_BREW_PATH" ]; then
   PATH="$POSTGRES_BREW_PATH:$PATH"
-  export LDFLAGS="-L$(brew --prefix)/opt/postgresql@10/lib"
-  export CPPFLAGS="-I$(brew --prefix)opt/postgresql@10/include"
-  export PKG_CONFIG_PATH="$(brew --prefix)/opt/postgresql@10/lib/pkgconfig"
+  export LDFLAGS="-L$(brew --prefix)/opt/postgresql@12/lib"
+  export CPPFLAGS="-I$(brew --prefix)opt/postgresql@12/include"
+  export PKG_CONFIG_PATH="$(brew --prefix)/opt/postgresql@12/lib/pkgconfig"
 fi
 
 # nice bash completion
