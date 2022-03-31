@@ -43,7 +43,7 @@ if [ -d "$PYTHON_PATH" ]; then
   PATH="$PYTHON_PATH:$PATH"
 fi
 
-# Use a pinned Postgres@10 install in homebrew if its there
+# Use a pinned Postgres@12 install in homebrew if its there
 POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@12/bin"
 if [ -d "$POSTGRES_BREW_PATH" ]; then
   PATH="$POSTGRES_BREW_PATH:$PATH"
