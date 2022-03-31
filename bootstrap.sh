@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
 
-# if [[ ! $SHELL == "/bin/bash" ]]; then
-#   chsh -s /bin/bash
-# fi
-
 source bin/functions
 
 export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
 export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
 
+ln -sf "$DOTFILES_HOME"/.asdfrc ~
 ln -sf "$DOTFILES_HOME"/.bashrc ~
 ln -sf "$DOTFILES_HOME"/.bash_profile ~
 ln -sf "$DOTFILES_HOME"/.vimrc ~
@@ -44,9 +41,13 @@ if is_osx; then
   echo
   echo "Installing brew bundle..."
   pushd "$DOTFILES_HOME" || exit
-  # brew bundle
+  brew bundle
   popd || exit 1
 fi
+
+echo "Changing shell to homebrew bash"
+sudo "/opt/homebrew/bin/bash" >> /etc/shells
+chsh -s /opt/homebrew/bin/bash
 
 echo
 echo "Installing Rubies..."
