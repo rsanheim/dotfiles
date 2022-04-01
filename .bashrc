@@ -3,10 +3,8 @@ export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
 source "$DOTFILES_HOME/bin/functions"
 
 if [ "$(uname -m)" = "x86_64" ]; then
-  brew_path="/usr/local/homebrew/bin"
   eval "$(/usr/local/bin/brew shellenv)"
 else
-  brew_path="/opt/homebrew/bin"
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 for file in $DOTFILES_HOME/bash/*.sh; do
