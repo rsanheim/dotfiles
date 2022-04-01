@@ -65,9 +65,6 @@ shopt -s histappend histverify;
 # set '**' to match all files and zero or more directories and subdirectories
 shopt -s globstar
 
-# Ansible
-export ANSIBLE_VAULT_PASSWORD_FILE="/Users/rsanheim/src/simpledotorg/deployment/.vault_password"
-
 if [ -f "/usr/local/bin/code-insiders" ] ; then
   export EDITOR="code-insiders --wait"
 else

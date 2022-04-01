@@ -14,6 +14,8 @@ alias m="cd ~/src/monograph/monograph-dashboard"
 alias mg="cd ~/src/monograph/monograph-dashboard"
 alias mgs="cd ~/src/monograph/mg-schematic"
 
+alias console="script/console"
+alias sc="script/console"
 alias sd="script/dev"
 alias ss="script/server"
 
