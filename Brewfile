@@ -5,6 +5,8 @@ tap "heroku/brew"
 # Get some essentials installed first
 brew "bash"
 brew "bash-completion"
+brew "openssl"
+brew "readline"
 brew "git"
 cask "iterm2"
 cask "rectangle"
@@ -28,6 +30,8 @@ brew "shellcheck"
 brew "sloccount"
 brew "sqlite"
 brew "tree"
+brew "xz"
+brew "zlib"
 
 # the rest of the apps
 cask "atext"
