@@ -34,12 +34,10 @@ if [ -d "$DOTFILES_HOME/bin" ] ; then
   PATH="$DOTFILES_HOME/bin:$PATH"
 fi
 
-PYTHON_PATH="/usr/local/opt/python/libexec/bin"
-
-# Use Python from Homebrew if its available
-if [ -d "$PYTHON_PATH" ]; then
-  PATH="$PYTHON_PATH:$PATH"
-fi
+# Setup pyenv for multiple Pythons
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 
 # Use a pinned Postgres@12 install in homebrew if its there
 POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@12/bin"
