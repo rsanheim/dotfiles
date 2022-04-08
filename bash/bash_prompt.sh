@@ -47,16 +47,17 @@ function git_dirty_flag {
 }
 
 function prompt_func() {
-    previous_return_value=$?;
+  local exit_code="$?"
+  previous_return_value=$?;
     # \w is the full current working directory
     # \W is just the trailing part of the current working directory
     prompt="${TITLEBAR}${BLUE}[${LIGHT_GRAY}\w${GREEN}$(parse_git_branch)${BLUE}]${COLOR_NONE}"
 
-    if test $previous_return_value -eq 0
+    if test $exit_code -eq 0
     then
         PS1="${prompt}> "
     else
-        PS1="${prompt}${RED}>${COLOR_NONE} "
+        PS1="${prompt}${RED} [${exit_code}] >${COLOR_NONE} "
     fi
 }
 
