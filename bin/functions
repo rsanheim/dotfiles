@@ -27,7 +27,7 @@ function repeat() {
   number=$1
   shift
   for _n in $(seq "$number"); do
-    $@
+    "$@"
   done
 }
 # function wait_for_boot() {
