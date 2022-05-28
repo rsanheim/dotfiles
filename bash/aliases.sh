@@ -10,8 +10,11 @@ alias rdt="bin/rake db:migrate db:test:prepare"
 alias mix="cd ~/src/mixcatcher"
 alias dotfiles="cd ~/src/rsanheim/dotfiles"
 
-alias m="cd ~/src/monograph/monograph-dashboard"
-alias mg="cd ~/src/monograph/monograph-dashboard"
+alias m="cd ~/src/monograph/monograph/apps/api"
+alias mf="cd ~/src/monograph/monograph/apps/web"
+
+# alias m="cd ~/src/monograph/monograph-dashboard"
+# alias mg="cd ~/src/monograph/monograph-dashboard"
 alias mgs="cd ~/src/monograph/mg-schematic"
 
 alias console="script/console"
