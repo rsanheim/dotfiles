@@ -49,7 +49,6 @@ mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709
 
 # Things down here are slow or just much lower priority
-brew "ansible"
 brew "ffmpeg"
 brew "graphviz"
 brew "lame"
