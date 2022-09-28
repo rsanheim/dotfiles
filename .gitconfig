@@ -34,3 +34,5 @@
 	textconv = ansible-vault view
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
