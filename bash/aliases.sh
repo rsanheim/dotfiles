@@ -10,6 +10,9 @@ alias rdt="bin/rake db:migrate db:test:prepare"
 alias mix="cd ~/src/rsanheim/mixcatcher-v1"
 alias dotfiles="cd ~/src/rsanheim/dotfiles"
 
+alias p="pnpm"
+
+alias mg="echo mg starts micro emacs on Mac, and it can't be removed. Life is pain. I'm sorry"
 alias m="cd ~/src/monograph/monograph/"
 alias mb="cd ~/src/monograph/monograph/apps/api"
 alias mf="cd ~/src/monograph/monograph/apps/web"
@@ -26,6 +29,7 @@ alias console="script/console"
 alias sc="script/console"
 alias sd="script/dev"
 alias ss="script/server"
+alias sl="script/lint"
 
 # just make life easier
 alias "edit-bash-profile"='code $DOTFILES_HOME/'
