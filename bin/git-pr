@@ -5,6 +5,7 @@ cmd = "git push -u --no-verify"
 result = system cmd
 raise "==> #'{cmd}' failed!" unless result
 
+
 MAIN_BRANCHES = ["master", "main"].freeze
 
 branch = `git symbolic-ref --short HEAD`.strip
