@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
 # Usage: git-pr
+# Pushes to the remote with no-verify, and then opens the related PR
+# on the remote (assuming GitHub style URLs)
 
 cmd = "git push -u --no-verify"
 result = system cmd
 raise "==> #'{cmd}' failed!" unless result
-
 
 MAIN_BRANCHES = ["master", "main"].freeze
 
