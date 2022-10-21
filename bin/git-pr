@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 # Usage: git-pr
 
-result = system "git push -u --no-verify"
-raise "git push failed" unless result
-
+cmd = "git push -u --no-verify"
+result = system cmd
+raise "==> #'{cmd}' failed!" unless result
 
 MAIN_BRANCHES = ["master", "main"].freeze
 
@@ -16,5 +16,5 @@ else
   origin.gsub(/\.git$/, '') << "/pull/" << branch
 end
 
-puts "Opening #{url}"
+puts "==> Opening on remote: #{url}"
 `open '#{url}'`
