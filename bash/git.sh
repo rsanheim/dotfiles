@@ -15,6 +15,7 @@ alias gpp='git pull --prune; git push'
 alias gpr='git-pr -p'
 alias gup='gpp && clean-squashed-branches'
 
+# derp
 # From: http://www.commandlinefu.com/commands/view/2345/show-git-branches-by-date-useful-for-showing-active-branches
 alias "git-recent-branches"='for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
 alias "git-recent-branches-remote"='for k in `git branch -r|head 10|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
