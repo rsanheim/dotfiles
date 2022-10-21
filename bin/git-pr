@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
 # Usage: git-pr
+# Pushes to the remote with no-verify, and then opens the related PR
+# on the remote (assuming GitHub style URLs)
 
-if ARGV.first =~ /--p/ || ARGV.first =~ /-p/
-  `git push -u`
-end
+cmd = "git push -u --no-verify"
+result = system cmd
+raise "==> #'{cmd}' failed!" unless result
 
 MAIN_BRANCHES = ["master", "main"].freeze
 
@@ -16,5 +18,5 @@ else
   origin.gsub(/\.git$/, '') << "/pull/" << branch
 end
 
-puts "Opening #{url}"
+puts "==> Opening on remote: #{url}"
 `open '#{url}'`

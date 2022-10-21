@@ -1,0 +1,19 @@
+#!/usr/bin/env osascript 
+-- this doesn't work, apple script is annoying, giving up for now
+
+set tabUrl to "https://github.com"
+
+tell application "Safari"
+  activate
+  repeat with thisWindow in windows
+    set cnt to 1
+    repeat with thisTab in (tabs of thisWindow)
+      if URL of thisTab contains tabUrl then
+        set active tab index of thisWindow to cnt
+        set index of thisWindow to 1
+        exit repeat
+      end if
+      set cnt to cnt + 1
+    end repeat
+  end repeat
+end tell
