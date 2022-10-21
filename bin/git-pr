@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 # Usage: git-pr
 
-if ARGV.first =~ /--p/ || ARGV.first =~ /-p/
-  `git push -u`
-end
+result = system "git push -u --no-verify"
+raise "git push failed" unless result
+
 
 MAIN_BRANCHES = ["master", "main"].freeze
 
