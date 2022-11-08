@@ -21,7 +21,6 @@ brew "iperf"
 brew "jq"
 brew "mas"
 brew "postgresql@12", start_service: true
-brew "rbenv"
 brew "redis", start_service: true
 brew "ruby-build"
 brew "shellcheck"
@@ -30,7 +29,6 @@ brew "sqlite"
 brew "tree"
 
 # the rest of the apps
-cask "atext"
 cask "dash"
 cask "fantastical"
 cask "istat-menus"
