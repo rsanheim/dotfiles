@@ -45,6 +45,9 @@ if is_osx; then
   popd || exit 1
 fi
 
+echo "Setting up asdf..."
+asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+
 echo "Changing shell to homebrew bash"
 sudo "/opt/homebrew/bin/bash" >> /etc/shells
 chsh -s /opt/homebrew/bin/bash
@@ -52,8 +55,6 @@ chsh -s /opt/homebrew/bin/bash
 echo
 echo "Installing Rubies..."
 ./bin/install-rubies
-
-# Install nvm and install latest 12.x LTS version of Node
 
 # setup Vundle for vim
 git -C ~/.vim/bundle/Vundle.vim pull || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

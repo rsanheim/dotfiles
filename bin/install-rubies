@@ -4,7 +4,7 @@ set -e
 # only needed for m1 macs
 # export RUBY_CONFIGURE_OPTS=--with-openssl-dir=/opt/local
 
-RUBY_BUILD_OPTS="--enable-yjit" RUBY_CONFIGURE_OPTS="--enable-yjit" asdf install ruby 3.1.2 --verbose
+RUBY_CONFIGURE_OPTS="--enable-yjit" asdf install ruby 3.1.2 --verbose
 
 # rbenv install --skip-existing 2.7.4
 # rbenv install --skip-existing 2.7.5
