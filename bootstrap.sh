@@ -47,6 +47,7 @@ fi
 
 echo "Setting up asdf..."
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf plugin-add pnpm
 
 echo "Changing shell to homebrew bash"
 sudo "/opt/homebrew/bin/bash" >> /etc/shells
