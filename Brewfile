@@ -19,6 +19,7 @@ brew "findutils"
 brew "flac"
 brew "heroku"
 brew "iperf"
+brew "gh"
 brew "jq"
 brew "mas"
 brew "postgresql@12", start_service: true
