@@ -30,6 +30,12 @@ brew "sloccount"
 brew "sqlite"
 brew "tree"
 
+# For Ruby 3.1 and above, see https://github.com/rbenv/ruby-build/wiki
+brew "openssl@3" 
+brew "readline" 
+brew "libyaml" 
+brew "gmp"
+
 # the rest of the apps
 cask "dash"
 cask "fantastical"
