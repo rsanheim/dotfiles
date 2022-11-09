@@ -8,6 +8,7 @@ asdf install ruby 2.7.6
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
 # see https://github.com/rbenv/ruby-build/wiki
 
+asdf install ruby 3.0.2
 RUBY_CONFIGURE_OPTS="--enable-yjit" asdf install ruby 3.1.2 --verbose
 RUBY_CONFIGURE_OPTS="--enable-yjit" asdf install ruby 3.2.0-preview2
 
