@@ -18,11 +18,6 @@ ln -sf "$DOTFILES_HOME"/.gitconfig ~
 ln -sf "$DOTFILES_HOME"/.gitignore ~
 ln -sf "$DOTFILES_HOME"/.vimrc ~
 
-if [[ ! -d $HOME/src/rsanheim ]]; then
-  echo "SSH'ing to GitHub to setup .ssh dir (this is expected to fail...)"
-  ssh git@github.com
-fi
-
 pushd "$HOME/src/rsanheim" || exit 1
 if [[ ! -d $HOME/src/rsanheim ]]; then
   echo
@@ -47,16 +42,16 @@ if is_osx; then
   popd || exit 1
 fi
 
+if [[ $SHELL != "/opt/homebrew/bin/bash" ]]; then
+  echo "Changing shell to homebrew bash..."
+  echo "/opt/homebrew/bin/bash" | sudo tee -a /etc/shells
+  chsh -s /opt/homebrew/bin/bash
+fi
+
 echo "Setting up asdf..."
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin-add pnpm
-
-echo "Changing shell to homebrew bash"
-sudo "/opt/homebrew/bin/bash" >> /etc/shells
-if [[ $SHELL != "/opt/homebrew/bin/bash" ]]; then
-  chsh -s /opt/homebrew/bin/bash
-fi
 
 echo
 echo "Installing Rubies..."
