@@ -8,6 +8,7 @@ brew "bash"
 brew "bash-completion"
 brew "git"
 cask "iterm2"
+cask "maestral"
 cask "rectangle"
 cask "visual-studio-code"
 cask "firefox"
@@ -29,6 +30,9 @@ brew "shellcheck"
 brew "sloccount"
 brew "sqlite"
 brew "tree"
+
+# For Ruby 3.0.2 (sigh)
+brew "openssl@1.1"
 
 # For Ruby 3.1 and above, see https://github.com/rbenv/ruby-build/wiki
 brew "openssl@3" 

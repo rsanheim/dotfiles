@@ -1,21 +1,17 @@
 #!/usr/bin/env bash
 set -e
 
-# only needed for m1 macs
-
 asdf install ruby 2.7.6
 
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
-# see https://github.com/rbenv/ruby-build/wiki
+# see https://github.com/rbenv/ruby-build/wiki for help
 
-asdf install ruby 3.0.2
+RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)" asdf install ruby 3.0.2
+
+# For Ruby >= 3.1
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
 RUBY_CONFIGURE_OPTS="--enable-yjit" asdf install ruby 3.1.2 --verbose
 RUBY_CONFIGURE_OPTS="--enable-yjit" asdf install ruby 3.2.0-preview2
+RUBY_CONFIGURE_OPTS="--enable-yjit" asdf install ruby 3.2.0-dev
 
-# rbenv install --skip-existing 2.7.4
-# rbenv install --skip-existing 2.7.5
-# rbenv install --skip-existing 3.0.2
-# rbenv rehash
-# rbenv global 3.0.2
 
 # gem install solargraph
