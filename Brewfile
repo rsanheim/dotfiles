@@ -8,18 +8,17 @@ brew "bash"
 brew "bash-completion"
 brew "git"
 cask "iterm2"
-cask "maestral"
-cask "rectangle"
-cask "visual-studio-code"
+cask "maestral" # a better, lighter weight Dropbox client - https://maestral.app
+cask "rectangle" # simple, open source Mac OS window management - https://rectangleapp.com
+cask "visual-studio-code" # duh
 cask "firefox"
 cask "zoom"
 
 brew "ag"
 brew "fd"
 brew "findutils"
-brew "flac"
 brew "heroku"
-brew "hyperfine"
+brew "hyperfine" # super cool shell benchmarking
 brew "iperf"
 brew "gh"
 brew "jq"
@@ -32,16 +31,16 @@ brew "sloccount"
 brew "sqlite"
 brew "tree"
 
-# For Ruby 3.0.2 (sigh)
+# Needed for Ruby 3.0.2 (sigh)
 brew "openssl@1.1"
 
-# For Ruby 3.1 and above, see https://github.com/rbenv/ruby-build/wiki
+# Needed For Ruby 3.1 and above, see https://github.com/rbenv/ruby-build/wiki
 brew "openssl@3" 
 brew "readline" 
 brew "libyaml" 
 brew "gmp"
 
-# the rest of the apps
+# Cask based apps here...
 cask "dash"
 cask "fantastical"
 cask "istat-menus"
@@ -52,6 +51,7 @@ cask "todoist"
 cask "the-unarchiver"
 cask "vlc"
 
+# Mac App Store apps here
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
 mas "Bear", id: 1091189122
@@ -60,11 +60,12 @@ mas "Dayone", id: 1055511498
 mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709
 
-# Things down here are slow or just much lower priority
+# Lower priority brew's are last - these are slow and/or not as important as the ones above
+brew "flac"
 brew "ffmpeg"
 brew "graphviz"
 brew "lame"
 brew "shared-mime-info"
 brew "wget"
 brew "youtube-dl"
-cask "google-chrome"
+cask "google-chrome" # a necessary evil
