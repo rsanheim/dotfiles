@@ -8,10 +8,7 @@ asdf install ruby 2.7.6
 RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)" asdf install ruby 3.0.2
 
 # For Ruby >= 3.1
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
-RUBY_CONFIGURE_OPTS="--enable-yjit" asdf install ruby 3.1.2 --verbose
-RUBY_CONFIGURE_OPTS="--enable-yjit" asdf install ruby 3.2.0-preview2
-RUBY_CONFIGURE_OPTS="--enable-yjit" asdf install ruby 3.2.0-dev
-
-
-# gem install solargraph
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3) --enable-yjit"
+asdf install ruby 3.1.2 --verbose
+asdf install ruby 3.2.0-preview2
+asdf install ruby 3.2.0-dev

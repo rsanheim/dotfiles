@@ -5,16 +5,18 @@ source bin/functions
 export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
 export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
 
-ln -sf "$DOTFILES_HOME"/.asdfrc ~
-ln -sf "$DOTFILES_HOME"/.bashrc ~
-ln -sf "$DOTFILES_HOME"/.bash_profile ~
-ln -sf "$DOTFILES_HOME"/.vimrc ~
-ln -sf "$DOTFILES_HOME"/.gitconfig ~
-ln -sf "$DOTFILES_HOME"/.atom/ ~
-ln -sf "$DOTFILES_HOME"/.gitignore ~
-
 mkdir -p "$HOME"/src/rsanheim
+mkdir -p "$HOME"/src/monograph
 mkdir -p "$HOME"/src/oss
+
+ln -sf "$DOTFILES_HOME"/.asdfrc ~
+ln -sf "$DOTFILES_HOME"/.atom/ ~
+ln -sf "$DOTFILES_HOME"/.bash_profile ~
+ln -sf "$DOTFILES_HOME"/.bashrc ~
+ln -sf "$DOTFILES_HOME"/.default-gems ~
+ln -sf "$DOTFILES_HOME"/.gitconfig ~
+ln -sf "$DOTFILES_HOME"/.gitignore ~
+ln -sf "$DOTFILES_HOME"/.vimrc ~
 
 if [[ ! -d $HOME/src/rsanheim ]]; then
   echo "SSH'ing to GitHub to setup .ssh dir (this is expected to fail...)"
@@ -47,11 +49,14 @@ fi
 
 echo "Setting up asdf..."
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin-add pnpm
 
 echo "Changing shell to homebrew bash"
 sudo "/opt/homebrew/bin/bash" >> /etc/shells
-chsh -s /opt/homebrew/bin/bash
+if [[ $SHELL != "/opt/homebrew/bin/bash" ]]; then
+  chsh -s /opt/homebrew/bin/bash
+fi
 
 echo
 echo "Installing Rubies..."
