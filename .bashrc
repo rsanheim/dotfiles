@@ -75,8 +75,6 @@ fi
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-. "$HOME/.cargo/env"
-
 # asdf direnv
 # PATH="$PATH:~/.asdf/bin"
 # source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"

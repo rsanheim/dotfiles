@@ -3,10 +3,12 @@ tap "homebrew/services"
 tap "heroku/brew"
 
 # Get some essentials installed first
+brew "asdf"
 brew "bash"
 brew "bash-completion"
 brew "git"
 cask "iterm2"
+cask "maestral"
 cask "rectangle"
 cask "visual-studio-code"
 cask "firefox"
@@ -17,11 +19,12 @@ brew "fd"
 brew "findutils"
 brew "flac"
 brew "heroku"
+brew "hyperfine"
 brew "iperf"
+brew "gh"
 brew "jq"
 brew "mas"
 brew "postgresql@12", start_service: true
-brew "rbenv"
 brew "redis", start_service: true
 brew "ruby-build"
 brew "shellcheck"
@@ -29,14 +32,23 @@ brew "sloccount"
 brew "sqlite"
 brew "tree"
 
+# For Ruby 3.0.2 (sigh)
+brew "openssl@1.1"
+
+# For Ruby 3.1 and above, see https://github.com/rbenv/ruby-build/wiki
+brew "openssl@3" 
+brew "readline" 
+brew "libyaml" 
+brew "gmp"
+
 # the rest of the apps
-cask "atext"
 cask "dash"
 cask "fantastical"
 cask "istat-menus"
 cask "notion"
 cask "roon"
 cask "telegram-desktop"
+cask "todoist"
 cask "the-unarchiver"
 cask "vlc"
 
