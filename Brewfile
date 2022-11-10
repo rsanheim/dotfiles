@@ -47,6 +47,7 @@ cask "istat-menus"
 cask "notion"
 cask "roon"
 cask "telegram-desktop"
+cask "todoist"
 cask "the-unarchiver"
 cask "vlc"
 
