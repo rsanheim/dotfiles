@@ -87,10 +87,10 @@ endif
 " ****************************
 let mapleader = ","
 
-map <Leader>n :NERDTreeToggle<CR>
-imap <Leader>n :NERDTreeToggle<CR>
+" map <Leader>n :NERDTreeToggle<CR>
+" imap <Leader>n :NERDTreeToggle<CR>
 " find current buffer in NERDTree
-map <leader>r :NERDTreeFind<cr>
+" map <leader>r :NERDTreeFind<cr>
 
 " NERDCommenter mappings
 if has("gui_macvim") && has("gui_running")

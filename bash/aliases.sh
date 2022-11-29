@@ -17,9 +17,9 @@ alias m="cd ~/src/monograph/monograph/"
 alias mb="cd ~/src/monograph/monograph/apps/api"
 alias mf="cd ~/src/monograph/monograph/apps/web"
 
-alias mart="cd ~/src/monograph/monograph-art/"
-alias mbart="cd ~/src/monograph/monograph-art/apps/api"
-alias mfart="cd ~/src/monograph/monograph-art/apps/web"
+alias m2="cd ~/src/monograph/monograph2/"
+alias mb2="cd ~/src/monograph/monograph2/apps/api"
+alias mf2="cd ~/src/monograph/monograph2/apps/web"
 
 # alias m="cd ~/src/monograph/monograph-dashboard"
 # alias mg="cd ~/src/monograph/monograph-dashboard"
