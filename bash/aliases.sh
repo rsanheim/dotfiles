@@ -30,7 +30,7 @@ alias sc="script/console"
 alias sd="script/dev"
 alias sl="script/lint"
 alias ss="script/server"
-alias ss="script/test"
+alias st="script/test"
 
 # just make life easier
 alias "edit-bash-profile"='code $DOTFILES_HOME/'
