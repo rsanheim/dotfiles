@@ -13,3 +13,4 @@ asdf install ruby 3.1.2 --verbose
 asdf install ruby 3.2.0-preview2
 brew link bison --force # needed for 3.2
 asdf install ruby 3.2.0-rc1
+asdf install ruby 3.2.0
