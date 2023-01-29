@@ -10,6 +10,7 @@ RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)" asdf insta
 # For Ruby >= 3.1
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3) --enable-yjit"
 asdf install ruby 3.1.2 --verbose
+asdf install ruby 3.1.3 --verbose
 asdf install ruby 3.2.0-preview2
 brew link bison --force # needed for 3.2
 asdf install ruby 3.2.0-rc1
