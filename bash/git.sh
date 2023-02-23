@@ -16,9 +16,12 @@ alias gpr='git-pr -p'
 alias gup='gpp && clean-squashed-branches'
 
 # From: http://www.commandlinefu.com/commands/view/2345/show-git-branches-by-date-useful-for-showing-active-branches
-alias "git-recent-branches"='for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
-alias "git-recent-branches-remote"='for k in `git branch -r|head 10|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
+alias git-recent-branches="git for-each-ref --count=20 --sort=-committerdate refs/heads --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)'"
 alias grb="git-recent-branches"
+
+alias git-recent-branches-remote="git for-each-ref --count=20 --sort=-committerdate refs/heads refs/remotes --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)'"
+alias grrb="git-recent-branches-remote"
+
 
 # Throw a timestamp in README.markdown and commit and push
 alias random_commit="echo `date` >> README.markdown \
