@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+pushd "$HOME/src/monograph" || exit 1
+if [[ -d $HOME/src/monograph ]]; then
+  echo
+  echo "Cloning personal repos..."
+  curl -s https://api.github.com/users/monographhq/repos | grep \"clone_url\" | awk '{print $2}' | sed -e 's/"//g' -e 's/,//g' | xargs -n1 git clone
+fi
+popd || exit 1
