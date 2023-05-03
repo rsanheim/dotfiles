@@ -42,13 +42,13 @@ if [ -d "$PYTHON_PATH" ]; then
 fi
 
 
-# Use a pinned Postgres@12 install in homebrew if its there
-POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@12/bin"
+# Use a pinned Postgres install in homebrew if its there
+POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@14/bin"
 if [ -d "$POSTGRES_BREW_PATH" ]; then
   PATH="$POSTGRES_BREW_PATH:$PATH"
-  export LDFLAGS="-L$(brew --prefix)/opt/postgresql@12/lib"
-  export CPPFLAGS="-I$(brew --prefix)opt/postgresql@12/include"
-  export PKG_CONFIG_PATH="$(brew --prefix)/opt/postgresql@12/lib/pkgconfig"
+  export LDFLAGS="-L$(brew --prefix)/opt/postgresql@14/lib"
+  export CPPFLAGS="-I$(brew --prefix)opt/postgresql@14/include"
+  export PKG_CONFIG_PATH="$(brew --prefix)/opt/postgresql@14/lib/pkgconfig"
 fi
 
 # nice bash completion
