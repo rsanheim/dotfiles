@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
+asdf install ruby 2.7.4
 asdf install ruby 2.7.6
 
 # see https://github.com/rbenv/ruby-build/wiki for help
