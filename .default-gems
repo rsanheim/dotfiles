@@ -1,3 +1,5 @@
+guard
+guard-rspec
 rails
 rspec
 rspec-rails
