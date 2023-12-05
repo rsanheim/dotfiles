@@ -5,6 +5,7 @@ fi
 alias h="history"
 alias be="bundle exec"
 alias bi="bundle install"
+alias l="ls -lah"
 alias rdm="bundle exec rake db:migrate"
 alias rdt="bin/rake db:migrate db:test:prepare"
 alias mix="cd ~/src/rsanheim/mixcatcher-v1"

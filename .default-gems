@@ -1,2 +1,6 @@
-solargraph
+guard
+guard-rspec
 rails
+rspec
+rspec-rails
+standardrb
