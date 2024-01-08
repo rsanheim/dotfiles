@@ -22,14 +22,13 @@ alias grb="git-recent-branches"
 alias git-recent-branches-remote="git for-each-ref --count=20 --sort=-committerdate refs/heads refs/remotes --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)'"
 alias grrb="git-recent-branches-remote"
 
-
 # Throw a timestamp in README.markdown and commit and push
-alias random_commit="echo `date` >> README.markdown \
+alias random_commit="echo $(date) >> README.markdown \
   && git ci -am 'random commit' \
   && git push"
 
-alias "clean-local-branches"="git branch --merged master | grep -v 'master$' | xargs git branch -d"
-alias "git-sync"="git co master && git pull && clean-local-branches"
+alias "clean-local-branches"="git branch --merged main | grep -v 'main$' | xargs git branch -d"
+alias "git-sync"="git co main && git pull && clean-local-branches"
 alias "github-sync"="git-sync && rdt && git checkout db/structure.sql"
 
 # copy current branch to clipboard
