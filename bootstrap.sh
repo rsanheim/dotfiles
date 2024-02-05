@@ -22,12 +22,6 @@ ln -sf "$DOTFILES_HOME"/.vimrc ~
 
 ln -sf "$DOTFILES_PRIVATE_HOME"/ssh_config ~/.ssh/config
 
-if [[ ! -d $HOME/src/simpledotorg ]]; then
-  echo
-  echo "Cloning simple-server..."
-  ./bin/install-simple
-fi
-
 if is_osx; then
   echo
   echo "Installing brew bundle..."
