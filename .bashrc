@@ -20,6 +20,10 @@ if test "${PS1+set}"; then
   CDPATH=".:$HOME:$HOME/src:$HOME/work:$HOME/src/rsanheim:$HOME/src/oss"
 fi
 
+if [ -f "$DOTFILES_HOME/.private" ]; then
+  source "$DOTFILES_HOME/.private"
+fi
+
 # More open files
 # https://gist.github.com/tombigel/d503800a282fcadbee14b537735d202c
 ulimit -n 65536
@@ -83,8 +87,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # asdf direnv
 # PATH="$PATH:~/.asdf/bin"
 # source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"
+eval "$("/Users/rsanheim/work/dox-compose/bin/dox-init")"
 
 # Normal asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-PATH="$HOME/dart-sass:$PATH"
