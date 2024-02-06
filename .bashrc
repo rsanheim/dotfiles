@@ -7,6 +7,7 @@ if [ "$(uname -m)" = "x86_64" ]; then
 else
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
 for file in $DOTFILES_HOME/bash/*.sh; do
   [[ -r $file ]] && source $file
 done
@@ -16,7 +17,7 @@ for file in $DOTFILES_PRIVATE_HOME/bash/*.sh; do
 done
 
 if test "${PS1+set}"; then
-  CDPATH=".:$HOME:$HOME/src:$HOME/src/rsanheim:$HOME/src/oss"
+  CDPATH=".:$HOME:$HOME/src:$HOME/work:$HOME/src/rsanheim:$HOME/src/oss"
 fi
 
 # More open files
@@ -28,6 +29,10 @@ PATH="/usr/local/sbin:$PATH"
 
 if [ -d "$HOME/bin" ]; then
   PATH="$HOME/bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ]; then
+  PATH="$HOME/.local/bin:$PATH"
 fi
 
 if [ -d "$DOTFILES_HOME/bin" ]; then
