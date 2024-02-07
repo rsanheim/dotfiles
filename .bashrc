@@ -68,7 +68,6 @@ fi
 if which rbenv >/dev/null; then eval "$(rbenv init -)"; fi
 
 export HOMEBREW_NO_ANALYTICS=true
-export AWS_PROFILE="default"
 export HISTCONTROL=ignoredups
 export HISTSIZE=10000
 shopt -s histappend histverify
