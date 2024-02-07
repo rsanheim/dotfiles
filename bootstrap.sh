@@ -7,6 +7,7 @@ export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
 
 mkdir -p "$HOME"/src/rsanheim
 mkdir -p "$HOME"/src/oss
+mkdir -p "$HOME"/work
 
 ln -sf "$DOTFILES_HOME"/.asdfrc ~
 ln -sf "$DOTFILES_HOME"/.atom/ ~

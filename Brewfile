@@ -36,9 +36,9 @@ brew "tree"
 brew "openssl@1.1"
 
 # Needed For Ruby 3.1 and above, see https://github.com/rbenv/ruby-build/wiki
-brew "openssl@3" 
-brew "readline" 
-brew "libyaml" 
+brew "openssl@3"
+brew "readline"
+brew "libyaml"
 brew "gmp"
 
 # Cask based apps here...
@@ -67,3 +67,9 @@ brew "lame"
 brew "shared-mime-info"
 brew "wget"
 brew "youtube-dl"
+
+# dox
+brew "git-lfs"
+brew "parallel"
+brew "gawk"
+brew "awscli"
