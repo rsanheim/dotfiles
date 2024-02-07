@@ -86,6 +86,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # asdf direnv
 # PATH="$PATH:~/.asdf/bin"
 # source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
 eval "$("/Users/rsanheim/work/dox-compose/bin/dox-init")"
 
 # Normal asdf
