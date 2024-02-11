@@ -1,4 +1,4 @@
-if command_exists hub ; then
+if command_exists hub; then
   alias git=hub
 fi
 
@@ -14,17 +14,6 @@ alias dotfiles="cd ~/src/rsanheim/dotfiles"
 alias p="pnpm"
 
 alias mg="echo mg starts micro emacs on Mac, and it can't be removed. Life is pain. I'm sorry"
-alias m="cd ~/src/monograph/monograph/"
-alias mb="cd ~/src/monograph/monograph/apps/api"
-alias mf="cd ~/src/monograph/monograph/apps/web"
-
-alias m2="cd ~/src/monograph/monograph2/"
-alias mb2="cd ~/src/monograph/monograph2/apps/api"
-alias mf2="cd ~/src/monograph/monograph2/apps/web"
-
-# alias m="cd ~/src/monograph/monograph-dashboard"
-# alias mg="cd ~/src/monograph/monograph-dashboard"
-# alias mgs="cd ~/src/monograph/mg-schematic"
 
 alias console="script/console"
 alias sc="script/console"

@@ -7,11 +7,11 @@ brew "asdf"
 brew "bash"
 brew "bash-completion"
 brew "git"
-cask "iterm2"
-cask "1password"
-cask "maestral" # a better, lighter weight Dropbox client - https://maestral.app
-cask "rectangle" # simple, open source Mac OS window management - https://rectangleapp.com
-cask "visual-studio-code" # duh
+# cask "iterm2"
+# cask "1password"
+# cask "maestral" # a better, lighter weight Dropbox client - https://maestral.app
+# cask "rectangle" # simple, open source Mac OS window management - https://rectangleapp.com
+# cask "visual-studio-code" # duh
 cask "firefox"
 cask "zoom"
 
@@ -24,8 +24,8 @@ brew "iperf"
 brew "gh"
 brew "jq"
 brew "mas"
-brew "postgresql@12", start_service: true
-brew "redis", start_service: true
+# brew "postgresql@12", start_service: true
+# brew "redis", start_service: true
 brew "ruby-build"
 brew "shellcheck"
 brew "sloccount"
@@ -36,9 +36,9 @@ brew "tree"
 brew "openssl@1.1"
 
 # Needed For Ruby 3.1 and above, see https://github.com/rbenv/ruby-build/wiki
-brew "openssl@3" 
-brew "readline" 
-brew "libyaml" 
+brew "openssl@3"
+brew "readline"
+brew "libyaml"
 brew "gmp"
 
 # Cask based apps here...
@@ -46,9 +46,7 @@ cask "dash"
 cask "fantastical"
 cask "istat-menus"
 cask "netnewswire"
-cask "notion"
 cask "roon"
-cask "telegram-desktop"
 cask "todoist"
 cask "the-unarchiver"
 cask "vlc"
@@ -69,4 +67,9 @@ brew "lame"
 brew "shared-mime-info"
 brew "wget"
 brew "youtube-dl"
-cask "google-chrome" # a necessary evil
+
+# dox
+brew "git-lfs"
+brew "parallel"
+brew "gawk"
+brew "awscli"

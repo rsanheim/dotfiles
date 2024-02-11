@@ -6,8 +6,8 @@ export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
 export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
 
 mkdir -p "$HOME"/src/rsanheim
-mkdir -p "$HOME"/src/monograph
 mkdir -p "$HOME"/src/oss
+mkdir -p "$HOME"/work
 
 ln -sf "$DOTFILES_HOME"/.asdfrc ~
 ln -sf "$DOTFILES_HOME"/.atom/ ~
@@ -18,15 +18,9 @@ ln -sf "$DOTFILES_HOME"/.gitconfig ~
 ln -sf "$DOTFILES_HOME"/.gitignore ~
 ln -sf "$DOTFILES_HOME"/.vimrc ~
 
-./bin/clone-personal
+# ./bin/clone-personal
 
 ln -sf "$DOTFILES_PRIVATE_HOME"/ssh_config ~/.ssh/config
-
-if [[ ! -d $HOME/src/simpledotorg ]]; then
-  echo
-  echo "Cloning simple-server..."
-  ./bin/install-simple
-fi
 
 if is_osx; then
   echo

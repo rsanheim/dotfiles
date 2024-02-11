@@ -3,3 +3,4 @@
 .generators
 .idea/
 .rakeTasks
+.private

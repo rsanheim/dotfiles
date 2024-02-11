@@ -7,16 +7,21 @@ if [ "$(uname -m)" = "x86_64" ]; then
 else
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
 for file in $DOTFILES_HOME/bash/*.sh; do
-  [[ -r $file ]] && source $file;
+  [[ -r $file ]] && source $file
 done
 
 for file in $DOTFILES_PRIVATE_HOME/bash/*.sh; do
-  [[ -r $file ]] && source $file;
+  [[ -r $file ]] && source $file
 done
 
 if test "${PS1+set}"; then
-  CDPATH=".:$HOME:$HOME/src:$HOME/src/monograph:$HOME/src/rsanheim:$HOME/src/oss"
+  CDPATH=".:$HOME:$HOME/src:$HOME/work:$HOME/src/rsanheim:$HOME/src/oss"
+fi
+
+if [ -f "$DOTFILES_HOME/.private" ]; then
+  source "$DOTFILES_HOME/.private"
 fi
 
 # More open files
@@ -26,11 +31,15 @@ ulimit -u 2048
 
 PATH="/usr/local/sbin:$PATH"
 
-if [ -d "$HOME/bin" ] ; then
+if [ -d "$HOME/bin" ]; then
   PATH="$HOME/bin:$PATH"
 fi
 
-if [ -d "$DOTFILES_HOME/bin" ] ; then
+if [ -d "$HOME/.local/bin" ]; then
+  PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$DOTFILES_HOME/bin" ]; then
   PATH="$DOTFILES_HOME/bin:$PATH"
 fi
 
@@ -40,7 +49,6 @@ PYTHON_PATH="/usr/local/opt/python/libexec/bin"
 if [ -d "$PYTHON_PATH" ]; then
   PATH="$PYTHON_PATH:$PATH"
 fi
-
 
 # Use a pinned Postgres install in homebrew if its there
 POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@14/bin"
@@ -57,17 +65,16 @@ if is_osx && [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 # rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv >/dev/null; then eval "$(rbenv init -)"; fi
 
 export HOMEBREW_NO_ANALYTICS=true
-export AWS_PROFILE="default"
-export HISTCONTROL=ignoredups;
-export HISTSIZE=10000;
-shopt -s histappend histverify;
+export HISTCONTROL=ignoredups
+export HISTSIZE=10000
+shopt -s histappend histverify
 # set '**' to match all files and zero or more directories and subdirectories
 shopt -s globstar
 
-if [ -f "/usr/local/bin/code-insiders" ] ; then
+if [ -f "/usr/local/bin/code-insiders" ]; then
   export EDITOR="code-insiders --wait"
 else
   export EDITOR="code --wait"
@@ -79,9 +86,8 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # asdf direnv
 # PATH="$PATH:~/.asdf/bin"
 # source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
+eval "$("/Users/rsanheim/work/dox-compose/bin/dox-init")"
 
 # Normal asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-
-PATH="$HOME/dart-sass:$PATH"
