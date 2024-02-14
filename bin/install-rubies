@@ -10,6 +10,7 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3) --enab
 asdf install ruby 3.1.2 --verbose
 asdf install ruby 3.1.3 --verbose
 asdf install ruby 3.1.4 --verbose
-# brew link bison --force # needed for 3.2
+asdf install ruby 3.2.0
 asdf install ruby 3.2.2
 asdf install ruby 3.2.3
+asdf install ruby 3.3.0
