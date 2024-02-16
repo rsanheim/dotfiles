@@ -62,7 +62,7 @@ function timer_start {
 
 # from https://stackoverflow.com/a/34812608
 function timer_stop {
-  local delta_us=$((($(timer_now) - timer_start) / 1000))
+  local delta_us=$((($(timer_now) - $timer_start) / 1000))
   local us=$((delta_us % 1000))
   local ms=$(((delta_us / 1000) % 1000))
   local s=$(((delta_us / 1000000) % 60))
@@ -87,7 +87,6 @@ function timer_stop {
   unset timer_start
 }
 
-trap 'timer_start' DEBUG
 function prompt_func() {
   local exit_code="$?"
   timer_stop
@@ -102,5 +101,6 @@ function prompt_func() {
     PS1="${prompt}${RED} [${exit_code}] ${elasped_time} >${COLOR_NONE} "
   fi
 }
+trap 'timer_start' DEBUG
 
 PROMPT_COMMAND=prompt_func
