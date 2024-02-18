@@ -12,6 +12,7 @@ brew "git"
 # cask "maestral" # a better, lighter weight Dropbox client - https://maestral.app
 # cask "rectangle" # simple, open source Mac OS window management - https://rectangleapp.com
 # cask "visual-studio-code" # duh
+cask "kitty"
 cask "firefox"
 cask "zoom"
 
