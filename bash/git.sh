@@ -27,7 +27,11 @@ alias random_commit="echo $(date) >> README.markdown \
   && git ci -am 'random commit' \
   && git push"
 
-alias "clean-local-branches"="git branch --merged main | grep -v 'main$' | xargs git branch -d"
+function clean-local-branches {
+  target=$(git branch -l main master --format '%(refname:short)')
+  git branch --merged "$target" | grep -v "$target$" | xargs git branch -d
+}
+
 alias "git-sync"="git co main && git pull && clean-local-branches"
 alias "github-sync"="git-sync && rdt && git checkout db/structure.sql"
 
