@@ -31,6 +31,11 @@ ulimit -u 2048
 
 PATH="/usr/local/sbin:$PATH"
 
+# Docker Desktop user install
+if [ -d "$HOME/.docker/bin" ]; then
+  PATH="$HOME/.docker/bin:$PATH"
+fi
+
 if [ -d "$HOME/bin" ]; then
   PATH="$HOME/bin:$PATH"
 fi
