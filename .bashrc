@@ -52,6 +52,15 @@ if [ -d "$DOTFILES_PRIVATE_HOME/bin" ]; then
   PATH="$DOTFILES_PRIVATE_HOME/bin:$PATH"
 fi
 
+if [ -d "$HOME/work/works-on-my-machine/bin" ]; then
+  PATH=$PATH:$HOME/work/works-on-my-machine/bin
+fi
+
+# for switching between local and cloud dev
+if [ -f "$HOME/local-docker.sh" ]; then
+  source "$HOME/local-docker.sh"
+fi
+
 PYTHON_PATH="/usr/local/opt/python/libexec/bin"
 
 # Use Python from Homebrew if its available
