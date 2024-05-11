@@ -17,7 +17,7 @@ for file in $DOTFILES_PRIVATE_HOME/bash/*.sh; do
 done
 
 if test "${PS1+set}"; then
-  CDPATH=".:$HOME:$HOME/src:$HOME/work:$HOME/src/rsanheim:$HOME/src/oss"
+  CDPATH=".:$HOME:$HOME/src:$HOME/work:$HOME/work/gems:$HOME/src/rsanheim:$HOME/src/oss"
 fi
 
 if [ -f "$DOTFILES_HOME/.private" ]; then
