@@ -8,6 +8,15 @@ else
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+PATH="/usr/local/sbin:$PATH"
+if [ -d "$HOME/bin" ]; then
+  PATH="$HOME/bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ]; then
+  PATH="$HOME/.local/bin:$PATH"
+fi
+
 for file in $DOTFILES_HOME/bash/*.sh; do
   [[ -r $file ]] && source $file
 done
@@ -29,20 +38,10 @@ fi
 ulimit -n 65536
 ulimit -u 2048
 
-PATH="/usr/local/sbin:$PATH"
-
 # Docker Desktop user install
 # if [ -d "$HOME/.docker/bin" ]; then
 #   PATH="$HOME/.docker/bin:$PATH"
 # fi
-
-if [ -d "$HOME/bin" ]; then
-  PATH="$HOME/bin:$PATH"
-fi
-
-if [ -d "$HOME/.local/bin" ]; then
-  PATH="$HOME/.local/bin:$PATH"
-fi
 
 if [ -d "$DOTFILES_HOME/bin" ]; then
   PATH="$DOTFILES_HOME/bin:$PATH"
