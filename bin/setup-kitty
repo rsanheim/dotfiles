@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Setting up kitty config..."
+
+# create dirs if needed
+mkdir -p ~/.config/kitty
+mkdir -p ~/.config/kitty/backups
+
+# Move any real files (not symlinks) in ~/.config/kitty to the backup folder
+for file in ~/.config/kitty/*; do
+  if [ -f "$file" ] && [ ! -L "$file" ]; then
+    mv "$file" ~/.config/kitty/backups/
+  fi
+done
+
+# Symlink all files that exist in ./kitty (this repo) into ~/.config/kitty
+for file in kitty/*; do
+  if [ -f "$file" ]; then
+    ln -sf "$(pwd)/$file" ~/.config/kitty/
+  fi
+done
+
+# TODO setup fonts!
