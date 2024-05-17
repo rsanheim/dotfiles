@@ -20,3 +20,5 @@ for file in kitty/*; do
     ln -sf "$(pwd)/$file" ~/.config/kitty/
   fi
 done
+
+# TODO setup fonts!
