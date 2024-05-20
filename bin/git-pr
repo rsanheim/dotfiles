@@ -12,10 +12,16 @@ MAIN_BRANCHES = ["master", "main"].freeze
 branch = `git symbolic-ref --short HEAD`.strip
 origin = `git config --get remote.origin.url`.strip
 
-url = if MAIN_BRANCHES.include?(branch)
-  origin.gsub(/\.git$/, '')
+repo = if origin.start_with?("git@")
+  origin.sub("git@github.com:", "https://github.com/")
 else
-  origin.gsub(/\.git$/, '') << "/pull/" << branch
+  origin
+end
+
+url = if MAIN_BRANCHES.include?(branch)
+  repo.gsub(/\.git$/, '')
+else
+  repo.gsub(/\.git$/, '') << "/pull/" << branch
 end
 
 puts "==> Opening on remote: #{url}"
