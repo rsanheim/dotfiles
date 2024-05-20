@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
+asdf plugin update ruby
 # see https://github.com/rbenv/ruby-build/wiki for help
 
-RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)" asdf install ruby 3.0.5
+# RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)" asdf install ruby 3.0.5
 
 # For Ruby >= 3.1
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3) --enable-yjit"
