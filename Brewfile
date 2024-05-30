@@ -43,6 +43,7 @@ brew "libyaml"
 brew "gmp"
 
 # Cask based apps here...
+cask "chatgpt"
 cask "dash"
 cask "fantastical"
 cask "istat-menus"
