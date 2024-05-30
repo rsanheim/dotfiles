@@ -7,7 +7,6 @@ brew "asdf"
 brew "bash"
 brew "bash-completion"
 brew "git"
-# cask "iterm2"
 # cask "1password"
 # cask "maestral" # a better, lighter weight Dropbox client - https://maestral.app
 # cask "rectangle" # simple, open source Mac OS window management - https://rectangleapp.com
@@ -43,6 +42,7 @@ brew "libyaml"
 brew "gmp"
 
 # Cask based apps here...
+cask "bartender"
 cask "chatgpt"
 cask "dash"
 cask "fantastical"
