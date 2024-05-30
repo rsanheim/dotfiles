@@ -3,4 +3,5 @@ guard-rspec
 rails
 rspec
 rspec-rails
+rubocop
 standardrb
