@@ -24,7 +24,6 @@ brew "iperf"
 brew "gh"
 brew "jq"
 brew "mas"
-# brew "postgresql@12", start_service: true
 # brew "redis", start_service: true
 brew "ruby-build"
 brew "shellcheck"
