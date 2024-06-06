@@ -1,5 +1,6 @@
 export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
 export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
+export BUNDLE_CACHE_ALL_PLATFORMS=1
 source "$DOTFILES_HOME/bin/functions"
 
 if [ "$(uname -m)" = "x86_64" ]; then
