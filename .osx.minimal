@@ -5,7 +5,7 @@
 ###############################################################################
 # Fix key repeat in VS Code + vim mode
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false 
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
 
 ###############################################################################
 # Finder                                                                      #
@@ -22,3 +22,13 @@ defaults write com.apple.finder ShowStatusBar -bool true
 
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
+
+# expand save dialog by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# don't save .DS_Store to network locations
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+
+# bring up the hidden dock faster
+defaults write com.apple.dock autohide-time-modifier -float 0.15
