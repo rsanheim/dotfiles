@@ -77,10 +77,7 @@ if [ -d "$POSTGRES_BREW_PATH" ]; then
   export PKG_CONFIG_PATH="$(brew --prefix)/opt/postgresql@14/lib/pkgconfig"
 fi
 
-# nice bash completion
-if is_osx && [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+[[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 
 # rbenv
 if which rbenv >/dev/null; then eval "$(rbenv init -)"; fi
