@@ -18,6 +18,10 @@ alias sl="script/lint"
 alias ss="script/server"
 alias st="script/test"
 
+# Easy access to `ci open` and such
+# https://github.com/CircleCI-Public/circleci-cli
+alias ci="circleci"
+
 # just make life easier
 alias "edit-bash-profile"='code $DOTFILES_HOME/'
 alias "reload-bash-profile"=". ~/.bash_profile"

@@ -62,6 +62,7 @@ mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709
 
 # Lower priority brew's are last - these are slow and/or not as important as the ones above
+brew "circleci"
 brew "flac"
 brew "ffmpeg"
 brew "graphviz"
