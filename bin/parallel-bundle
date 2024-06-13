@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+find . -type d -depth 1 -exec sh -c 'cd "{}" && (test -f Gemfile || ls *.gemspec > /dev/null 2>&1)' \; -print | parallel -j 8 "cd {} && bundle"
