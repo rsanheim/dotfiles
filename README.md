@@ -4,9 +4,9 @@ My dotfiles built for ruby, javascript web dev nonsense, and general bash shell 
 
 These may work well as a jumping off point for you this sounds like your working style:
 
-* primarily use M1 based Macs
+* mostly use apple silicon Macs, but spend most of your life in terminal
 * prefer bash over zsh
-* program in Ruby a lot and want to have access to the latest versions easily
+* work daily in ruby, javascript, and shell, but don't mind diving into other languages
 * use [homebrew bundle](https://github.com/Homebrew/homebrew-bundle) for installing most of your Mac apps
 * use [asdf](https://asdf-vm.com) for your version switching
 
