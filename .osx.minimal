@@ -7,6 +7,9 @@
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
 
+# use the small analog clock in the menubar
+defaults write com.apple.menuextra.clock IsAnalog -bool true
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
