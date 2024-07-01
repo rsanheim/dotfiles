@@ -82,6 +82,9 @@ fi
 # rbenv
 if which rbenv >/dev/null; then eval "$(rbenv init -)"; fi
 
+# CircleCI CLI wants to auto update every day, which is far too frequent
+# See https://github.com/CircleCI-Public/circleci-cli/issues/839
+export CIRCLECI_CLI_SKIP_UPDATE_CHECK=true
 export HOMEBREW_NO_ANALYTICS=true
 export HISTCONTROL=ignoredups
 export HISTSIZE=10000
