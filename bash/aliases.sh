@@ -6,6 +6,7 @@ alias rdm="bundle exec rake db:migrate"
 alias rdt="bin/rake db:migrate db:test:prepare"
 alias mix="cd ~/src/rsanheim/mixcatcher-v1"
 alias dotfiles="cd ~/src/rsanheim/dotfiles"
+alias dx="~/src/rsanheim/dx/script/dx"
 
 alias p="pnpm"
 
