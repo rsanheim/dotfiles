@@ -28,6 +28,7 @@ brew "mas"
 brew "ruby-build"
 brew "shellcheck"
 brew "sloccount"
+brew "scc"
 brew "sqlite"
 brew "tree"
 
