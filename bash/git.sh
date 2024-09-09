@@ -14,6 +14,7 @@ alias gcap='git commit -v -a && git push'
 alias gpp='git pull --prune; git push'
 alias gpr='git-pr -p'
 alias gup='gpp && clean-squashed-branches'
+alias git-clean="git pull --prune && clean-local-branches"
 
 # From: http://www.commandlinefu.com/commands/view/2345/show-git-branches-by-date-useful-for-showing-active-branches
 alias git-recent-branches="git for-each-ref --count=20 --sort=-committerdate refs/heads --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)'"
