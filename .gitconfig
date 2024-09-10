@@ -2,6 +2,7 @@
 [user]
 	name = Rob Sanheim
 	email = rsanheim@gmail.com
+	signingkey = /Users/rsanheim/.ssh/id_ed25519.pub
 
 [alias]
   br = branch
@@ -46,3 +47,9 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /Users/rsanheim/.ssh/id_ed25519.pub
+[commit]
+	gpgsign = true
