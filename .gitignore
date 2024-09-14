@@ -4,6 +4,6 @@
 .irb_history
 .private
 .rakeTasks
-# dodker synchronized file stores
+# docker synchronized file stores
 .syncignore
 .vscode/
