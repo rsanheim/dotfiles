@@ -1,7 +1,9 @@
-.irb_history
-.vscode/
 .DS_Store
 .generators
 .idea/
-.rakeTasks
+.irb_history
 .private
+.rakeTasks
+# docker synchronized file stores
+.syncignore
+.vscode/

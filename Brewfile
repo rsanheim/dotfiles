@@ -23,6 +23,7 @@ brew "hyperfine" # super cool shell benchmarking
 brew "iperf"
 brew "gh"
 brew "jq"
+brew "lsd"
 brew "mas"
 # brew "redis", start_service: true
 brew "ruby-build"
