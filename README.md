@@ -12,6 +12,12 @@ These may work well as a jumping off point for you this sounds like your working
 
 I tend to setup new machines or pave + reinstall on new Macs frequently, so these here dotfiles will get frequent housekeeping.
 
+## Homebrew bundle
+
+[homebrew-bundle](https://github.com/Homebrew/homebrew-bundle) is great. It makes installing all the things a breeze.
+
+https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f has some handy tipstips
+ 
 ## bootstrap
 
 Requires homebrew. You can install homebrew via:
