@@ -22,6 +22,9 @@ alias st="script/test"
 # https://github.com/CircleCI-Public/circleci-cli
 alias ci="circleci"
 
+alias start-mysql8="/opt/homebrew/opt/mysql@8.0/bin/mysqld_safe --datadir\=/opt/homebrew/var/mysql"
+alias cd-mysql="cd /opt/homebrew/opt/mysql@8.0"
+
 # just make life easier
 alias "edit-bash-profile"='code $DOTFILES_HOME/'
 alias "reload-bash-profile"=". ~/.bash_profile"

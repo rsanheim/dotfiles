@@ -61,11 +61,24 @@ if [ -f "$HOME/local-docker.sh" ]; then
   source "$HOME/local-docker.sh"
 fi
 
+export FIREFOX="/Applications/Firefox.app/Contents/MacOS/firefox"
+alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox"
+
 PYTHON_PATH="/usr/local/opt/python/libexec/bin"
 
 # Use Python from Homebrew if its available
 if [ -d "$PYTHON_PATH" ]; then
   PATH="$PYTHON_PATH:$PATH"
+fi
+
+# homebrew pinned Mysql 8.0 setup
+if [ -d "/opt/homebrew/opt/mysql@8.0/" ]; then
+  export LDFLAGS="-L/opt/homebrew/opt/mysql@8.0/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/mysql@8.0/include"
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql@8.0/lib/pkgconfig"
+  PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
+  # To start mysql 8.0 interactively
+  #   /opt/homebrew/opt/mysql@8.0/bin/mysqld_safe --datadir\=/opt/homebrew/var/mysql
 fi
 
 # Use a pinned Postgres install in homebrew if its there
@@ -78,9 +91,6 @@ if [ -d "$POSTGRES_BREW_PATH" ]; then
 fi
 
 [[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
-
-# rbenv
-if which rbenv >/dev/null; then eval "$(rbenv init -)"; fi
 
 # CircleCI CLI wants to auto update every day, which is far too frequent
 # See https://github.com/CircleCI-Public/circleci-cli/issues/839
@@ -104,11 +114,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # asdf direnv
 # PATH="$PATH:~/.asdf/bin"
 # source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"
-export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
-
-if [ -f "/Users/rsanheim/work/dox-compose/bin/dox-init" ]; then
-  eval "$("/Users/rsanheim/work/dox-compose/bin/dox-init")"
-fi
 
 # Normal asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
