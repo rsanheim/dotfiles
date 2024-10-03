@@ -2,7 +2,7 @@
 [user]
 	name = Rob Sanheim
 	email = rsanheim@gmail.com
-	signingkey = /Users/rsanheim/.ssh/id_ed25519.pub
+	signingkey = /Users/rsanheim/.ssh/dox_ed25519.pub
 
 [alias]
   br = branch
