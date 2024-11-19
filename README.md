@@ -16,7 +16,7 @@ I tend to setup new machines or pave + reinstall on new Macs frequently, so thes
 
 [homebrew-bundle](https://github.com/Homebrew/homebrew-bundle) is great. It makes installing all the things a breeze.
 
-https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f has some handy tipstips
+https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f has some handy tips.
  
 ## bootstrap
 
