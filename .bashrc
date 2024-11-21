@@ -111,9 +111,5 @@ fi
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# asdf direnv
-# PATH="$PATH:~/.asdf/bin"
-# source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"
-
 # Normal asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
