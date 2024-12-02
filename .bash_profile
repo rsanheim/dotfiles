@@ -2,7 +2,7 @@ if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
 
-asdf
+# asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # # rbenv
