@@ -1,3 +1,4 @@
+alias c="cursor"
 alias h="history"
 alias be="bundle exec"
 alias bi="bundle install"
