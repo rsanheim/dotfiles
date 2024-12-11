@@ -21,6 +21,10 @@ parser = OptionParser.new do |opts|
     options[:jobs] = n
   end
 
+  opts.on("--git", "Only run in git repositories") do
+    options[:git] = true
+  end
+
   opts.on("-h", "--help", "Show this help message") do
     puts opts
     exit
@@ -37,7 +41,11 @@ if ARGV.empty?
 end
 
 command = ARGV.join(" ")
-dirs = Dir.glob("*/").map { |d| d.chomp("/") }
+dirs = if options[:git]
+  Dir.glob("*/").map { |d| d.chomp("/") }.select { |d| Dir.exist?("#{d}/.git") }
+else
+  Dir.glob("*/").map { |d| d.chomp("/") }
+end
 
 Parallel.each(dirs, in_processes: options[:jobs]) do |dir|
   puts "[#{dir}]" if options[:debug]

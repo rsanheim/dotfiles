@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+show_help() {
+    cat << EOF
+Usage: clean-local-branches [-h|--help]
+
+Safely removes local branches that have been merged into main/master.
+
+Options:
+    -h, --help    Show this help message
+
+Note: This script will:
+    1. Detect whether main or master is the default branch
+    2. Remove only branches that have been fully merged
+    3. Skip the current branch and default branch
+EOF
+    exit 0
+}
+
+[[ "$1" == "-h" || "$1" == "--help" ]] && show_help
+
+# Exit on any error
+set -e
+
+# Detect main/master branch
+target=$(git branch -l main master --format '%(refname:short)' | head -n1)
+
+if [ -z "$target" ]; then
+    echo "Error: Could not detect main or master branch"
+    exit 1
+fi
+
+# Get and delete merged branches excluding the target and current branch
+git branch --merged "$target" | grep -v "$target$" | grep -v "^\*" | xargs git branch -d
