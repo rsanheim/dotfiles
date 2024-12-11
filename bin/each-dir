@@ -1,58 +1,62 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 
-function show_help {
-  echo "Usage: eachdir [OPTIONS] <command>"
-  echo
-  echo "Executes the specified command in each subdirectory of the current working directory."
-  echo
-  echo "Options:"
-  echo "  -d, --d       Display the commands being run for each directory."
-  echo "  --help        Show this help message."
-  echo
-  echo "Examples:"
-  echo "  eachdir bundle install"
-  echo "  eachdir \"git pull -p && bundle install && bundle check\""
-  echo "  eachdir --d \"bundle check\""
-  exit 0
-}
+require "etc"
+require "parallel"
+require "optparse"
 
-DEBUG=false
-COMMAND=()
+options = {jobs: Etc.nprocessors, debug: false}
 
-while [[ $# -gt 0 ]]; do
-  case "$1" in
-  -d | --d)
-    DEBUG=true
-    shift
-    ;;
-  --help)
-    show_help
-    ;;
-  *)
-    COMMAND+=("$1")
-    shift
-    ;;
-  esac
-done
+parser = OptionParser.new do |opts|
+  opts.banner = "Usage: eachdir [OPTIONS] <command>"
+  opts.separator ""
+  opts.separator "Executes the specified command in each subdirectory of the current working directory."
+  opts.separator ""
+  opts.separator "Options:"
 
-if [ ${#COMMAND[@]} -eq 0 ]; then
-  echo "Error: No command provided."
-  echo
-  echo "Use --help for more information."
+  opts.on("-d", "--debug", "Display the commands being run") do
+    options[:debug] = true
+  end
+
+  opts.on("-j", "--jobs N", Integer, "Number of parallel jobs (default: CPU count)") do |n|
+    options[:jobs] = n
+  end
+
+  opts.on("--git", "Only run in git repositories") do
+    options[:git] = true
+  end
+
+  opts.on("-h", "--help", "Show this help message") do
+    puts opts
+    exit
+  end
+end
+
+parser.parse!
+
+if ARGV.empty?
+  puts "Error: No command provided."
+  puts
+  puts parser
   exit 1
-fi
+end
 
-# Loop through each subdirectory and execute the command
-for dir in */; do
-  if [ -d "$dir" ]; then
-    cd "$dir" || continue
-    if [ "$DEBUG" = true ]; then
-      echo "==> $dir > ${COMMAND[*]}"
-    fi
-    "${COMMAND[@]}" 2>&1
-    if [ $? -ne 0 ]; then
-      echo "==> Error in directory: $dir"
-    fi
-    cd ..
-  fi
-done
+command = ARGV.join(" ")
+dirs = if options[:git]
+  Dir.glob("*/").map { |d| d.chomp("/") }.select { |d| Dir.exist?("#{d}/.git") }
+else
+  Dir.glob("*/").map { |d| d.chomp("/") }
+end
+
+Parallel.each(dirs, in_processes: options[:jobs]) do |dir|
+  puts "[#{dir}]" if options[:debug]
+
+  Dir.chdir(dir) do
+    IO.popen(command, err: [:child, :out]) do |io|
+      while line = io.gets
+        puts "[#{dir}] #{line}"
+      end
+    end
+  end
+rescue => e
+  puts "[#{dir}] Error: #{e.message}"
+end
