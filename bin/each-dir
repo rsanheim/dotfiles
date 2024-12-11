@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 
 require "etc"
-require 'parallel'
-require 'optparse'
+require "parallel"
+require "optparse"
 
-options = { jobs: Etc.nprocessors, debug: false }
+options = {jobs: Etc.nprocessors, debug: false}
 
 parser = OptionParser.new do |opts|
   opts.banner = "Usage: eachdir [OPTIONS] <command>"
@@ -41,7 +41,7 @@ dirs = Dir.glob("*/").map { |d| d.chomp("/") }
 
 Parallel.each(dirs, in_processes: options[:jobs]) do |dir|
   puts "[#{dir}]" if options[:debug]
-  
+
   Dir.chdir(dir) do
     IO.popen(command, err: [:child, :out]) do |io|
       while line = io.gets
