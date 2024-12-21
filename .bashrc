@@ -110,3 +110,6 @@ fi
 
 export GIT_EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
