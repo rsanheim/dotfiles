@@ -14,10 +14,6 @@ if [ -d "$HOME/bin" ]; then
   PATH="$HOME/bin:$PATH"
 fi
 
-if [ -d "$HOME/.local/bin" ]; then
-  PATH="$HOME/.local/bin:$PATH"
-fi
-
 for file in $DOTFILES_HOME/bash/*.sh; do
   [[ -r $file ]] && source $file
 done
@@ -113,3 +109,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+if [ -d "$HOME/.local/bin" ]; then
+  PATH="$HOME/.local/bin:$PATH"
+fi
