@@ -104,7 +104,7 @@ else
   export EDITOR="code --wait"
 fi
 
-export GIT_EDITOR="vim"
+export GIT_EDITOR="cursor --wait"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # asdf
