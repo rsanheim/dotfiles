@@ -1,0 +1,82 @@
+#!/usr/bin/env ruby
+
+require "bundler/inline"
+
+gemfile do
+  source "https://rubygems.org"
+  gem "base64"
+  gem "octokit"
+end
+
+require "date"
+require "optparse"
+
+class StandupNotes
+  PREFIX = ":today:"
+  attr_reader :args, :client, :options
+
+  def initialize(args)
+    puts RUBY_VERSION
+    @args = args
+    @options = parse_options
+    @client = Octokit::Client.new(access_token: github_token)
+    @client.auto_paginate = true
+  end
+
+  def call
+    puts PREFIX
+    puts summary if summary
+    puts
+
+    prs.each do |pr|
+      puts "* [#{pr.title}](#{pr.html_url})"
+    end
+  end
+
+  private
+
+  def parse_options
+    options = { days: 1 }
+    
+    OptionParser.new do |opts|
+      opts.banner = "Usage: standup-notes [summary] [options]"
+      
+      opts.on("-d", "--days DAYS", Integer, "Number of days to look back (default: 1)") do |d|
+        options[:days] = d
+      end
+    end.parse!(args)
+
+    options
+  end
+
+  def summary
+    args[0]
+  end
+
+  def prs
+    search_query = [
+      "is:pr",
+      "author:#{github_username}",
+      "org:doximity",
+      "updated:#{date_range}",
+      "draft:false",
+    ].join(" ")
+
+    @client.search_issues(search_query).items
+  end
+
+  def date_range
+    date = Date.today - options[:days]
+    "#{date.iso8601}..*"
+  end
+
+  def github_token
+    ENV["GITHUB_TOKEN"] || raise("Please set GITHUB_TOKEN environment variable")
+  end
+
+  def github_username
+    @github_username ||= @client.user.login
+  end
+end
+
+StandupNotes.new(ARGV).call
