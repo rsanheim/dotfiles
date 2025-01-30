@@ -16,7 +16,6 @@ class StandupNotes
   attr_reader :args, :client, :options
 
   def initialize(args)
-    puts RUBY_VERSION
     @args = args
     @options = parse_options
     @client = Octokit::Client.new(access_token: github_token)
