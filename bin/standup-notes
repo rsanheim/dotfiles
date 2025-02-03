@@ -30,7 +30,8 @@ class StandupNotes
     puts
 
     prs.each do |pr|
-      puts "* [#{pr.title}](#{pr.html_url})"
+      status_label = determine_status(pr)
+      puts "* [#{pr.title}](#{pr.html_url}) #{status_label}"
     end
   end
 
@@ -63,7 +64,10 @@ class StandupNotes
       "draft:false",
     ].join(" ")
 
-    @client.search_issues(search_query).items
+    @client.search_issues(search_query).items.map do |issue|
+      repo_name = issue.repository_url.split('/').last(2).join('/')
+      @client.pull_request(repo_name, issue.number)
+    end
   end
 
   def date_range
@@ -77,6 +81,29 @@ class StandupNotes
 
   def github_username
     @github_username ||= @client.user.login
+  end
+
+  def determine_status(pr)
+    return "_shipped_" if pr.merged
+
+    reviews = @client.pull_request_reviews(pr.base.repo.full_name, pr.number)
+    required_reviews = get_required_reviews(pr.base.repo.full_name, pr.base.ref)
+    
+    approved_reviews = reviews.count { |r| r.state == "APPROVED" }
+    
+    if approved_reviews >= required_reviews
+      # "_ready to merge_"
+    else
+      remaining = required_reviews - approved_reviews
+      "_needs #{remaining} more review#{remaining > 1 ? 's' : ''}_"
+    end
+  end
+
+  def get_required_reviews(repo, branch)
+    protection = @client.branch_protection(repo, branch)
+    protection.required_pull_request_reviews.required_approving_review_count
+  rescue Octokit::NotFound
+    1 # Default to 1 required review if branch protection not found
   end
 end
 
