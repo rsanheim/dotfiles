@@ -53,3 +53,5 @@
 	allowedSignersFile = /Users/rsanheim/.ssh/id_ed25519.pub
 [commit]
 	gpgsign = true
+[fetch]
+	prune = true
