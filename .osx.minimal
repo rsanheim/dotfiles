@@ -6,6 +6,8 @@
 # Fix key repeat in VS Code + vim mode
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
+# Fix key repeat in Cursor
+defaults write com.todesktop.230313mzl4w4u92 ApplePressAndHoldEnabled -bool false
 
 # use the small analog clock in the menubar
 defaults write com.apple.menuextra.clock IsAnalog -bool true
