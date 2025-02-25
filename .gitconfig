@@ -46,3 +46,5 @@
 	clean = git-lfs clean -- %f
 [fetch]
 	prune = true
+[merge]
+	autoEdit = no
