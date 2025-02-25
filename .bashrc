@@ -113,3 +113,5 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
 fi
+
+[ -f ~/.config/dx/completion ] && source ~/.config/dx/completion
