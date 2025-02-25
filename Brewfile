@@ -3,7 +3,8 @@ tap "homebrew/services"
 tap "heroku/brew"
 
 # Get some essentials installed first
-brew "asdf"
+# brew "asdf" # Switched to mise
+brew "mise" # Modern version manager, replacement for asdf
 brew "bash"
 brew "bash-completion"
 brew "git"

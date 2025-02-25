@@ -8,7 +8,7 @@ These may work well as a jumping off point for you this sounds like your working
 * prefer bash over zsh
 * work daily in ruby, javascript, and shell, but don't mind diving into other languages
 * use [homebrew bundle](https://github.com/Homebrew/homebrew-bundle) for installing most of your Mac apps
-* use [asdf](https://asdf-vm.com) for your version switching
+* use [mise](https://mise.jdx.dev/) for your version switching
 
 I tend to setup new machines or pave + reinstall on new Macs frequently, so these here dotfiles will get frequent housekeeping.
 

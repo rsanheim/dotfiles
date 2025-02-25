@@ -110,13 +110,16 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # rbenv
 # eval "$(rbenv init - bash)"
 
-# asdf
+# asdf - COMMENTED OUT FOR MISE MIGRATION
 # old way (pre 0.16.0)
 # . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # new way (0.16.0+)
-export ASDF_DATA_DIR="$HOME/.asdf"
-export PATH="$ASDF_DATA_DIR/shims:$PATH"
+# export ASDF_DATA_DIR="$HOME/.asdf"
+# export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
+# mise - activate version manager
+eval "$(mise activate bash)"
 
 if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
