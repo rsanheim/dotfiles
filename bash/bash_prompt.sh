@@ -87,9 +87,17 @@ function timer_stop {
   unset timer_start
 }
 
-function prompt_func() {
+function prompt_func_without_timer() {
   local exit_code="$?"
   timer_stop
+  # \w is the full current working directory
+  # \W is just the trailing part of the current working directory
+  prompt="${TITLEBAR}${BLUE}[${LIGHT_GRAY}\w${GREEN}$(parse_git_branch)${BLUE}]${COLOR_NONE}"
+  PS1="${prompt} > "
+}
+
+function prompt_func() {
+  local exit_code="$?"
   # \w is the full current working directory
   # \W is just the trailing part of the current working directory
   prompt="${TITLEBAR}${BLUE}[${LIGHT_GRAY}\w${GREEN}$(parse_git_branch)${BLUE}]${COLOR_NONE}"
@@ -103,4 +111,4 @@ function prompt_func() {
 }
 trap 'timer_start' DEBUG
 
-PROMPT_COMMAND=prompt_func
+PROMPT_COMMAND=prompt_func_without_timer
