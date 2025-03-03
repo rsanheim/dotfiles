@@ -107,6 +107,7 @@ fi
 export GIT_EDITOR="cursor --wait"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+export DX_ALT_BROWSER="Google Chrome"
 # rbenv
 # eval "$(rbenv init - bash)"
 
