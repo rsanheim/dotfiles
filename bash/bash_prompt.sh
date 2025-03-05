@@ -87,7 +87,12 @@ function timer_stop {
   unset timer_start
 }
 
-function prompt_func_without_timer() {
+function prompt_func_without_timer {
+  prompt="${TITLEBAR}${BLUE}[${LIGHT_GRAY}\w${GREEN}$(parse_git_branch)${BLUE}]${COLOR_NONE}"
+  PS1="${prompt} > "
+}
+
+function prompt_func() {
   local exit_code="$?"
   timer_stop
   # \w is the full current working directory
