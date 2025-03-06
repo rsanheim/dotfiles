@@ -9,8 +9,6 @@ mkdir -p "$HOME"/src/rsanheim
 mkdir -p "$HOME"/src/oss
 mkdir -p "$HOME"/work
 
-# Comment out asdf related links (kept for reference)
-# ln -sf "$DOTFILES_HOME"/.asdfrc ~
 ln -sf "$DOTFILES_HOME"/.atom/ ~
 ln -sf "$DOTFILES_HOME"/.bash_profile ~
 ln -sf "$DOTFILES_HOME"/.bashrc ~
