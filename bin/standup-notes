@@ -99,8 +99,9 @@ class StandupNotes
     end
   end
 
+  ACCEPT = "Accept: application/vnd.github.loki-preview+json"
   def get_required_reviews(repo, branch)
-    protection = @client.branch_protection(repo, branch)
+    protection = @client.branch_protection(repo, branch, accept: ACCEPT)
     protection.required_pull_request_reviews.required_approving_review_count
   rescue Octokit::NotFound
     1 # Default to 1 required review if branch protection not found

@@ -108,6 +108,8 @@ export GIT_EDITOR="cursor --wait"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export DX_ALT_BROWSER="Google Chrome"
+export JIRA_API_TOKEN="op://Private/jira-cli-token/credential"
+
 # rbenv
 # eval "$(rbenv init - bash)"
 
