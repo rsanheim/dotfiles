@@ -113,14 +113,6 @@ export JIRA_API_TOKEN="op://Private/jira-cli-token/credential"
 # rbenv
 # eval "$(rbenv init - bash)"
 
-# asdf - COMMENTED OUT FOR MISE MIGRATION
-# old way (pre 0.16.0)
-# . /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-# new way (0.16.0+)
-# export ASDF_DATA_DIR="$HOME/.asdf"
-# export PATH="$ASDF_DATA_DIR/shims:$PATH"
-
 # mise - activate version manager
 eval "$(mise activate bash)"
 

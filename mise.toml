@@ -2,7 +2,7 @@
 # Converted from .tool-versions (formerly used by asdf)
 
 [tools]
-ruby = "3.3.6"
+ruby = "3.3.7"
 
 [settings]
 legacy_version_file = true 
