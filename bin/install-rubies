@@ -1,22 +1,15 @@
 #!/usr/bin/env bash
 set -e
 
-asdf plugin update ruby
-# see https://github.com/rbenv/ruby-build/wiki for help
-
-# RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)" asdf install ruby 3.0.5
-
-# For Ruby >= 3.1
+# For Ruby versions
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3) --enable-yjit"
-asdf install ruby 3.1.4 --verbose
-asdf install ruby 3.1.6 --verbose
-asdf install ruby 3.2.2
-asdf install ruby 3.2.3
-asdf install ruby 3.2.4
-asdf install ruby 3.3.0
-asdf install ruby 3.3.1
-asdf install ruby 3.3.2
-asdf install ruby 3.3.3
-asdf install ruby 3.3.4
-asdf install ruby 3.3.5
-asdf install ruby 3.3.6
+mise install ruby@3.1.4
+mise install ruby@3.1.6
+mise install ruby@3.2.3
+mise install ruby@3.2.4
+mise install ruby@3.3.5
+mise install ruby@3.3.6
+mise install ruby@3.3.7
+
+echo "Ruby installations complete!"
+echo "Default Ruby: $(mise which ruby)"

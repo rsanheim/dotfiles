@@ -1,0 +1,8 @@
+# mise configuration (https://mise.jdx.dev/)
+# Converted from .tool-versions (formerly used by asdf)
+
+[tools]
+ruby = "3.3.7"
+
+[settings]
+legacy_version_file = true 

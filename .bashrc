@@ -77,13 +77,22 @@ if [ -d "/opt/homebrew/opt/mysql@8.0/" ]; then
   #   /opt/homebrew/opt/mysql@8.0/bin/mysqld_safe --datadir\=/opt/homebrew/var/mysql
 fi
 
-# Use a pinned Postgres install in homebrew if its there
+# Use a Postgres 14 in homebrew if its there
 POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@14/bin"
 if [ -d "$POSTGRES_BREW_PATH" ]; then
   PATH="$POSTGRES_BREW_PATH:$PATH"
   export LDFLAGS="-L$(brew --prefix)/opt/postgresql@14/lib"
   export CPPFLAGS="-I$(brew --prefix)opt/postgresql@14/include"
   export PKG_CONFIG_PATH="$(brew --prefix)/opt/postgresql@14/lib/pkgconfig"
+fi
+
+# Use a Postgres 17 in homebrew if its there
+POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@17/bin"
+if [ -d "$POSTGRES_BREW_PATH" ]; then
+  PATH="$POSTGRES_BREW_PATH:$PATH"
+  export LDFLAGS="-L$(brew --prefix)/opt/postgresql@17/lib"
+  export CPPFLAGS="-I$(brew --prefix)opt/postgresql@17/include"
+  export PKG_CONFIG_PATH="$(brew --prefix)/opt/postgresql@17/lib/pkgconfig"
 fi
 
 [[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
@@ -107,16 +116,14 @@ fi
 export GIT_EDITOR="cursor --wait"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+export DX_ALT_BROWSER="Google Chrome"
+export JIRA_API_TOKEN="op://Private/jira-cli-token/credential"
+
 # rbenv
 # eval "$(rbenv init - bash)"
 
-# asdf
-# old way (pre 0.16.0)
-# . /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-# new way (0.16.0+)
-export ASDF_DATA_DIR="$HOME/.asdf"
-export PATH="$ASDF_DATA_DIR/shims:$PATH"
+# mise - activate version manager
+eval "$(mise activate bash)"
 
 if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"

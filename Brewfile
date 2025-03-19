@@ -3,7 +3,7 @@ tap "homebrew/services"
 tap "heroku/brew"
 
 # Get some essentials installed first
-brew "asdf"
+brew "mise"
 brew "bash"
 brew "bash-completion"
 brew "git"

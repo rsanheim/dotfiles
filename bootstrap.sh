@@ -9,7 +9,6 @@ mkdir -p "$HOME"/src/rsanheim
 mkdir -p "$HOME"/src/oss
 mkdir -p "$HOME"/work
 
-ln -sf "$DOTFILES_HOME"/.asdfrc ~
 ln -sf "$DOTFILES_HOME"/.atom/ ~
 ln -sf "$DOTFILES_HOME"/.bash_profile ~
 ln -sf "$DOTFILES_HOME"/.bashrc ~
@@ -36,10 +35,8 @@ if [[ $SHELL != "/opt/homebrew/bin/bash" ]]; then
   chsh -s /opt/homebrew/bin/bash
 fi
 
-echo "Setting up asdf..."
-asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf plugin-add pnpm
+echo "Setting up mise..."
+./bin/install-mise
 
 echo
 echo "Installing Rubies..."

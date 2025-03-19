@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+# Examples
+> ruby-version-checker
+$ what gemspec do you want to check?
+> "~> 3.0"
+$ This gemspec will satisfy version from ....
+> "~> 3"
+$ This gemspec will satisfy version from ...
+> "~> 3.45.1"
+$ This gemspec will satisfy version from ...
+gem "json", ">= 2.0.0", "!=2.7.0"
+$ This gemspec will satisfy json versions from ...

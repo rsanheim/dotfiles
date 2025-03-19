@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -e
+
+source "$(dirname "$0")/functions"
+
+# Idempotent setup script for mise (https://mise.jdx.dev/) version manager
+
+echo "Setting up mise..."
+
+# Install mise via Homebrew if not already installed
+if ! command_exists mise; then
+  echo "Installing mise via Homebrew..."
+  brew install mise
+else
+  echo "mise already installed, checking for updates..."
+  brew upgrade mise
+fi
+
+# Create config directory if it doesn't exist
+mkdir -p "$HOME/.config/mise"
+
+# Create a default config.toml if it doesn't exist
+if [ ! -f "$HOME/.config/mise/config.toml" ]; then
+  echo "Creating default mise config..."
+  cat > "$HOME/.config/mise/config.toml" << EOF
+[tools]
+ruby = 'latest'
+nodejs = 'lts'
+
+[settings]
+legacy_version_file = true
+always_keep_download = true
+verbose = false
+EOF
+fi
+
+# Note: mise looks for .default-gems in $HOME, not in ~/.config/mise/
+# The symlink in bootstrap.sh handles this
+
+# Add mise hook to environment if not already present
+echo "Mise installation complete! Please make sure your .bashrc contains the mise activation hook."
+echo "Current mise version: $(mise --version)" 

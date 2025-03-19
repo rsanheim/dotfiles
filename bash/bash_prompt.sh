@@ -98,6 +98,14 @@ function prompt_func() {
   # \w is the full current working directory
   # \W is just the trailing part of the current working directory
   prompt="${TITLEBAR}${BLUE}[${LIGHT_GRAY}\w${GREEN}$(parse_git_branch)${BLUE}]${COLOR_NONE}"
+  PS1="${prompt} > "
+}
+
+function prompt_func() {
+  local exit_code="$?"
+  # \w is the full current working directory
+  # \W is just the trailing part of the current working directory
+  prompt="${TITLEBAR}${BLUE}[${LIGHT_GRAY}\w${GREEN}$(parse_git_branch)${BLUE}]${COLOR_NONE}"
 
   local elasped_time="(${timer_show})"
   if test $exit_code -eq 0; then

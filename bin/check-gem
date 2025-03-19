@@ -9,7 +9,7 @@ if [[ -z "$GEM_NAME" ]]; then
   exit 1
 fi
 
-for version in $(asdf list ruby | awk '{print $1}'); do
+for version in $(mise list ruby | awk '{print $1}'); do
   echo "Ruby $version:"
-  asdf shell ruby "$version" && gem list "$GEM_NAME" | grep "$GEM_NAME" || echo "No $GEM_NAME installed"
+  mise shell ruby "$version" && gem list "$GEM_NAME" | grep "$GEM_NAME" || echo "No $GEM_NAME installed"
 done
