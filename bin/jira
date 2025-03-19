@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Wrapper around the jira command that sets the JIRA_API_TOKEN environment variable.
+# It uses the op command to get the JIRA_API_TOKEN from the 1Password CLI and then runs the jira command.
+
+op run --no-masking -- /opt/homebrew/bin/jira "$@"
