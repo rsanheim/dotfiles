@@ -18,10 +18,6 @@ alias sl="script/lint"
 alias ss="script/server"
 alias st="script/test"
 
-# Easy access to `ci open` and such
-# https://github.com/CircleCI-Public/circleci-cli
-alias ci="circleci"
-
 alias start-mysql8="/opt/homebrew/opt/mysql@8.0/bin/mysqld_safe --datadir\=/opt/homebrew/var/mysql"
 alias cd-mysql="cd /opt/homebrew/opt/mysql@8.0"
 

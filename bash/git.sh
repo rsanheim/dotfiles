@@ -1,5 +1,5 @@
 # Thanks to Geoffrey's peepcode for many of these
-alias g='git '
+alias g='git'
 alias gst='git status'
 alias gap='git add --patch'
 alias gs='git status'
