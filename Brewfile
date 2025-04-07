@@ -22,6 +22,7 @@ brew "iperf"
 brew "gh"
 brew "jq"
 brew "lsd"
+brew "llm"
 brew "mas"
 # brew "redis", start_service: true
 brew "ruby-build"

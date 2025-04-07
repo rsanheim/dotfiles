@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Install via uv to workaround https://github.com/simonw/llm-mlx/issues/7
+uv tool install llm --python 3.12
+uvx llm install llm-mlx
+
+# Download the model
+uvx llm mlx download-model mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit
+
+# Run the model
+llm -m mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit --prompt "What is the capital of the moon?"
