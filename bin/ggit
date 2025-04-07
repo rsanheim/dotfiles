@@ -1,0 +1,8 @@
+#!/bin/bash
+# Run git commands in each sub directory that is a git repository
+
+# Combine all arguments into a single git command
+git_command="git $*"
+
+# Pass the combined command to each-dir
+each-dir --git "$git_command"
