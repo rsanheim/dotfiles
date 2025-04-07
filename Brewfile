@@ -1,6 +1,5 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "heroku/brew"
 
 # Get some essentials installed first
 brew "mise"
@@ -18,7 +17,6 @@ cask "zoom"
 brew "ag"
 brew "fd"
 brew "findutils"
-brew "heroku"
 brew "hyperfine" # super cool shell benchmarking
 brew "iperf"
 brew "gh"
@@ -33,14 +31,10 @@ brew "scc"
 brew "sqlite"
 brew "tree"
 
-# Needed for Ruby 3.0.2 (sigh)
-brew "openssl@1.1"
-
 # Needed For Ruby 3.1 and above, see https://github.com/rbenv/ruby-build/wiki
 brew "openssl@3"
 brew "readline"
 brew "libyaml"
-brew "gmp"
 
 # Cask based apps here...
 cask "bartender"
