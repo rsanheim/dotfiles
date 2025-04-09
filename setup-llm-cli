@@ -1,11 +1,85 @@
 #!/usr/bin/env bash
 
-# Install via uv to workaround https://github.com/simonw/llm-mlx/issues/7
-uv tool install llm --python 3.12
-uvx llm install llm-mlx
+# Function to display help
+show_help() {
+    cat << EOF
+Usage: $0 [OPTIONS]
+Install and setup llm and llm-mlx with optional models
 
-# Download the model
-uvx llm mlx download-model mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit
+Options:
+  -h, --help        Show this help message
+  -d, --deepseek3   Install the DeepSeek-V3 model (32GB)
+  -e, --examples    Show usage examples
 
-# Run the model
-llm -m mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit --prompt "What is the capital of the moon?"
+Example:
+  $0 --deepseek3  # Install with DeepSeek-V3 model
+  $0             # Install with only the base model
+EOF
+}
+
+# Function to display examples
+show_examples() {
+    cat << EOF
+llm and llm-mlx installed and setup
+---------------------------------
+You may need to import models via 'llm mlx import'
+
+Examples:
+* Run the model
+  llm -m mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit --prompt "What is the capital of the moon?"
+
+* Chat with the model
+  llm chat -m mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit
+
+* Use the DeepSeek-V3 model (if installed with --deepseek3)
+  llm -m ds3 --prompt "Your question here"
+EOF
+}
+
+# Parse command line arguments
+DEEPSEEK3=false
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -h|--help)
+            show_help
+            exit 0
+            ;;
+        -e|--examples)
+            show_examples
+            exit 0
+            ;;
+        -d|--deepseek3)
+            DEEPSEEK3=true
+            shift
+            ;;
+        *)
+            echo "Unknown option: $1"
+            show_help
+            exit 1
+            ;;
+    esac
+done
+
+# Check if llm is installed via uv tool and upgrade if it is, otherwise install
+if uv tool list | grep -q "^llm "; then
+    echo "llm is already installed via uv tool, upgrading..."
+    uv tool upgrade llm
+else
+    echo "Installing llm via uv tool..."
+    uv tool install llm --python 3.12
+fi
+
+llm install llm-mlx
+
+# Download the base model
+llm mlx download-model mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit
+
+# Download the larger model if requested
+if [ "$DEEPSEEK3" = true ]; then
+    echo "Installing DeepSeek-V3 model (this may take a while)..."
+    llm mlx download-model mlx-community/DeepSeek-V3-0324-4bit
+    llm aliases set ds3 mlx-community/DeepSeek-V3-0324-4bit
+fi
+
+echo "Installation complete!"
+echo "Run '$0 --examples' to see usage examples"
