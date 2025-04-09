@@ -61,9 +61,10 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Check if llm is installed via uv tool and upgrade if it is, otherwise install
+# NOTE: we force Python 3.12 to be used because of https://github.com/simonw/llm-mlx/issues/7
 if uv tool list | grep -q "^llm "; then
     echo "llm is already installed via uv tool, upgrading..."
-    uv tool upgrade llm
+    uv tool upgrade llm --python 3.12
 else
     echo "Installing llm via uv tool..."
     uv tool install llm --python 3.12
