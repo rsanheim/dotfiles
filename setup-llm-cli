@@ -76,7 +76,7 @@ llm install llm-mlx
 llm mlx download-model mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit
 
 # Download the larger model if requested
-if [ "$DEEPSEEK3" = true ]; then
+if [[ "$DEEPSEEK3" == true ]]; then
     echo "Installing DeepSeek-V3 model (this may take a while)..."
     llm mlx download-model mlx-community/DeepSeek-V3-0324-4bit
     llm aliases set ds3 mlx-community/DeepSeek-V3-0324-4bit
