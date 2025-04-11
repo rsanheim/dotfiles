@@ -107,12 +107,7 @@ shopt -s histappend histverify
 # set '**' to match all files and zero or more directories and subdirectories
 shopt -s globstar
 
-if [ -f "/usr/local/bin/code-insiders" ]; then
-  export EDITOR="code-insiders --wait"
-else
-  export EDITOR="code --wait"
-fi
-
+export EDITOR="cursor --wait"
 export GIT_EDITOR="cursor --wait"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
