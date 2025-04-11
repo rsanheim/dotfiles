@@ -3,6 +3,12 @@ export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
 export BUNDLE_CACHE_ALL_PLATFORMS=1
 source "$DOTFILES_HOME/bin/functions"
 
+# CircleCI CLI wants to auto update every day, which is far too frequent
+# See https://github.com/CircleCI-Public/circleci-cli/issues/839
+export CIRCLECI_CLI_SKIP_UPDATE_CHECK=true
+# No analytics for Homebrew
+export HOMEBREW_NO_ANALYTICS=true
+
 if [ "$(uname -m)" = "x86_64" ]; then
   eval "$(/usr/local/bin/brew shellenv)"
 else
@@ -97,10 +103,6 @@ fi
 
 [[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 
-# CircleCI CLI wants to auto update every day, which is far too frequent
-# See https://github.com/CircleCI-Public/circleci-cli/issues/839
-export CIRCLECI_CLI_SKIP_UPDATE_CHECK=true
-export HOMEBREW_NO_ANALYTICS=true
 export HISTCONTROL=ignoredups
 export HISTSIZE=10000
 shopt -s histappend histverify
@@ -118,9 +120,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export DX_ALT_BROWSER="Google Chrome"
 export JIRA_API_TOKEN="op://Private/jira-cli-token/credential"
-
-# rbenv
-# eval "$(rbenv init - bash)"
 
 # mise - activate version manager
 eval "$(mise activate bash)"
