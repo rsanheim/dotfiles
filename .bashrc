@@ -104,12 +104,9 @@ export HISTSIZE=10000
 shopt -s histappend histverify
 shopt -s globstar
 
-# Check for code-insiders
-if [ -f "/usr/local/bin/code-insiders" ]; then
-  export EDITOR="code-insiders --wait"
-else
-  export EDITOR="code --wait"
-fi
+export EDITOR="cursor --wait"
+export GIT_EDITOR="cursor --wait"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # For orbstack - currently disabled
 # source ~/.orbstack/shell/init.bash 2>/dev/null || :
