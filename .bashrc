@@ -1,18 +1,25 @@
-# Export Variables
-export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
-export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
 export BUNDLE_CACHE_ALL_PLATFORMS=1
 export CIRCLECI_CLI_SKIP_UPDATE_CHECK=true
-export HOMEBREW_NO_ANALYTICS=true
+export DOTFILES_HOME="$HOME/src/rsanheim/dotfiles"
+export DOTFILES_PRIVATE_HOME="$HOME/src/rsanheim/dotfiles-private"
+export DX_ALT_BROWSER="Google Chrome"
+export EDITOR="cursor --wait"
 export FIREFOX="/Applications/Firefox.app/Contents/MacOS/firefox"
-export EDITOR="code --wait"
 export GIT_EDITOR="cursor --wait"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-export DX_ALT_BROWSER="Google Chrome"
+export HOMEBREW_NO_ANALYTICS=true
 export JIRA_API_TOKEN="op://Private/jira-cli-token/credential"
+
+# Set ulimit - see https://gist.github.com/tombigel/d503800a282fcadbee14b537735d202c
+ulimit -n 65536
+ulimit -u 2048
 
 # Source Functions and Scripts
 source "$DOTFILES_HOME/bin/functions"
+
+if test "${PS1+set}"; then
+  CDPATH=".:$HOME:$HOME/src:$HOME/work:$HOME/work/gems:$HOME/src/rsanheim:$HOME/src/oss"
+fi
 
 # Path Modifications
 PATH="/usr/local/sbin:$PATH"
@@ -61,10 +68,6 @@ fi
 #   PATH="$HOME/.docker/bin:$PATH"
 # fi
 
-# Set ulimit - see https://gist.github.com/tombigel/d503800a282fcadbee14b537735d202c
-ulimit -n 65536
-ulimit -u 2048
-
 # Homebrew pinned Mysql 8.0 setup
 if [ -d "/opt/homebrew/opt/mysql@8.0/" ]; then
   export LDFLAGS="-L/opt/homebrew/opt/mysql@8.0/lib"
@@ -104,9 +107,6 @@ export HISTSIZE=10000
 shopt -s histappend histverify
 shopt -s globstar
 
-export EDITOR="cursor --wait"
-export GIT_EDITOR="cursor --wait"
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # For orbstack - currently disabled
 # source ~/.orbstack/shell/init.bash 2>/dev/null || :
