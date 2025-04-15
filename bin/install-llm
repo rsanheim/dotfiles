@@ -40,18 +40,17 @@ You may need to import models via 'llm mlx import'
 
 Examples:
 * Run the model
-  llm -m $DEFAULT_MODEL --prompt "What is the capital of the moon?"
+  llm -m $DEFAULT_MODEL "What is the capital of the moon?"
 
 * Chat with the model
   llm chat -m $DEFAULT_MODEL
 
 * Use the $LARGE_MODEL model (if installed with --large)
-  llm -m $DEFAULT_MODEL --prompt "Your question here"
+  llm -m $LARGE_MODEL --prompt "Your question here"
 EOF
 }
 
-
-DEEPSEEK3=false
+INSTALL_LARGE_MODEL=false
 while [[ $# -gt 0 ]]; do
     case $1 in
         -h|--help)
@@ -62,8 +61,8 @@ while [[ $# -gt 0 ]]; do
             show_examples
             exit 0
             ;;
-        -d|--deepseek3)
-            DEEPSEEK3=true
+        -d|--large)
+            INSTALL_LARGE_MODEL=true
             shift
             ;;
         *)
@@ -79,10 +78,10 @@ done
 # NOTE: we force Python 3.12 to be used because of https://github.com/simonw/llm-mlx/issues/7
 if uv tool list | grep -q "^llm "; then
     echo "llm is already installed via uv tool, upgrading..."
-    uv tool upgrade llm --python 3.12
+    uv tool upgrade --quiet --python 3.12 llm
 else
     echo "Installing llm via uv tool..."
-    uv tool install llm --python 3.12
+    uv tool install --quiet --python 3.12 llm
 fi
 
 llm install llm-mlx
@@ -91,7 +90,7 @@ llm install llm-mlx
 llm mlx download-model $DEFAULT_MODEL
 
 # Download the larger model if requested
-if [[ "$DEEPSEEK3" == true ]]; then
+if [[ "$INSTALL_LARGE_MODEL" == true ]]; then
     echo "Installing $LARGE_MODEL model (this may take a while)..."
     llm mlx download-model $LARGE_MODEL
     llm aliases set ds3 $LARGE_MODEL
