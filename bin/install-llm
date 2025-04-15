@@ -1,0 +1,100 @@
+#!/usr/bin/env bash
+
+DEEPSEEK_R1_DISTILL_QWEN_32B_4BIT="mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit"
+DEEPSEEK_V3_0324_4BIT="mlx-community/DeepSeek-V3-0324-4bit"
+MISTRAL_7B_4BIT="mlx-community/Mistral-7B-Instruct-v0.2-4bit"
+
+DEEPSEEK_R1_DISTILL_QWEN_32B_4BIT_INFO="https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit"
+DEEPSEEK_V3_0324_4BIT_INFO="https://huggingface.co/mlx-community/DeepSeek-V3-0324-4bit"
+MISTRAL_7B_4BIT_INFO="https://huggingface.co/mlx-community/Mistral-7B-Instruct-v0.2-4-bit"
+
+LARGE_MODEL=$DEEPSEEK_R1_DISTILL_QWEN_32B_4BIT
+DEFAULT_MODEL=$MISTRAL_7B_4BIT
+
+# Function to display help
+show_help() {
+    cat << EOF
+Usage: $0 [OPTIONS]
+Install and setup llm and llm-mlx with local models for Macs.
+By default, installs the $DEFAULT_MODEL model, which should work on Apple Silicon Macs with 
+16GB of unified memory or more. You can optionally install the $LARGE_MODEL model, which requires
+at least 64GB of unified memory.
+
+Options:
+  -h, --help        Show this help message
+  -d, --large       Install the $LARGE_MODEL model (64GB)
+  -e, --examples    Show usage examples
+
+Example:
+  $0 --large  # Install with the large model
+  $0          # Install with only the base model
+EOF
+}
+
+# Function to display examples
+show_examples() {
+    cat << EOF
+llm and llm-mlx installed and setup
+---------------------------------
+You may need to import models via 'llm mlx import'
+
+Examples:
+* Run the model
+  llm -m $DEFAULT_MODEL "What is the capital of the moon?"
+
+* Chat with the model
+  llm chat -m $DEFAULT_MODEL
+
+* Use the $LARGE_MODEL model (if installed with --large)
+  llm -m $LARGE_MODEL --prompt "Your question here"
+EOF
+}
+
+INSTALL_LARGE_MODEL=false
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -h|--help)
+            show_help
+            exit 0
+            ;;
+        -e|--examples)
+            show_examples
+            exit 0
+            ;;
+        -d|--large)
+            INSTALL_LARGE_MODEL=true
+            shift
+            ;;
+        *)
+            echo "Unknown option: $1"
+            show_help
+            exit 1
+            ;;
+    esac
+done
+
+
+# Check if llm is installed via uv tool and upgrade if it is, otherwise install
+# NOTE: we force Python 3.12 to be used because of https://github.com/simonw/llm-mlx/issues/7
+if uv tool list | grep -q "^llm "; then
+    echo "llm is already installed via uv tool, upgrading..."
+    uv tool upgrade --quiet --python 3.12 llm
+else
+    echo "Installing llm via uv tool..."
+    uv tool install --quiet --python 3.12 llm
+fi
+
+llm install llm-mlx
+
+# Download the base model
+llm mlx download-model $DEFAULT_MODEL
+
+# Download the larger model if requested
+if [[ "$INSTALL_LARGE_MODEL" == true ]]; then
+    echo "Installing $LARGE_MODEL model (this may take a while)..."
+    llm mlx download-model $LARGE_MODEL
+    llm aliases set ds3 $LARGE_MODEL
+fi
+
+echo "Installation complete!"
+echo "Run '$0 --examples' to see usage examples"
