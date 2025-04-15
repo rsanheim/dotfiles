@@ -56,6 +56,7 @@ mas "Bear", id: 1091189122
 mas "Dayone", id: 1055511498
 mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709
+mas "Tailscale", id: 1475387142
 
 # Lower priority brew's are last - these are slow and/or not as important as the ones above
 brew "circleci"
@@ -67,7 +68,7 @@ brew "shared-mime-info"
 brew "wget"
 brew "youtube-dl"
 
-# dox
+# work
 brew "git-lfs"
 brew "parallel"
 brew "gawk"
