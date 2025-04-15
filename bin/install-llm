@@ -1,19 +1,33 @@
 #!/usr/bin/env bash
 
+DEEPSEEK_R1_DISTILL_QWEN_32B_4BIT="mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit"
+DEEPSEEK_V3_0324_4BIT="mlx-community/DeepSeek-V3-0324-4bit"
+MISTRAL_7B_4BIT="mlx-community/Mistral-7B-Instruct-v0.2-4bit"
+
+DEEPSEEK_R1_DISTILL_QWEN_32B_4BIT_INFO="https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit"
+DEEPSEEK_V3_0324_4BIT_INFO="https://huggingface.co/mlx-community/DeepSeek-V3-0324-4bit"
+MISTRAL_7B_4BIT_INFO="https://huggingface.co/mlx-community/Mistral-7B-Instruct-v0.2-4-bit"
+
+LARGE_MODEL=$DEEPSEEK_R1_DISTILL_QWEN_32B_4BIT
+DEFAULT_MODEL=$MISTRAL_7B_4BIT
+
 # Function to display help
 show_help() {
     cat << EOF
 Usage: $0 [OPTIONS]
-Install and setup llm and llm-mlx with optional models
+Install and setup llm and llm-mlx with local models for Macs.
+By default, installs the $DEFAULT_MODEL model, which should work on Apple Silicon Macs with 
+16GB of unified memory or more. You can optionally install the $LARGE_MODEL model, which requires
+at least 64GB of unified memory.
 
 Options:
   -h, --help        Show this help message
-  -d, --deepseek3   Install the DeepSeek-V3 model (32GB)
+  -d, --large       Install the $LARGE_MODEL model (64GB)
   -e, --examples    Show usage examples
 
 Example:
-  $0 --deepseek3  # Install with DeepSeek-V3 model
-  $0             # Install with only the base model
+  $0 --large  # Install with the large model
+  $0          # Install with only the base model
 EOF
 }
 
@@ -26,18 +40,16 @@ You may need to import models via 'llm mlx import'
 
 Examples:
 * Run the model
-  llm -m mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit --prompt "What is the capital of the moon?"
+  llm -m $DEFAULT_MODEL --prompt "What is the capital of the moon?"
 
 * Chat with the model
-  llm chat -m mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit
+  llm chat -m $DEFAULT_MODEL
 
-* Use the DeepSeek-V3 model (if installed with --deepseek3)
-  llm -m ds3 --prompt "Your question here"
+* Use the $LARGE_MODEL model (if installed with --large)
+  llm -m $DEFAULT_MODEL --prompt "Your question here"
 EOF
 }
 
-# Parse command line arguments
-DEFAULT_MODEL="mlx-community/Mistral-7B-Instruct-v0.2-4bit"
 
 DEEPSEEK3=false
 while [[ $# -gt 0 ]]; do
@@ -80,9 +92,9 @@ llm mlx download-model $DEFAULT_MODEL
 
 # Download the larger model if requested
 if [[ "$DEEPSEEK3" == true ]]; then
-    echo "Installing DeepSeek-V3 model (this may take a while)..."
-    llm mlx download-model mlx-community/DeepSeek-V3-0324-4bit
-    llm aliases set ds3 mlx-community/DeepSeek-V3-0324-4bit
+    echo "Installing $LARGE_MODEL model (this may take a while)..."
+    llm mlx download-model $LARGE_MODEL
+    llm aliases set ds3 $LARGE_MODEL
 fi
 
 echo "Installation complete!"
