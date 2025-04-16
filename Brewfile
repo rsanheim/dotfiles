@@ -38,6 +38,7 @@ brew "libyaml"
 
 # Cask based apps here...
 cask "bartender"
+cask "boltai"
 cask "chatgpt"
 cask "dash"
 cask "fantastical"
