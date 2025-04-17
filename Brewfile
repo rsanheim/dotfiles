@@ -1,20 +1,21 @@
-tap "homebrew/bundle"
-tap "homebrew/services"
-
-# Get some essentials installed first
-brew "mise"
-brew "bash"
-brew "bash-completion"
-brew "git"
-# cask "1password"
+# =================================================================================
+#  High priority things first
+# =================================================================================
 # cask "maestral" # a better, lighter weight Dropbox client - https://maestral.app
-# cask "rectangle" # simple, open source Mac OS window management - https://rectangleapp.com
-# cask "visual-studio-code" # duh
+brew "bash-completion"
+brew "bash"
+brew "git"
+brew "mise"
+
 cask "cursor"
-cask "kitty"
 cask "firefox"
+cask "kitty"
+cask "rectangle" # simple, open source Mac OS window management - https://rectangleapp.com
 cask "zoom"
 
+# =================================================================================
+#  medium priority
+# =================================================================================
 brew "ag"
 brew "fd"
 brew "findutils"
@@ -22,37 +23,48 @@ brew "gh"
 brew "hyperfine"
 brew "iperf"
 brew "jq"
+brew "libyaml" # https://github.com/rbenv/ruby-build/wiki
 brew "lsd"
 brew "mas"
+brew "openssl@3" # https://github.com/rbenv/ruby-build/wiki
 brew "orbstack"
+brew "readline" # https://github.com/rbenv/ruby-build/wiki
 brew "redis"
 brew "ruby-build"
 brew "scc"
 brew "shellcheck"
-brew "sloccount"
 brew "sqlite"
 brew "tree"
 
-# Needed For Ruby 3.1 and above, see https://github.com/rbenv/ruby-build/wiki
-brew "openssl@3"
-brew "readline"
-brew "libyaml"
-
-# Cask based apps here...
 cask "bartender"
 cask "boltai"
 cask "chatgpt"
 cask "dash"
 cask "fantastical"
-cask "font-fira-code"
 cask "istat-menus"
-cask "netnewswire"
 cask "roon"
+
+# =================================================================================
+#  low priority
+# =================================================================================
+brew "awscli"
+brew "circleci"
+brew "ffmpeg"
+brew "flac"
+brew "gawk"
+brew "git-lfs"
+brew "graphviz"
+brew "lame"
+brew "parallel"
+brew "shared-mime-info"
+brew "wget"
+brew "youtube-dl"
+
+cask "font-fira-code"
+cask "netnewswire"
 cask "todoist"
-cask "the-unarchiver"
 cask "vlc"
 
-# Mac App Store apps here
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
 mas "Bear", id: 1091189122
@@ -60,19 +72,3 @@ mas "Dayone", id: 1055511498
 mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709
 mas "Tailscale", id: 1475387142
-
-# Lower priority brew's are last - these are slow and/or not as important as the ones above
-brew "circleci"
-brew "flac"
-brew "ffmpeg"
-brew "graphviz"
-brew "lame"
-brew "shared-mime-info"
-brew "wget"
-brew "youtube-dl"
-
-# work
-brew "git-lfs"
-brew "parallel"
-brew "gawk"
-brew "awscli"
