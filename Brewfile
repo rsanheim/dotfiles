@@ -27,7 +27,6 @@ brew "libyaml" # https://github.com/rbenv/ruby-build/wiki
 brew "lsd"
 brew "mas"
 brew "openssl@3" # https://github.com/rbenv/ruby-build/wiki
-brew "orbstack"
 brew "readline" # https://github.com/rbenv/ruby-build/wiki
 brew "redis"
 brew "ruby-build"
@@ -41,6 +40,7 @@ cask "boltai"
 cask "chatgpt"
 cask "dash"
 cask "fantastical"
+cask "orbstack"
 cask "istat-menus"
 cask "roon"
 
