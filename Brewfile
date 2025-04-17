@@ -2,8 +2,8 @@
 #  High priority things first
 # =================================================================================
 # cask "maestral" # a better, lighter weight Dropbox client - https://maestral.app
-brew "bash-completion"
 brew "bash"
+brew "bash-completion@2"
 brew "git"
 brew "mise"
 
