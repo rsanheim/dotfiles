@@ -19,8 +19,6 @@ ln -sf "$DOTFILES_HOME"/.vimrc ~
 
 # ./bin/clone-personal
 
-ln -sf "$DOTFILES_PRIVATE_HOME"/ssh_config ~/.ssh/config
-
 if is_osx; then
   echo
   echo "Installing brew bundle..."
