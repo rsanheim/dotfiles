@@ -1,8 +1,14 @@
-# This is Git's per-user configuration file.
 [user]
-	name = Rob Sanheim
-	email = rsanheim@gmail.com
-	signingkey = /Users/rsanheim/.ssh/dox_ed25519.pub
+  name = Rob Sanheim
+  email = rsanheim@gmail.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILs+8+tiCUvcUF60pjRhi6mV3YsycSXIVQUpS0sFzI7d
+[gpg]
+	format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+  gpgsign = true
+
 [alias]
   br = branch
   co = checkout
@@ -21,37 +27,40 @@
 [push]
 	default = current
 [hub]
-	protocol = https
+	protocol = ssh
 [core]
 	excludesfile = ~/.gitignore
 [github]
 	user = rsanheim
 [diff]
   tool = icdiff
+
 [difftool]
   prompt = false
+
 [difftool "icdiff"]
   cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
+
 [credential]
 	helper = osxkeychain
+
 [diff "ansible-vault"]
 	textconv = ansible-vault view
+
 [pull]
 	rebase = false
+
 [init]
 	defaultBranch = main
+
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+
 [fetch]
 	prune = true
+
 [merge]
 	autoEdit = no
-[gpg]
-	format = ssh
-[gpg "ssh"]
-	allowedSignersFile = /Users/rsanheim/.ssh/dox_ed25519.pub
-[commit]
-	gpgsign = true
