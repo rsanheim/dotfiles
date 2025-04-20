@@ -19,8 +19,6 @@ ln -sf "$DOTFILES_HOME"/.vimrc ~
 
 # ./bin/clone-personal
 
-ln -sf "$DOTFILES_PRIVATE_HOME"/ssh_config ~/.ssh/config
-
 if is_osx; then
   echo
   echo "Installing brew bundle..."
@@ -34,6 +32,8 @@ if [[ $SHELL != "/opt/homebrew/bin/bash" ]]; then
   echo "/opt/homebrew/bin/bash" | sudo tee -a /etc/shells
   chsh -s /opt/homebrew/bin/bash
 fi
+
+chezmoi init git@github.com:rsanheim/chezmoi.git
 
 echo "Setting up mise..."
 ./bin/install-mise

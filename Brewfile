@@ -4,6 +4,7 @@
 # cask "maestral" # a better, lighter weight Dropbox client - https://maestral.app
 brew "bash"
 brew "bash-completion@2"
+brew "chezmoi"
 brew "git"
 brew "mise"
 
