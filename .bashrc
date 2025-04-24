@@ -9,6 +9,7 @@ export GIT_EDITOR="cursor --wait"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export HOMEBREW_NO_ANALYTICS=true
 export JIRA_API_TOKEN="op://Private/jira-cli-token/credential"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Set ulimit - see https://gist.github.com/tombigel/d503800a282fcadbee14b537735d202c
 ulimit -n 65536
