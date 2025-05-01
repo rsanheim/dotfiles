@@ -1,19 +1,68 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -uo pipefail
+
+# Default to non-verbose mode
+VERBOSE=0
+
+usage() {
+  cat <<EOF
+Usage: $(basename "$0") [OPTIONS]
+
+Checks for and cleans up broken symlinks in your home directory that were previously
+managed by dotfiles and are now managed by chezmoi.
+
+Options:
+  -h, --help     Show this help message and exit
+  -v, --verbose  Enable verbose output for debugging
+
+Examples:
+  $(basename "$0")          # Run normally
+  $(basename "$0") -v      # Run with verbose output
+  $(basename "$0") --help  # Show this help message
+EOF
+}
+
+log_verbose() {
+  if [ "$VERBOSE" -eq 1 ]; then
+    echo "DEBUG: $*" >&2
+  fi
+}
+
+# Parse command line arguments
+while [ $# -gt 0 ]; do
+  case "$1" in
+  -h | --help)
+    usage
+    exit 0
+    ;;
+  -v | --verbose)
+    VERBOSE=1
+    shift
+    ;;
+  *)
+    echo "Error: Unknown option: $1" >&2
+    usage
+    exit 1
+    ;;
+  esac
+done
 
 # Function to check if a symlink is broken
 is_broken_symlink() {
+  log_verbose "Checking if '$1' is a broken symlink"
   [ -L "$1" ] && [ ! -e "$1" ]
 }
 
 # Function to check if a file is managed by chezmoi
 is_managed_by_chezmoi() {
+  log_verbose "Checking if '$1' is managed by chezmoi"
   chezmoi managed "$1" >/dev/null 2>&1
 }
 
 # Function to get the target of a symlink
 get_symlink_target() {
+  log_verbose "Getting target for '$1'"
   readlink -f "$1"
 }
 
@@ -21,15 +70,30 @@ get_symlink_target() {
 echo "Checking for broken symlinks that should be managed by chezmoi..."
 
 # Find all symlinks in home directory
-while IFS= read -r -d '' symlink; do
+log_verbose "Searching for symlinks in $HOME"
+find "$HOME" -maxdepth 1 -type l -print0 | while IFS= read -r -d '' symlink; do
+  log_verbose "Processing symlink: $symlink"
   if is_broken_symlink "$symlink"; then
     target=$(get_symlink_target "$symlink")
-    # If the target was in dotfiles and the file is now managed by chezmoi
-    if [[ "$target" == *"dotfiles"* ]] && is_managed_by_chezmoi "$symlink"; then
-      echo "Removing broken symlink: $symlink (now managed by chezmoi)"
-      rm "$symlink"
+    echo
+    echo "Found broken symlink: $symlink"
+    echo "  Target was: $target"
+
+    if [[ "$target" == *"dotfiles"* ]]; then
+      if is_managed_by_chezmoi "$symlink"; then
+        echo "  ✓ This file is now managed by chezmoi - removing symlink"
+        log_verbose "Removing symlink: $symlink"
+        rm "$symlink"
+      else
+        echo "  ⚠️  This file was in dotfiles but is NOT managed by chezmoi"
+        echo "  Please check if this file should be added to chezmoi"
+      fi
+    else
+      echo "  ⚠️  This symlink points outside of dotfiles"
+      echo "  Please check if this symlink is still needed"
     fi
   fi
-done < <(find "$HOME" -maxdepth 1 -type l -print0)
+done
 
+echo
 echo "Cleanup complete!"
