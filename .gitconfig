@@ -64,3 +64,5 @@
 
 [merge]
 	autoEdit = no
+[branch]
+	sort = -committerdate
