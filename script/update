@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Exit on error
+set -e
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOTFILES_DIR="$(dirname "$SCRIPT_DIR")"
+
+echo "Updating dotfiles..."
+cd "$DOTFILES_DIR"
+git pull
+
+echo "Running cleanup script..."
+"$DOTFILES_DIR/bin/cleanup-broken-symlinks"
+
+echo "Update complete!"

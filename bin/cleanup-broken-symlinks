@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Function to check if a symlink is broken
+is_broken_symlink() {
+  [ -L "$1" ] && [ ! -e "$1" ]
+}
+
+# Function to check if a file is managed by chezmoi
+is_managed_by_chezmoi() {
+  chezmoi managed "$1" >/dev/null 2>&1
+}
+
+# Function to get the target of a symlink
+get_symlink_target() {
+  readlink -f "$1"
+}
+
+# Main script
+echo "Checking for broken symlinks that should be managed by chezmoi..."
+
+# Find all symlinks in home directory
+while IFS= read -r -d '' symlink; do
+  if is_broken_symlink "$symlink"; then
+    target=$(get_symlink_target "$symlink")
+    # If the target was in dotfiles and the file is now managed by chezmoi
+    if [[ "$target" == *"dotfiles"* ]] && is_managed_by_chezmoi "$symlink"; then
+      echo "Removing broken symlink: $symlink (now managed by chezmoi)"
+      rm "$symlink"
+    fi
+  fi
+done < <(find "$HOME" -maxdepth 1 -type l -print0)
+
+echo "Cleanup complete!"
