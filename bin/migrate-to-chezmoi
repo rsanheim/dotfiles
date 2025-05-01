@@ -1,0 +1,107 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+usage() {
+  cat <<EOF
+Migrate files from dotfiles to chezmoi, handling symlink cleanup.
+
+Usage: 
+  $(basename "$0") <file> [file2 ...]
+
+Arguments:
+  file    Path to file(s) relative to your home directory (~/). 
+          For example, to migrate ~/.gitconfig, use '.gitconfig'
+
+Examples:
+  # Migrate .gitconfig from dotfiles to chezmoi:
+  $(basename "$0") .gitconfig
+
+  # Migrate multiple files at once:
+  $(basename "$0") .gitconfig .bashrc .vimrc
+
+Notes:
+  - Run this script from your dotfiles directory ($DOTFILES_HOME)
+  - Specify paths as they appear in your home directory
+  - The script will:
+    1. Remove any existing symlink in your home directory
+    2. Copy the file from dotfiles to your home directory if it doesn't exist
+    3. Add the file to chezmoi
+    4. Verify the file is managed by chezmoi
+    5. Optionally remove the file from your dotfiles repo
+EOF
+}
+
+# Function to check if a path is a symlink
+is_symlink() {
+  [ -L "$1" ]
+}
+
+# Function to verify file is managed by chezmoi
+is_managed_by_chezmoi() {
+  chezmoi managed "$1" >/dev/null 2>&1
+}
+
+# Function to migrate a file to chezmoi
+migrate_file() {
+  local file="$1"
+  local target_path="$HOME/$file"
+  local source_path="$DOTFILES_HOME/$file"
+
+  echo "Migrating $file to chezmoi..."
+
+  # Check if the target is a symlink
+  if is_symlink "$target_path"; then
+    echo "Removing symlink at $target_path"
+    rm "$target_path"
+  fi
+
+  # Copy file from dotfiles to home if it doesn't exist
+  if [ ! -f "$target_path" ]; then
+    echo "Copying $file from dotfiles to home directory..."
+    cp "$source_path" "$target_path"
+  fi
+
+  # Add to chezmoi
+  echo "Adding to chezmoi..."
+  chezmoi add "$target_path"
+
+  # Verify file is managed by chezmoi
+  if ! is_managed_by_chezmoi "$target_path"; then
+    echo "Error: Failed to verify $file is managed by chezmoi. Aborting."
+    exit 1
+  fi
+  echo "Verified $file is managed by chezmoi"
+
+  # Optionally remove from dotfiles repo
+  read -p "Remove $file from dotfiles repo? (y/n) " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "Removing from dotfiles repo..."
+    rm "$source_path"
+    git add "$source_path"
+    git commit -m "Remove $file (migrated to chezmoi)"
+  fi
+}
+
+# Main script
+if [ $# -eq 0 ]; then
+  usage
+  exit 1
+fi
+
+# Export DOTFILES_HOME if not already set
+export DOTFILES_HOME="${DOTFILES_HOME:-$HOME/src/rsanheim/dotfiles}"
+
+# Ensure we're running from the dotfiles directory
+if [[ "$PWD" != "$DOTFILES_HOME" ]]; then
+  echo "Error: Please run this script from your dotfiles directory ($DOTFILES_HOME)"
+  exit 1
+fi
+
+# Process each file
+for file in "$@"; do
+  migrate_file "$file"
+done
+
+echo "Migration complete!"
