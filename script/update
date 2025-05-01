@@ -14,4 +14,7 @@ git pull
 echo "Running cleanup script..."
 "$DOTFILES_DIR/bin/cleanup-broken-symlinks"
 
+echo "Updating chezmoi..."
+chezmoi update
+
 echo "Update complete!"
