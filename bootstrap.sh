@@ -9,11 +9,9 @@ mkdir -p "$HOME"/src/rsanheim
 mkdir -p "$HOME"/src/oss
 mkdir -p "$HOME"/work
 
-ln -sf "$DOTFILES_HOME"/.atom/ ~
 ln -sf "$DOTFILES_HOME"/.bash_profile ~
 ln -sf "$DOTFILES_HOME"/.bashrc ~
 ln -sf "$DOTFILES_HOME"/.default-gems ~
-ln -sf "$DOTFILES_HOME"/.gitconfig ~
 ln -sf "$DOTFILES_HOME"/.gitignore ~
 ln -sf "$DOTFILES_HOME"/.vimrc ~
 
