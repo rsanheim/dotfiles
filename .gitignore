@@ -7,3 +7,4 @@
 # docker synchronized file stores
 .syncignore
 .vscode/
+**/.claude/settings.local.json
