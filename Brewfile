@@ -32,6 +32,7 @@ brew "xwmx/taps/nb"
 brew "openssl@3" # https://github.com/rbenv/ruby-build/wiki
 brew "readline" # https://github.com/rbenv/ruby-build/wiki
 brew "redis"
+brew "ripgrep"
 brew "ruby-build"
 brew "scc"
 brew "shellcheck"
