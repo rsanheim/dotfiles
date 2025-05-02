@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Exit on error
+set -e
+
+# Default to non-verbose mode
+VERBOSE=""
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOTFILES_DIR="$(dirname "$SCRIPT_DIR")"
+
+usage() {
+  cat <<EOF
+Usage: $(basename "$0") [OPTIONS]
+
+Updates dotfiles repository and cleans up any broken symlinks.
+
+Options:
+  -h, --help     Show this help message and exit
+  -v, --verbose  Enable verbose output for debugging
+
+Examples:
+  $(basename "$0")          # Run normally
+  $(basename "$0") -v      # Run with verbose output
+  $(basename "$0") --help  # Show this help message
+EOF
+}
+
+# Parse command line arguments
+while [ $# -gt 0 ]; do
+  case "$1" in
+  -h | --help)
+    usage
+    exit 0
+    ;;
+  -v | --verbose)
+    VERBOSE="-v"
+    shift
+    ;;
+  *)
+    echo "Error: Unknown option: $1" >&2
+    usage
+    exit 1
+    ;;
+  esac
+done
+
+echo "Updating dotfiles..."
+cd "$DOTFILES_DIR"
+git pull
+
+echo "Running cleanup script..."
+"$DOTFILES_DIR/bin/cleanup-broken-symlinks" $VERBOSE
+
+echo "Updating chezmoi..."
+chezmoi update
+
+echo "Update complete!"
