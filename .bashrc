@@ -71,34 +71,34 @@ fi
 
 # Homebrew pinned Mysql 8.0 setup
 if [ -d "/opt/homebrew/opt/mysql@8.0/" ]; then
-  export LDFLAGS="-L/opt/homebrew/opt/mysql@8.0/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/mysql@8.0/include"
-  export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql@8.0/lib/pkgconfig"
+  # export LDFLAGS="-L/opt/homebrew/opt/mysql@8.0/lib"
+  # export CPPFLAGS="-I/opt/homebrew/opt/mysql@8.0/include"
+  # export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql@8.0/lib/pkgconfig"
   PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
 fi
 
 # Use a Postgres 17 in homebrew if it's there
-POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@17/bin"
-if [ -d "$POSTGRES_BREW_PATH" ]; then
-  PATH="$POSTGRES_BREW_PATH:$PATH"
-  export LDFLAGS="-L$(brew --prefix)/opt/postgresql@17/lib"
-  export CPPFLAGS="-I$(brew --prefix)/opt/postgresql@17/include"
-  export PKG_CONFIG_PATH="$(brew --prefix)/opt/postgresql@17/lib/pkgconfig"
-else
-  # Use a Postgres 14 in homebrew if it's there
-  POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@14/bin"
-  if [ -d "$POSTGRES_BREW_PATH" ]; then
-    PATH="$POSTGRES_BREW_PATH:$PATH"
-    export LDFLAGS="-L$(brew --prefix)/opt/postgresql@14/lib"
-    export CPPFLAGS="-I$(brew --prefix)/opt/postgresql@14/include"
-    export PKG_CONFIG_PATH="$(brew --prefix)/opt/postgresql@14/lib/pkgconfig"
-  else
-    # Print a warning if neither version is found, based on DEBUG_POSTGRES
-    if [ "$DEBUG_BASH" = "1" ]; then
-      echo "Warning: Neither PostgreSQL 17 nor PostgreSQL 14 is installed."
-    fi
-  fi
-fi
+# POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@17/bin"
+# if [ -d "$POSTGRES_BREW_PATH" ]; then
+#   PATH="$POSTGRES_BREW_PATH:$PATH"
+#   export LDFLAGS="-L$(brew --prefix)/opt/postgresql@17/lib"
+#   export CPPFLAGS="-I$(brew --prefix)/opt/postgresql@17/include"
+#   export PKG_CONFIG_PATH="$(brew --prefix)/opt/postgresql@17/lib/pkgconfig"
+# else
+#   # Use a Postgres 14 in homebrew if it's there
+#   POSTGRES_BREW_PATH="$(brew --prefix)/opt/postgresql@14/bin"
+#   if [ -d "$POSTGRES_BREW_PATH" ]; then
+#     PATH="$POSTGRES_BREW_PATH:$PATH"
+#     export LDFLAGS="-L$(brew --prefix)/opt/postgresql@14/lib"
+#     export CPPFLAGS="-I$(brew --prefix)/opt/postgresql@14/include"
+#     export PKG_CONFIG_PATH="$(brew --prefix)/opt/postgresql@14/lib/pkgconfig"
+#   else
+#     # Print a warning if neither version is found, based on DEBUG_POSTGRES
+#     if [ "$DEBUG_BASH" = "1" ]; then
+#       echo "Warning: Neither PostgreSQL 17 nor PostgreSQL 14 is installed."
+#     fi
+#   fi
+# fi
 
 [[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 
